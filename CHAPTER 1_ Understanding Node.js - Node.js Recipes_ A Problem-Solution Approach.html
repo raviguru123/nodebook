@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml -->
+<html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="1573407" data-user-uuid="29525685-85c9-45c7-9eda-3c178d86398e" data-username="raviguru0007" data-account-type="Trial" data-activated-trial-date="04/17/2017" data-archive="9781430260585" data-publishers="Apress" data-htmlfile-name="9781430260585_Ch01.xhtml" data-epub-title="Node.js Recipes: A Problem-Solution Approach" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781430260585"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><script type="text/javascript" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/510f1a6865"></script><script src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/nr-spa-1026.min.js"></script><script type="text/javascript" async="" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/linkid.js"></script><script async="" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQDUVVVGwACU1RUAQA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(19),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(20),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(p){"stack"in p&&(t(12),t(11),"addEventListener"in window&&t(6),s.xhrWrappable&&t(13),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){C++,N=y.hash,this[u]=M.now()}function o(){C--,y.hash!==N&&i(0,!0);var t=M.now();this[l]=~~this[l]+t-this[u],this[d]=t}function i(t,e){x.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=M.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,h="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location;if(w[v]){var b=t(9),g=t(10),x=t(8),E=t(6),O=t(12),R=t(7),P=t(13),T=t("ee"),S=T.get("tracer");t(14);var M=t("loader");M.features.spa=!0;var N,j=w[v],C=0;T.on(u,r),T.on(p,r),T.on(d,o),T.on(h,o),T.buffer([u,d,"xhr-done","xhr-resolved"]),E.buffer([u]),O.buffer(["setTimeout"+s,"clearTimeout"+c,u]),P.buffer([u,"new-xhr","send-xhr"+c]),R.buffer([m+c,m+"-done",m+f+c,m+f+s]),x.buffer(["newURL"]),b.buffer([u]),g.buffer(["propagate",p,h,"executor-err","resolve"+c]),S.buffer([u,"no-"+u]),a(P,"send-xhr"+c),a(T,"xhr-resolved"),a(T,"xhr-done"),a(R,m+c),a(R,m+"-done"),x.on("pushState-end",i),x.on("replaceState-end",i),j("hashchange",i,!0),j("load",i,!0),j("popstate",function(){i(0,C>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(12),c=t(11),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",h="-start",l="-end",m="fn"+h,v="fn"+l,w="bstTimer",y="pushState",b=t("loader");b.features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=b.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,b.now()])}),a.on(m,function(t,e,n){this.bstStart=b.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),this.bstType])}),c.on(m,function(){this.bstStart=b.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),"requestAnimationFrame"])}),o.on(y+h,function(t){this.time=b.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(22)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(19);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,h="prototype";u&&d&&p&&(i(f,function(t,e){r(u[h],e,s),r(d[h],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(22)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("mutation"),o=t(22)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],10:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(22),a=t("ee").get("promise"),c=i(a),s=t(19),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],11:[function(t,e,n){var r=t("ee").get("raf"),o=t(22)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],12:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(22)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],13:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",c)}function i(t){w.push(t),l&&(b=-b,g.data=b)}function a(){for(var t=0;t<w.length;t++)r([],w[t]);w.length&&(w=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(22)(u),p=NREUM.o,h=p.XHR,l=p.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],w=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(h,y),y.prototype=h.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var b=1,g=document.createTextNode(b);new l(a).observe(g,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],14:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(15),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),h=t(18),l=t(17),m=window.XMLHttpRequest;a.features.xhr=!0,t(13),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],15:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],16:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(19),c=t(20),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var l=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){l[e]=o(h+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],19:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],20:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],21:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],22:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(20),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=l(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([b,n,r,a]),a}}function h(t,e){w[t]=l(t).concat(e)}function l(t){return w[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var w={},y={},b={on:h,emit:n,get:m,listeners:l,context:e,buffer:v,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(19),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!x++){var t=g.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+g.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+g.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-g.offset}var c=(new Date).getTime(),s=t("handle"),f=t(19),u=t("ee"),d=window,p=d.document,h="addEventListener",l="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1026.min.js"},b=m&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:c,now:a,origin:w,features:{},xhrWrappable:b};t(16),p[h]?(p[h]("DOMContentLoaded",i,!1),d[h]("load",r,!1)):(p[l]("onreadystatechange",o),d[l]("onload",r)),s("mark",["firstbyte",c],null,"api");var x=0,E=t(21)},{}]},{},["loader",2,14,5,3,4]);</script><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/css" rel="stylesheet" type="text/css"><title>CHAPTER 1: Understanding Node.js - Node.js Recipes: A Problem-Solution Approach</title><link rel="stylesheet" href="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/74741d96e0ae.css" type="text/css"><link rel="stylesheet" type="text/css" href="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/annotator.e34eec1a0d5a.css"><link rel="stylesheet" href="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    #sbo-rt-content div{margin:1em 1em 1em 1em}#sbo-rt-content a{text-decoration:none}#sbo-rt-content img{max-width:100%;margin-top:10pt}#sbo-rt-content p.booktitle{font-weight:bold;font-size:2.5em;margin-top:2em;margin-bottom:8em;text-align:center}#sbo-rt-content p.bookauthor{font-weight:bold;font-size:1.7em;margin-top:0;margin-right:2em;margin-bottom:0;text-align:left}#sbo-rt-content p.booksubtitle{font-weight:bold;font-size:1.7em;margin-top:0;margin-bottom:7em;text-align:center;color:#8A8A8A}#sbo-rt-content .bookimage{font-size:1.2em;margin-top:0;margin-bottom:1em;text-align:left}#sbo-rt-content .fmpara{font-size:.9em;text-indent:0;margin-top:.5em;margin-bottom:.3em;text-align:justify}#sbo-rt-content .fmpara1{font-size:.9em;text-indent:0;margin-top:.4em;margin-bottom:.3em;text-align:right}#sbo-rt-content .inpara{text-indent:0;margin-top:.4em;margin-left:3em;margin-bottom:.3em}#sbo-rt-content .pub{margin-top:10em;margin-bottom:1em;text-align:right;margin-right:5em}#sbo-rt-content .copyright{font-size:.9em;margin-top:.4em;margin-bottom:.4em;margin-left:1.2em;margin-right:1.2em;text-align:left}#sbo-rt-content .copyright1{font-size:.9em;margin-top:.1em;margin-bottom:.1em;margin-left:4em;margin-right:3.3em;text-align:left;text-indent:-1.6em}#sbo-rt-content .copyright2{font-size:.9em;margin-top:.1em;margin-bottom:.1em;margin-left:4.2em}#sbo-rt-content .dedication{font-size:1.2em;margin-bottom:0;margin-top:3.5em;text-align:center;margin-right:1em;font-style:italic}#sbo-rt-content .dedication1{font-size:1.2em;margin-bottom:0;margin-top:.5em;text-align:center;margin-right:1em;font-style:normal}#sbo-rt-content .dedication2{font-size:1.2em;margin-bottom:0;margin-top:1.5em;text-align:center;margin-right:1em;font-style:italic}#sbo-rt-content .content-title{font-size:1.6em;margin-top:3em;margin-bottom:.1em;text-align:left;font-weight:bold}#sbo-rt-content .fmtitle{font-size:2.5em;margin-top:1em;margin-bottom:1em;text-align:left;font-weight:bold;border-bottom:1.1px solid black;padding-bottom:.8em}#sbo-rt-content .right{text-indent:0;margin-top:1em;margin-right:1.5em;margin-bottom:.3em;text-align:right}#sbo-rt-content .right1{text-indent:0;margin-top:0;margin-right:1.5em;margin-bottom:.2em;text-align:right}#sbo-rt-content .chapimage{margin-left:.2em;margin-top:1.5em;margin-bottom:1.5em;text-align:left}#sbo-rt-content p.ChapterNumber{font-weight:bold;font-size:1.7em;margin-top:10px;margin-left:0;margin-bottom:5px;text-align:left}#sbo-rt-content p.ChapterTitle{font-weight:bold;font-size:2.5em;margin-top:0;margin-bottom:1em;margin-left:0;text-align:left;border-bottom:1.1px solid black;padding-bottom:.8em}#sbo-rt-content p.PartNumber{font-weight:bold;font-size:1.7em;margin-top:10px;margin-left:0;margin-bottom:5px;text-align:left;padding-bottom:.8em}#sbo-rt-content p.partTitle{font-weight:bold;font-size:2.5em;margin-top:1em;margin-bottom:1em;margin-left:0;text-align:left}#sbo-rt-content .paraaftertitle{font-size:100%;text-indent:0;margin-top:0;margin-left:0;margin-bottom:0}#sbo-rt-content p.noindent{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:0;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.noindent1{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:1em}#sbo-rt-content p.noindent2{font-size:100%;text-indent:0;margin-top:1.5em;margin-bottom:1em}#sbo-rt-content p.noindent3{font-size:100%;text-indent:0;margin-top:.8em;margin-bottom:.2em;margin-left:0;margin-right:0;text-align:center}#sbo-rt-content p.noindent4{font-size:100%;text-indent:0;margin-top:.8em;margin-bottom:.2em;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content span.listing{font-weight:bold}#sbo-rt-content p.indent{font-size:100%;text-indent:1.2em;margin-top:.1em;margin-bottom:.1em;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.indent1{font-size:100%;text-indent:1.2em;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.indent1a{font-size:100%;text-indent:1.5em;margin-top:0;margin-bottom:0;margin-left:0;margin-right:4.5em;text-align:right}#sbo-rt-content p.indent2{font-size:100%;margin-top:.8em;margin-bottom:.8em;margin-left:2.4em;margin-right:2.4em;text-align:justify;font-style:italic}#sbo-rt-content p.indent3{font-size:100%;text-indent:1em;margin-top:.8em;margin-bottom:.8em;margin-left:1.8em;margin-right:1.8em;text-align:left}#sbo-rt-content p.indent4{font-size:100%;text-indent:1.3em;margin-top:.5em;margin-bottom:.5em;margin-left:2em;margin-right:0;text-align:left}#sbo-rt-content .blockquote{font-size:100%;text-indent:.2em;margin-top:1em;margin-left:3em;margin-right:2em;margin-bottom:1em;font-style:italic}#sbo-rt-content .blockquote1{font-size:100%;text-indent:.2em;margin-top:1em;margin-left:3em;margin-bottom:0;font-style:italic}#sbo-rt-content p.Heading1{font-weight:bold;font-size:2em;text-indent:0;margin-top:1.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2{font-size:1.6em;text-indent:0;margin-top:1.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2_2{font-size:1.6em;text-indent:0;margin-top:.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2a{font-size:1.5em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;font-weight:bold}#sbo-rt-content p.Heading3{font-weight:bold;font-size:1.45em;text-indent:0;margin-top:1.2em;margin-bottom:.1em}#sbo-rt-content p.Heading3a{font-weight:normal;font-size:1.25em;text-indent:0;margin-top:1.2em;margin-bottom:.1em}#sbo-rt-content p.Heading4{font-size:1.3em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;text-align:left}#sbo-rt-content .img{max-width:100%;margin-top:10pt}#sbo-rt-content .img1{text-align:left}#sbo-rt-content .img1a{text-align:right;margin-right:5em;margin-top:5em}#sbo-rt-content .img2{text-align:left}#sbo-rt-content div.Figure{font-size:small;margin-top:1.5em;margin-bottom:1.5em}#sbo-rt-content .para-1{font-size:100%;margin-top:1em;text-indent:1.5em;margin-bottom:0;text-align:left}#sbo-rt-content .para-2{font-size:.9em;text-indent:-1.4em;margin-left:2.4em;margin-top:.5em;margin-bottom:0}#sbo-rt-content .figurecaption{font-size:small;margin-top:0;margin-bottom:0;text-align:justify}#sbo-rt-content .image{text-align:center}#sbo-rt-content .codecaption{font-size:100%;margin-top:.6em;margin-bottom:.6em;text-align:justify;font-style:italic}#sbo-rt-content .PCode{font-size:small;margin-top:1em;margin-bottom:1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-1{font-size:small;margin-top:1em;margin-bottom:.1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-2{font-size:small;margin-top:0;margin-bottom:0;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-3{font-size:small;margin-top:0;margin-bottom:1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content div.singlethin{border-bottom:solid 3px;margin-left:1em;margin-right:1em;margin-bottom:1em}#sbo-rt-content div.singlethin1{margin-left:2em;margin-right:2em}#sbo-rt-content .inlinecode{font-family:monospace}#sbo-rt-content div.notepara{font-size:110%;text-indent:0;margin-top:1em;border-top:solid 1px;border-bottom:solid 1px;margin-bottom:1em;text-align:justify}#sbo-rt-content span.pink-box{font-weight:bold;padding-left:1.3em;padding-right:1.3em;border:1.1px solid black;font-size:1.5em;margin-top:.5em;margin-bottom:.5em;text-indent:0;text-align:justify}#sbo-rt-content span.courier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%}#sbo-rt-content div.courier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%;margin-top:1em;margin-bottom:1em}#sbo-rt-content div.boxcourier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%;margin-top:1em;margin-bottom:1em;margin-left:1.5em;margin-right:1.5em;text-align:left}#sbo-rt-content span.courier1{font-family:Courier New;font-weight:normal;font-style:normal;font-size:95%}#sbo-rt-content .boxhead{font-size:1.25em;font-weight:bold;padding-left:.1em;padding-bottom:.1em;padding-top:.1em;margin-top:0;text-indent:0;text-align:center;border:3px solid black}#sbo-rt-content div.box{margin-top:1em;margin-bottom:1em}#sbo-rt-content .boxpara{font-size:110%;text-indent:0;margin-left:1.5em;margin-right:1.5em;margin-top:.5em;margin-bottom:.5em;text-align:left}#sbo-rt-content .alpha{font-size:1.2em;font-weight:bold;margin-left:.2em;margin-top:1em;margin-bottom:.3em;text-align:left}#sbo-rt-content .index{font-size:small;margin-left:.2em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .index1{font-size:small;margin-left:1em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .index2{font-size:small;margin-left:2em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .cover{text-align:center}#sbo-rt-content .top{border-top:1.1px solid black;border-bottom:2px solid black}#sbo-rt-content .bot{border-bottom:2px solid black}#sbo-rt-content table.bodytable,#sbo-rt-content table{border-collapse:collapse;margin-bottom:8px;font-size:small;margin-top:10pt;width:95%;border-top:0 solid black;border-bottom:0 solid black}#sbo-rt-content table.fmtable{margin-bottom:1em;font-size:1em;margin-left:4em;border-top:0 solid #FFF;border-bottom:0 solid #FFF}#sbo-rt-content table{margin-bottom:1em;border-top:1.1px solid black;border-bottom:1.1px solid black;border-collapse:collapse}#sbo-rt-content th{border-top:1px solid black;border-bottom:1px solid black;padding-right:1.5em}#sbo-rt-content td{font-size:small;vertical-align:top;padding-right:1.5em;margin-top:0;margin-bottom:1em}#sbo-rt-content .tablepara{font-size:small;text-indent:0;margin-top:0;margin-bottom:.5em;padding-right:1.5em}#sbo-rt-content .tablepara1{font-size:small;margin-left:2em;margin-top:0;margin-bottom:0;padding-right:1.5em}#sbo-rt-content .header{border-bottom:1.1px solid black;text-indent:0;text-align:left}#sbo-rt-content .TabCapt{font-style:italic;margin-left:0;text-indent:0}#sbo-rt-content .FigCapt{font-style:italic;font-size:.9em}#sbo-rt-content .CaptNr{font-weight:bold}#sbo-rt-content .ttitle{font-style:Italic;margin-bottom:1em}#sbo-rt-content p.paraaftertitle1{font-size:.9em;text-indent:0;margin-top:.5em;margin-bottom:.8em;text-align:left}#sbo-rt-content p.para{font-size:small;text-indent:20px;margin-top:0;margin-bottom:0;text-align:justify}#sbo-rt-content p.quote{font-style:italic;font-size:100%;margin-top:1.5em;margin-left:2.5em;margin-right:2.5em;margin-bottom:0}#sbo-rt-content p.quotesource{font-size:small;text-indent:0;margin-top:1em;margin-bottom:1em;text-align:right}#sbo-rt-content p.chaptersubtitle{font-size:x-large;text-indent:0;margin-top:0;margin-left:0;margin-bottom:0;text-align:left}#sbo-rt-content p.line{margin-top:.3em;border-bottom:1px solid black}#sbo-rt-content p.line1{margin-top:.3em;margin-bottom:1.5em;border-bottom:1px solid black}#sbo-rt-content p.line2{margin-top:5em;margin-bottom:5em;border-bottom:1px solid black;text-align:center;margin-left:15em;margin-right:15em}#sbo-rt-content li{margin-bottom:.5em;margin-top:.5em}#sbo-rt-content p.alpha{font-size:1.2em;font-weight:bold;margin-left:.2em;margin-top:1em;margin-bottom:.3em;text-align:left}#sbo-rt-content ul.bulleted{font-size:100%;text-align:justify;margin-left:2.5em;margin-right:3em;margin-top:1em;margin-bottom:1em;text-indent:0}#sbo-rt-content ol.OrderedList{font-size:100%;text-align:left;margin-left:2.5em;margin-right:3em;margin-top:1em;margin-bottom:1em}#sbo-rt-content ul.bulleted1{font-size:100%;text-align:left;margin-left:1em;margin-right:5em;margin-top:1em;margin-bottom:1em;list-style-type:none}#sbo-rt-content ul.bulleted1_a{font-size:100%;text-align:justify;margin-left:0;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0;list-style-type:none}#sbo-rt-content ul.bulleted2{font-size:100%;text-align:justify;margin-left:2.3em;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0}#sbo-rt-content ul.bulleted4{font-size:100%;text-align:center;margin-left:1.3em;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0;list-style-type:none}#sbo-rt-content .numbered{font-size:small;text-align:justify;margin-left:2em;margin-right:2em;margin-top:.5em;margin-bottom:.5em;text-indent:1em}#sbo-rt-content .bulletedin{font-size:100%;text-align:justify;margin-left:4em;margin-right:4em;margin-top:.5em;margin-bottom:.5em}#sbo-rt-content ul.None{font-size:.9em;text-align:justify;margin-left:3em;margin-right:2em;margin-top:.5em;margin-bottom:.5em;list-style-type:none}#sbo-rt-content .Listing{font-size:small;margin-bottom:0}#sbo-rt-content .PCode1{font-size:small;margin-top:.7em;margin-bottom:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode2{font-size:small;margin-top:1em;margin-bottom:.1em;margin-left:2.2em;text-align:left;font-family:monospace}#sbo-rt-content .PCode3{font-size:small;margin-top:0;margin-left:2.2em;margin-bottom:.1em;text-align:left;font-family:monospace}#sbo-rt-content .NoteCaption{font-size:small;margin-top:1.3em;margin-left:5em;margin-right:5em;border:1.1px solid black;padding:.5em;margin-bottom:1.3em}#sbo-rt-content .Table{font-size:100%;margin-bottom:1em;margin-left:0}#sbo-rt-content .toc{font-size:1.1em;margin-top:.2em;margin-bottom:.2em;text-align:left;font-weight:bold}#sbo-rt-content .toca{font-size:1.1em;margin-top:.8em;margin-bottom:.4em;text-align:left;font-weight:bold}#sbo-rt-content .toc1{font-size:1.1em;margin-top:.4em;margin-bottom:.3em;text-align:left;text-indent:1.4em;font-weight:normal}#sbo-rt-content .toc2{font-size:1.2em;margin-top:.4em;margin-bottom:.3em;text-align:left;font-weight:bold}#sbo-rt-content .toc3{font-size:.9em;margin-top:.4em;margin-bottom:.3em;text-align:left;text-indent:3.5em;font-weight:normal}#sbo-rt-content .toc4{font-size:1.1em;margin-top:.2em;margin-bottom:.5em;text-align:left;font-weight:bold}#sbo-rt-content .tocch{font-size:1.3em;margin-top:.7em;margin-bottom:.7em;text-align:left;font-weight:bold}#sbo-rt-content .noborder{margin-bottom:1em;border-top:0 solid #FFF;border-bottom:0 solid #FFF}#sbo-rt-content .authurright{text-align:right;margin-top:0;margin-bottom:0}#sbo-rt-content .FormalPara{font-size:small;margin-bottom:.7em}#sbo-rt-content .FontName1{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content span.FontName2{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content span.FontName3{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content .rightarrow{margin-top:0}#sbo-rt-content div.thinline{margin-top:1em;margin-bottom:1em;border-top:solid 4px #AFAFB0;border-bottom:solid 4px #AFAFB0}#sbo-rt-content span.line{text-decoration:underline}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content div.box{border-top:solid 2px;border-bottom:solid 2px}#sbo-rt-content .app{font-size:150%;margin-left:.8em}#sbo-rt-content .page{text-decoration:none;color:#000}#sbo-rt-content .cXXX{text-decoration:none;color:#000}#sbo-rt-content .textindent{margin-left:1.7em;margin-top:1em;margin-bottom:1em;font-size:100%}#sbo-rt-content .textindent1{margin-left:1.7em;margin-top:0;margin-bottom:0;font-size:100%}#sbo-rt-content .textindent2{margin-left:1.7em;margin-top:0;margin-bottom:0;font-size:100%;text-indent:1em}#sbo-rt-content p.FootNote{margin-top:.8em;margin-bottom:0;font-size:85%;text-indent:0;text-align:left;margin-left:1.1em;margin-right:1.1em}#sbo-rt-content pre{margin-left:0;font-family:monospace;white-space:pre-wrap}#sbo-rt-content p.Heading4a{font-size:1.15em;font-weight:bold;text-indent:1em;margin-top:1.3em;margin-bottom:.3em;border-top:3px solid #4d4d4c;border-left:solid 3px #4d4d4c;border-right:solid 3px #4d4d4c;border-bottom:solid 3px #4d4d4c;text-align:center}#sbo-rt-content p.noindent8{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:1em;text-align:center;font-weight:bold;color:#8A8A8A}#sbo-rt-content .tocb{font-size:1.4em;margin-top:.5em;margin-bottom:.2em;text-align:left;font-weight:bold}#sbo-rt-content .part{font-weight:normal;font-size:1em;margin-bottom:5px;text-align:left;padding-left:1.3em;padding-bottom:10em;padding-right:1.3em;border:1.1px solid black}#sbo-rt-content p.Heading5{font-size:1em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;text-align:center}#sbo-rt-content p.noindent5s{font-size:100%;text-indent:0;margin-top:.1em;margin-bottom:.1em;margin-left:0;margin-right:0;text-align:right}#sbo-rt-content span.strike{text-decoration:line-through}
+    </style><script> // <![CDATA[
+    var g = {
+      position_cache: {
+        
+          "chapter": "/api/v1/book/9781430260585/chapter/9781430260585_Ch01.xhtml",
+          "book_id": "9781430260585",
+          "chapter_uri": "9781430260585_Ch01.xhtml",
+          "position": 0,
+          "user_uuid": "29525685-85c9-45c7-9eda-3c178d86398e",
+          "next_chapter_uri": "/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch02.xhtml"
+        
+      },
+      title: "Node.js Recipes: A Problem\u002DSolution Approach",
+      author_list: "Cory Gackenheimer",
+      format: "book",
+      source: "application/epub+zip",
+      is_system_book: true,
+      is_public: false,
+      loaded_from_server: true,
+      allow_scripts: false,
+      has_mathml: false,
+      show_ios_app_teaser: false
+    };
+    // ]]></script><script src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/modernizr.js"></script><script>
+    
+      
+        
+
+        
+
+        
+          
+            window.PUBLIC_ANNOTATIONS = true;
+          
+        
+
+      
+
+      
+        window.MOBILE_PUBLIC_ANNOTATIONS = false;
+      
+
+    
+
+    
+      window.PRIVACY_CONTROL_OVERRIDE = false;
+    
+
+    
+      window.PRIVACY_CONTROL_SWITCH = true;
+    
+
+    
+      window.PUBLISHER_PAGES = true;
+    
+
+      window.SBO = {
+        "constants": {
+          "SITB_ENDPOINT": "https://www.safaribooksonline.com/api/v2/sitb/",
+          "SEARCH_SELECT_ENDPOINT": "https://www.safaribooksonline.com/api/v2/search/select/",
+          "ENABLE_ONLINE_TRAINING": true
+        }
+      };
+  </script><link rel="canonical" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml"><meta name="description" content="CHAPTER 1 Understanding Node.js Node.js is a server-side framework useful for building highly scalable and fast applications. Node.js is a platform that is built on v8, the ... "><meta property="og:title" content="CHAPTER 1: Understanding Node.js"><meta itemprop="isPartOf" content="/library/view/nodejs-recipes-a/9781430260585/"><meta itemprop="name" content="CHAPTER 1: Understanding Node.js"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781430260585/"><meta property="og:description" itemprop="description" content="CHAPTER 1 Understanding Node.js Node.js is a server-side framework useful for building highly scalable and fast applications. Node.js is a platform that is built on v8, the ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Apress"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781430260585"><meta property="og:book:author" itemprop="author" content="Cory Gackenheimer"><meta property="og:book:tag" itemprop="about" content="JavaScript"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: &lt;%= font_size %&gt; !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: &lt;%= font_family %&gt; !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: &lt;%= column_width %&gt;% !important; margin: 0 auto !important; }"></style><noscript>&lt;meta http-equiv="refresh" content="0; url=/library/no-js/" /&gt;</noscript><script type="text/javascript">
+  (function(i,s,o,g,r,a,m) {
+    i['GoogleAnalyticsObject']=r;
+    i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+    a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+    a.async=1;
+    a.src=g;
+    m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  var matches = document.cookie.match(/BrowserCookie\s*=\s*([a-f0-9\-]{36})/),
+      user_uuid = null;
+
+  if (matches && matches.length === 2) {
+    user_uuid = matches[1];
+  }
+
+
+  ga('create', 'UA-39299553-7', {'userId': '29525685-85c9-45c7-9eda-3c178d86398e' });
+
+
+ga('set', 'dimension1', 'Trial');
+ga('set', 'dimension6', user_uuid);
+
+
+  ga('set', 'dimension2', '29525685-85c9-45c7-9eda-3c178d86398e');
+  
+
+
+
+
+
+
+  //enable enhanced link tracking
+  ga('require', 'linkid', 'linkid.js');
+
+  // reading interface will track pageviews itself
+  if (document.location.pathname.indexOf("/library/view") !== 0) {
+    ga('send', 'pageview');
+  }
+</script><script defer="" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/vendor.34024413b1d4.js"></script><script defer="" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/reader.a05323b190d3.js"></script><script async="" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/MathJax.js"></script><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav  scalefonts subscribe-panel library nav-collapsed">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z"></path></g></svg><span>
+              
+                Queue
+              
+            </span></a></li><li class="search"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/001o00000169U9HAAU/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Node.js Recipes: A Problem-Solution Approach
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781430260585/chapter/9781430260585_Ch01.xhtml" data-for-analytics="9781430260585:9781430260585_Ch01.xhtml" aria-label="Add to Queue"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml&amp;text=Node.js%20Recipes%3A%20A%20Problem-Solution%20Approach&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20CHAPTER%201%3A%20Understanding%20Node.js&amp;body=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml%0D%0Afrom%20Node.js%20Recipes%3A%20A%20Problem-Solution%20Approach%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  <script defer="" src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/djangoMessagesPage.845b17d78025.js"></script>
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Acknowledgments.xhtml" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Acknowledgments</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch02.xhtml" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">CHAPTER 2: Networking with Node.js</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><p class="ChapterNumber"><a id="Chap_1"></a>CHAPTER 1</p>
+<p class="chapimage"><img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/frontdot.jpg" alt="image" width="82" height="25" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/frontdot.jpg"></p>
+<p class="ChapterTitle">Understanding Node.js</p>
+<div>
+<p class="noindent">Node.js is a server-side framework useful for building highly scalable and fast applications. Node.js is a platform that is built on v8, the JavaScript runtime that powers the Chrome browser designed by Google. Node.js is designed to be great for intensive I/O applications utilizing the nonblocking event-driven architecture. While Node.js can serve functions in a synchronous way, it most commonly performs operations asynchronously. This means that as you develop an application, you call events with a callback registered for handling the return of the function. While awaiting the return, the next event or function in your application can be queued for execution. Once the first function completes, its callback event is executed and handled by the function call that invoked the callback. This event-driven processing<a id="cXXX.1"></a> is described in Node.js’s very own definition:</p>
+<div class="blockquote">
+<p class="noindent"><i>Node.js is a platform built on Chrome’s JavaScript<a id="cXXX.1s"></a></i><a id="cXXX.2"></a> <i>runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</i></p>
+</div>
+<p class="indent">Applications written in Node.js are written in JavaScript, the ubiquitous language of the web platform. Because of the accessibility of JavaScript to many experienced developers and newcomers alike, the Node.js platform and community have taken off and have become critical parts of the development landscape for many companies and developers.</p>
+<p class="indent">This book is about Node.js. In particular this book is designed as a recipe book, which aims to provide a large set of useful and high-quality examples of what Node.js is capable of accomplishing. This book is geared for a developer who has some experience with JavaScript and at least some exposure to Node.js. By reading this book, you will gain an understanding of many of the highly utilized modules, both those native to Node.js and those written by third-party contributors, that are the main targets for Node.js developers.</p>
+<p class="indent">This first chapter is a departure from the recipe format that will follow in the rest of the book. It is broken down to get a developer up and running from scratch with installation and it gives an overview of how to function within the Node.js platform. You will get an idea of how to install Node.js and understand many of the common paradigms and the basic workflow to get a Node.js application running. As you will see, a considerable amount of time is spent covering how Node.js works. Once you have read this chapter, you should be well equipped to dive into the recipes in the chapters that follow.</p>
+<p id="Sec1" class="Heading1">1-1. Installing Node.js on Your Machine</p>
+<p class="noindent">There are several ways in which an install of<a id="cXXX.1p"></a> Node.js can happen, and they vary slightly across different operating systems. The three primary methods to install Node.js are via a binary installer<a id="cXXX.3"></a>, via a package manager<a id="cXXX.4"></a>, or by compiling the source code<a id="cXXX.5"></a>.</p>
+<p class="indent">To install Node.js on your machine via a binary installer, you first need the installer. Currently the only installers that are available for Node.js are for Windows and Macintosh OS X. To find these installers, you need to go to <span class="FontName1"><a href="http://nodejs.org/download/">http://nodejs.org/download/</a></span>. Here you will find your choice of installer to download as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig1" id="_Fig1">Figure 1-1</a>.</p>
+<div class="Figure" id="Fig1">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-01.jpg" alt="9781430260585_Fig01-01.jpg" width="650" height="217" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-01.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig1">Figure 1-1</a>. </span>Platform-specific installers available for download<a id="cXXX.2f"></a> </p>
+</div>
+<div>
+<p id="Sec2" class="Heading2">Windows<a id="cXXX.7"></a></p>
+<p class="noindent">On Windows, first download the .msi installer package. When you open the file, you will begin your walkthrough with the Setup Wizard, shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig2" id="_Fig2">Figure 1-2</a>.</p>
+<div class="Figure" id="Fig2">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-02.jpg" alt="9781430260585_Fig01-02.jpg" width="725" height="564" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-02.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig2">Figure 1-2</a>. </span>Beginning the install </p>
+</div>
+<p class="indent">As in most Windows applications, you will be presented with a default location to which you can install the application files. This destination, however, can be overwritten and is presented to you as in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig3" id="_Fig3">Figure 1-3</a>.</p>
+<div class="Figure" id="Fig3">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-03.jpg" alt="9781430260585_Fig01-03.jpg" width="725" height="564" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-03.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig3">Figure 1-3</a>. </span>You can choose to use or overwrite the default file location </p>
+</div>
+<p class="indent">The last step before finalizing your install on Windows is to set up any custom configurations that you may want for your Node.js installation. For example you could not add Node.js to your path; perhaps you want to test multiple versions and will explicitly call the executable during your testing phase. This custom step is shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig4" id="_Fig4">Figure 1-4</a>.</p>
+<div class="Figure" id="Fig4">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-04.jpg" alt="9781430260585_Fig01-04.jpg" width="725" height="564" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-04.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig4">Figure 1-4</a>. </span>Custom setup </p>
+</div>
+</div>
+<div>
+<p id="Sec3" class="Heading2">OS X<a id="cXXX.8"></a><a id="cXXX.9"></a></p>
+<p class="noindent">The installer on a Macintosh is very similar to the Windows setup. First, download the .pkg file. When you open this, it will walk you through the standard installer that runs on OS X. This presents as you see in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig5" id="_Fig5">Figure 1-5</a>.</p>
+<div class="Figure" id="Fig5">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-05.jpg" alt="9781430260585_Fig01-05.jpg" width="825" height="586" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-05.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig5">Figure 1-5</a>. </span>Installing on OS X </p>
+</div>
+<p class="indent">Sometimes when installing Node.js, you want only a subset of the potential users to be able to access it. This functionality is built into the OS X installer, presenting you with the option of how you would like Node.js installed, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig6" id="_Fig6">Figure 1-6</a>.</p>
+<div class="Figure" id="Fig6">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-06.jpg" alt="9781430260585_Fig01-06.jpg" width="825" height="586" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-06.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig6">Figure 1-6</a>. </span>Installing for specified users </p>
+</div>
+<p class="indent">Just as on Windows, you can customize the installation. Click the Custom Install button and then set your configuration accordingly as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig7" id="_Fig7">Figure 1-7</a>. For example, you may wish not to install npm, in favor of doing a more customized npm install, which we will outline in the next section.</p>
+<div class="Figure" id="Fig7">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-07.jpg" alt="9781430260585_Fig01-07.jpg" width="825" height="586" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-07.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig7">Figure 1-7</a>. </span>A custom Node.js install on OS X </p>
+</div>
+<p class="indent">There are, of course, many platforms that are not Macintosh or Windows, but you would still like to not have to download and compile Node.js from sources. The solution for this is to find a package manager that will install Node.js for you. There are several package management systems that vary across platforms, each with its own style for fetching new packages.</p>
+</div>
+<div>
+<p id="Sec4" class="Heading2">Ubuntu and Linux Mint<a id="cXXX.10"></a></p>
+<p class="noindent">The package for Ubuntu and Linux Mint<a id="cXXX.11"></a> requires that a few components be installed onto your machine before you can install Node.js. To meet these prerequisites you must first run the code shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list1" id="_list1">Listing 1-1</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list1" id="list1">Listing 1-1</a></i></b>.&nbsp;&nbsp;Ensuring Prerequisites Are Installed</p>
+<pre><span class="FontName1">sudo apt-get install python-software-properties python g++ make</span></pre>
+<p class="indent">You can then proceed with the installation by adding the repository that hosts Node.js, updating your sources, and installing with the commands shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list2" id="_list2">Listing 1-2</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list2" id="list2">Listing 1-2</a></i></b>.&nbsp;&nbsp;Installing Node.js on Ubuntu and Linux Mint</p>
+<pre><span class="FontName1">sudo add-apt-repository ppa:chris-lea/node.js</span><br><span class="FontName1">sudo apt-get update</span><br><span class="FontName1">sudo apt-get install nodejs</span></pre>
+</div>
+<div>
+<p id="Sec5" class="Heading2">Fedora<a id="cXXX.12"></a><a id="cXXX.13"></a></p>
+<p class="noindent">Fedora 18 has a simple Node.js install that is a single package manager directive, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list3" id="_list3">Listing 1-3</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list3" id="list3">Listing 1-3</a></i></b>.&nbsp;&nbsp;Installing Node.js on Fedora</p>
+<pre><span class="FontName1">sudo yum --enablerepo=updates-testing install nodejs npm</span></pre>
+<p class="indent">In future versions of Fedora, Node.js should be integrated within the operating system by default.</p>
+</div>
+<div>
+<p id="Sec6" class="Heading2">Arch Linux<a id="cXXX.14"></a></p>
+<p class="noindent">For Arch Linux<a id="cXXX.15"></a>, utilize the pacman package manager by targeting the “nodejs” package, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list4" id="_list4">Listing 1-4</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list4" id="list4">Listing 1-4</a></i></b>.&nbsp;&nbsp;Installing via pacman on Arch Linux</p>
+<pre><span class="FontName1">pacman -S nodejs</span></pre>
+</div>
+<div>
+<p id="Sec7" class="Heading2">FreeBSD<a id="cXXX.16"></a><a id="cXXX.17"></a> and OpenBSD<a id="cXXX.18"></a><a id="cXXX.19"></a></p>
+<p class="noindent">An installation on Berkeley Software Distribution (BSD) platforms<a id="cXXX.20"></a> utilizes the ports installer, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list5" id="_list5">Listing 1-5</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list5" id="list5">Listing 1-5</a></i></b>.&nbsp;&nbsp;Installing on BSD</p>
+<pre><span class="FontName1">/usr/ports/www/node</span></pre>
+</div>
+<div>
+<p id="Sec8" class="Heading2">openSUSE<a id="cXXX.21"></a></p>
+<p class="noindent">When using openSUSE you can install Node.js using the zypper command-line package management tool, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list6" id="_list6">Listing 1-6</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list6" id="list6">Listing 1-6</a></i></b>.&nbsp;&nbsp;Using zypper to install Node.js on openSUSE</p>
+<pre><span class="FontName1">sudo zypper ar</span> <span class="FontName1"><a href="http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_12.1/">http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_12.1/</a></span> <span class="FontName1">NodeJSBuildService</span><br><span class="FontName1">sudo zypper in nodejs nodejs-devel</span></pre>
+<p class="indent">Many developers prefer utilizing package managers on OS X and even Windows as opposed to utilizing the installers. Node.js can also be installed via these package managers.</p>
+</div>
+<div>
+<p id="Sec9" class="Heading2">Windows</p>
+<p class="noindent">Using the Chocolatey package manager, simply install with the chocolatey command, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list7" id="_list7">Listing 1-7</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list7" id="list7">Listing 1-7</a></i></b>.&nbsp;&nbsp;installing Node.js on Windows with Chocolately</p>
+<pre><span class="FontName1">cinst nodejs</span></pre>
+</div>
+<div>
+<p id="Sec10" class="Heading2">OS X</p>
+<p class="noindent">Whether you utilize MacPorts or Homebrew for your package manager on Macintosh, you can install Node.js in either case as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list8" id="_list8">Listings 1-8</a> and <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list9" id="_list9">1-9</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list8" id="list8">Listing 1-8</a></i></b>.&nbsp;&nbsp;MacPorts<a id="cXXX.22"></a><a id="cXXX.23"></a></p>
+<pre><span class="FontName1">port install nodejs</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list9" id="list9">Listing 1-9</a></i></b>.&nbsp;&nbsp;Homebrew<a id="cXXX.24"></a></p>
+<pre><span class="FontName1">brew</span><a id="cXXX.25"></a> <span class="FontName1">install node</span></pre>
+<p class="indent">At this point you should have Node.js installed on your machine by using the method of your choosing on your preferred platform. Next, you need to make sure you have a way to discover and manage Node.js packages.</p>
+</div>
+<p id="Sec11" class="Heading1"><b>1-2. Installing the npm Package Manager</b><a id="cXXX.26"></a><a id="cXXX.27"></a></p>
+<p class="nonoindent">Many programming languages and platforms depend on the use of third-party modules to extend the utility of the platform. Node.js is no different in that it is greatly extended by the use of the package manager<b>:</b> npm<b>.</b> npm originated separately from Node.js itself and is still maintained as an independent project. However, due to its growing popularity and acceptance, it has been built and deployed with the Node.js binary installs since Node.js version 0.6.3. This means that installing npm is as simple as grabbing the latest version of Node.js as outlined in the previous section. So if you have used one of the binary installers, npm is already available to you. You can, of course, as shown in the previous section, choose to omit npm from your install. If it appears npm is not available, you can run the <span class="FontName1">make install command</span> and you will soon have it.</p>
+<p class="indent">There are, as you might expect, less simple ways to install npm. These would be useful if you want to debug npm or test a certain functionality that is not readily available in the default npm install. To get into the “fancy” installs, you must first locate the install.sh shell script, which is located at<span class="FontName1"><a href="https://npmjs.org/install.sh">https://npmjs.org/install.sh</a></span>.</p>
+<p class="indent">This installation shell script contains many tools for invoking npm in a way that meets your specific needs. For instance, if you wish to create a debug mode instance of npm you could invoke install.sh, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list10" id="_list10">Listing 1-10</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list10" id="list10">Listing 1-10</a></i></b>.&nbsp;&nbsp;npm debug Install</p>
+<pre><span class="FontName1">npm_debug=1 sh install.sh</span></pre>
+<p class="indent">You could also set configuration parameters with the npm install script, shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list11" id="_list11">Listing 1-11</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list11" id="list11">Listing 1-11</a></i></b>.&nbsp;&nbsp;Additional Configuration Parameters for npm</p>
+<pre><span class="FontName1">npm_config_prefix=/my/path sh install.sh</span></pre>
+<p class="indent">Of course, you could build a patch for npm, in which case you will be best served to download from the GitHub source and build it yourself. This requires running the make command in the folder that you have downloaded the npm source to (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list12" id="_list12">Listing 1-12</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list12" id="list12">Listing 1-12</a></i></b>.&nbsp;&nbsp;Installing npm Manually</p>
+<pre><span class="FontName1">make install</span></pre>
+<p class="indent">With npm installed your machine is now set up to utilize the packages and modules that are easily accessed through this package utility.</p>
+<p id="Sec12" class="Heading1">1-3. Understanding CommonJS Modules<a id="cXXX.10d"></a><a id="cXXX.28"></a></p>
+<p class="noindent">Because Node.js is a framework in which programs are written in JavaScript, it carries with it some of the perceived limitations that JavaScript has as well. One of these items that is missing is the concept of a robust standard library, like one might find in a language like C++. Because of this, there are many variations and ways for including modules within a JavaScript application. In the browser world, for example, this could be anything from simple <span class="FontName1">&lt;script&gt;</span> tag ordering to script loaders to module loaders. For Node.js, a simple and robust module loading system is used quite heavily though is not required. This modular system is known as CommonJS and represents the methods utilized for sharing; it includes standard and third-party modules within your Node.js application.</p>
+<p class="indent">CommonJS is a community-driven initiative<a id="cXXX.29"></a> that will bring a standard library-loading functionality to the JavaScript community as a whole. What CommonJS actually represents is a set of specification proposals that will aim to create a standardized system of module loaders. The concept of CommonJS modules is straightforward and involves two parts. First, a creator of a CommonJS module should come up with a reusable piece of JavaScript and export a specific objects or objects from this reusable JavaScript. Second, a consumer of the module will require the exported objects from the module, which will then load into the application. The basic module contract as outlined in the specification (<span class="FontName1"><a href="http://commonjs.org/specs/modules/1.0/">http://commonjs.org/specs/modules/1.0/</a></span> <span class="FontName1">)</span> is as follows:</p>
+<div>
+<p id="Sec13" class="Heading2">Module Context<a id="cXXX.30"></a></p>
+<ul class="bulleted1_a">
+<li>1.&nbsp;In a module, there is a free variable “require”, which is a function.</li>
+</ul>
+<ul class="bulleted1">
+<li>a.&nbsp;&nbsp;&nbsp;The “require” function accepts a module identifier.</li>
+<li>b.&nbsp;&nbsp;&nbsp;“require” returns the exported API of the foreign module.</li>
+<li>c.&nbsp;&nbsp;&nbsp;If there is a dependency<a id="cXXX.10p"></a> cycle, the foreign module may not have finished executing at the time it is required by one of its transitive dependencies; in this case, the object returned by “require” must contain at least the exports that the foreign module has prepared before the call to require that led to the current module’s execution.</li>
+<li>d.&nbsp;&nbsp;&nbsp;If the requested module cannot be returned, “require” must throw an error.</li>
+</ul>
+<ul class="bulleted1_a">
+<li>2&nbsp;In a module, there is a free variable called “exports” that is an object that the module may add its API to as it executes.</li>
+<li>3.&nbsp;Modules must use the “exports” object as the only means of exporting.</li>
+</ul>
+</div>
+<div>
+<p id="Sec14" class="Heading2">Module Identifiers<a id="cXXX.31"></a></p>
+<ol class="OrderedList">
+<li>A module identifier is a string of “terms” delimited by forward slashes.</li>
+<li>A term must be a CamelCase identifier: “ . ”, or “ . . ”.</li>
+<li>Module identifiers may not have file-name extensions like “.js”.</li>
+<li>Module identifiers may be “relative” or “top-level.” A module identifier is “relative” if the first term is “ . ” or “ . . ”.</li>
+<li>Top-level identifiers are resolved off the conceptual module namespace root.</li>
+<li>Relative identifiers are resolved relative to the identifier of the module in which “require” is written and called.</li>
+</ol>
+<p class="indent">You can now examine what a simple implementation of a CommonJS module would look like. Assume you create a file called “describe.js<a id="cXXX.32"></a>,” which will export a string of text that responds with a description of the module shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list13" id="_list13">Listing 1-13</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list13" id="list13">Listing 1-13</a></i></b>.&nbsp;&nbsp;describe.js Exporting a Description of Itself</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Describe module</span><br><span class="FontName1">*/</span><br><span class="FontName1">exports.describe = function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return 'I am a CommonJS Module';</span><br><span class="FontName1">};</span></pre>
+<p class="indent">This module does not require any other modules to function; all that it does is export the describe function, which returns a string description. But this is very uninteresting and if you wish to include this module within your applications elsewhere, you need to install that module in your code. To do this, use the CommonJS require( ) function, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list14" id="_list14">Listing 1-14</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list14" id="list14">Listing 1-14</a></i></b>.&nbsp;&nbsp;Requiring the describe Module</p>
+<pre><span class="FontName1">var describeModule = require('./describe.js');</span></pre>
+<p class="indent">Now you have a reference to your describe module, but what does that mean? What happens when you call require( )? When you call require( ), Node.js will locate the resource and read and parse the file, granting you access to the exported API of the module. When Node.js loads the file into your application, it will automatically isolate the module into its own scoped namespace to prevent global names colliding in a disastrous thunder of crying. Because Node.js has loaded this resource for you, you can call exported functionality from this resource (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list15" id="_list15">Listing 1-15</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list15" id="list15">Listing 1-15</a></i></b>.&nbsp;&nbsp;Reference an Exported Function from a Required Module</p>
+<pre><span class="FontName1">var describeModule = require('./describe.js');</span><br>&nbsp;<br><span class="FontName1">console.log(describeModule.describe());</span></pre>
+<p class="indent">CommonJS modules are not entirely about exporting functionality either. They can be used to create an API that builds on functionality with the module’s file but leaves that functionality private to the module itself. Imagine you have a more robust module where only a certain portion of your module needs to be exposed; you can easily create a method for this “private” functionality and still see it in the exported solution, as in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list16" id="_list16">Listing 1-16</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list16" id="list16">Listing 1-16</a></i></b>.&nbsp;&nbsp;“Private” Methods in Exported Modules</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Desc module with private method</span><br><span class="FontName1">*/</span><br><span class="FontName1">var _getType = function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return 'CommonJS Module';</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">exports.describe = function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return 'I am a ' + _getType();</span><br><span class="FontName1">};</span></pre>
+<p class="indent">You will see more about authoring and consuming CommonJS modules later, but, for now, the important takeaway is how this all works. CommonJS modules export functionality, and only the explicitly exported functionality is exported. Other functions or methods may live with the CommonJS modules, but they are limited to the private scope of the module itself and not to the application that accesses the module. This can result in very clean APIs for your application if you are careful and structure your CommonJS modules appropriately.</p>
+<p class="indent">Understanding how Node.js implements the CommonJS methodology for module loading helps you to think creatively about the structure and API of your application, allows for code sharing and reuse, and makes your application code cleaner and easier to follow.</p>
+</div>
+<p id="Sec15" class="Heading1">1-4. Writing Modules<a id="cXXX.12w"></a> for Your Application</p>
+<p class="noindent">Now that you understand what CommonJS is and how it pertains to Node.js as a module loader, you can begin to think about how you will build your own modules for your application. If you decide not to build modules for your application, you will quickly see your application code grow unwieldy and cause you maintenance nightmares, with heterogeneous data structures, objects, and callbacks strewn throughout what will become a monolithic Node.js application.</p>
+<p class="indent">When you begin thinking about writing your modules, the first thing that should come to mind is a simple division of tasks. If your application requires a user to authenticate against a server in order to access content, you will likely want to create a module for your user data. This could hold the session state, user information, authentication protocols, and more. If you include this chunk of user-specific data at the heart of your Node.js application, you will regret having to navigate past or around this code every time you see it. <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list17" id="_list17">Listing 1-17</a> shows how these data might look when your application lacks modules.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list17" id="list17">Listing 1-17</a></i></b>.&nbsp;&nbsp;Messy Code with Exportable Features<a id="cXXX.33"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* User authentication code not in its own module</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var db = require('./db.js');</span><br>&nbsp;<br><span class="FontName1">app.on('/createUser', function(req, res) {</span><br>&nbsp;&nbsp;<span class="FontName1">var user = req.username,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pwd = req.password,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">email = req.email;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">db.lookup('user', {username: user }, function(err, data) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Didn't find a user by that name</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (data.userid === null) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">createSalt(10, function(err, salt) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">createHash(pwd, salt, function(err, hash) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db.create('user', {username: user, password: pwd, email: email }, function(err, user) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">user.isauthenticated = true;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">app.users.push[user];</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.send(user);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">function createSalt(depth, callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">// do salting here</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;<span class="FontName1">};</span><br>&nbsp;&nbsp;<span class="FontName1">callback();</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">function createHash(password, salt, callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">// hashify</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">callback();</span><br><span class="FontName1">}</span></pre>
+<p class="indent">The code above is an example of a request from the client to create a new user. This has to pass through various parts of the application before you can create a user successfully. It must first check the database to ensure the username has not been claimed. Then it must create a salt and hash the password with that salt. Then it must store that user information in the database and transmit the new user object to the application. This by itself does not seem entirely unwieldy, but you can imagine as part of a large project you would like to move this outside of the main application into its own module. We can eliminate a large portion of the code by creating an authentication module to hold the createSalt<a id="cXXX.34"></a><a id="cXXX.35"></a> and createHash methods<a id="cXXX.36"></a><a id="cXXX.37"></a>. These new methods are shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list18" id="_list18">Listing 1-18</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list18" id="list18">Listing 1-18</a></i></b>.&nbsp;&nbsp;Exporting the Salt and Hash Methods</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Authentication module</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">exports.createSalt = function(depth, callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">//do salty things</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">callback();</span><br><span class="FontName1">}</span><br>&nbsp;<br><span class="FontName1">exports.createHash = function(password, salt, callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">//hashification</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">callback();</span><br><span class="FontName1">}</span></pre>
+<p class="indent">We eliminated two large functions from our main code by placing them into a module. Next we create a user module that will handle all the user-related things in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list19" id="_list19">Listing 1-19</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list19" id="list19">Listing 1-19</a></i></b>.&nbsp;&nbsp;User Module<a id="cXXX.38"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* User module</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var db = require('./db.js');</span><br><span class="FontName1">var auth = require('./auth.js');</span><br>&nbsp;<br><span class="FontName1">exports.create = function(req, res, callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">var user = req.username,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pwd = req.password,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">email = req.email;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">db.findOrCreate('user', {username: user});</span><br>&nbsp;&nbsp;<span class="FontName1">db.lookup('user', {username: user }, function(err, data) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Didn't find a user by that name</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (data.userid === null) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">auth.createSalt(depth, function(err, salt) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">auth.createHash(pwd, salt, function(err, hash) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db.create('user', {username: user, password: pwd, email: email }, function(err, user) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">user.isauthenticated = true;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(user);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">};</span></pre>
+<p class="indent">This is now outside of the application, so our original handler for createUser is now reduced to the concise information shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list20" id="_list20">Listing 1-20</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list20" id="list20">Listing 1-20</a></i></b>.&nbsp;&nbsp;Main Application with Required User Module</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* User Authentication code within its own module</span><br><span class="FontName1">*/</span><br><span class="FontName1">var user = require('./user.js');</span><br>&nbsp;<br><span class="FontName1">app.on('/createUser', user.create(function(err, user){</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">app.users.push[user];</span><br><span class="FontName1">}));</span></pre>
+<p class="indent">This example outlines a generalist approach to reducing your code into manageable portions by using modularization. It is important to remember some of the basic rules of CommonJS modules when writing them. You can create your modules based on whatever guidelines you see fit, but you must use the exports variable in order to expose any methods of your module to whatever portion of code you wish to see it in. You will also need to design a logical place for your module in order to load it, since the require function needs an identifier to find the module. For many cases this can be a local relative path within the structure of your Node.js application, or a more globalized package if you use an npm module. Of course, use cases will vary, but as a rule of thumb, if the code is getting in your way, you should be able to extract it to its own module.</p>
+<p id="Sec16" class="Heading1">1-5. Requiring Modules<a id="cXXX.39"></a><a id="cXXX.40"></a> in Your Application</p>
+<p class="noindent">As you build a Node.js application, you will almost inevitably need to utilize a set of modules, like those created in the previous section, in your application. To do this you will use the CommonJS module-loading require function. This function will find the module by name in the file system and load its exported API. This sounds very simple, but to really understand what happens when you load a module you must understand how the modules are retrieved.</p>
+<p class="indent">Node.js utilizes a complex strategy when it attempts to load a module. The very first place that is checked when loading a module is the module cache, so if you have previously loaded a module, you will have access to it already. If Node.js cannot find a cached module, precedence is then given to the Node.js native modules, such as crypto, http, fs, etc. If a native module is not found by the identifier passed to <span class="FontName1">require()</span>, then Node.js will perform a file-system search for the identifier that was passed to it.</p>
+<p class="indent">The file-system lookup for Node.js modules is a little bit more complex than looking for a native or cached module by name. When you require a module in Node.js the identifier can be in several forms, and the lookup performed can change accordingly.</p>
+<p class="indent">The first scenario that Node.js encounters when you are attempting to load a non-native module is if you provide an identifier with a file extension, such as require<span class="FontName1">('aModule.js');.</span> Node.js will try to load only that file, in the base path that you are requiring from, unless you have prefixed your require with a relative path as in <span class="FontName1">require('./modules/aModule.js');</span>. In that case, your Node.js will attempt to load your module from within the path you designate. When loading a module in Node.js, the file extension is optional. This allows a more concise way of writing your modules but also gives Node.js a more ambiguous path to parse. To load a module that does not provide an extension the first thing Node.js will do is try to load the file with each of the extensions: .js, .json, .node. If Node.js has not resolved a file based on implicitly appending the extensions to the module identifier, it is assumed that the identifier is a path relative to the base. Once it is assumed that this is a path, Node.js will parse the path and first search for <span class="FontName1">package.json</span> and load that if it exists. If it does not, the next thing that Node.js assumes is that there must be an “index” file in the path, and again it tries to load this file with the extensions implicitly added. At this point, Node.js either has a file that it can load (in which case it will add that module to the module cache) or it cannot find the module and will throw an error.</p>
+<p class="indent">To visualize these scenarios, let’s create a hypothetical application with a folder structure that looks like the outline in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list21" id="_list21">Listing 1-21</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list21" id="list21">Listing 1-21</a></i></b>.&nbsp;&nbsp;Outlining a Nested Application</p>
+<pre><span class="FontName1">myApp/</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">-main.js</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">-aModule.js</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">-subfolder/</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">bModule.js</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">index.js</span></pre>
+<p class="indent">You can assume that the application root is in the JavaScript file “main.js”, which loads all the dependencies needed for our application, shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list22" id="_list22">Listing 1-22</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list22" id="list22">Listing 1-22</a></i></b>.&nbsp;&nbsp;Loading Dependencies</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* main.js - module loading</span><br><span class="FontName1">*/</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// First we require 'http' which is a native Node.js Module</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var http = require('http'),</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// load a module with an extension Node.js has not trouble with this</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">modA = require('./aModule.js'),</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Load ambiguous filename from subdirectory load bModule.js fine</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">modB = require('./subfolder/bModule'),</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Load index.js from subdirectory</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">sub = require('/subfolder/'),</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// not a file or native module</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Error: Cannot find Module 'cheese'</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">missing = require('cheese');</span></pre>
+<p class="indent">When requiring modules in Node.js, you have a lot of freedom as to how you decide to structure your application and your file names. These rules apply not only to locally created files and native Node.js modules<a id="cXXX.16d"></a> but also to the modules that are loaded into your application via npm, which you will discover in detail in the following section.</p>
+<p id="Sec17" class="Heading1">1-6. Using npm Modules<a id="cXXX.41"></a></p>
+<p class="noindent">You installed Node.js and npm. You also know how you should include CommonJS modules in your Node.js applications, but you do not want to have to reinvent the wheel each time you create an application. Also, you may know of a Node.js package that exists for a task you want to accomplish in your code. Enter the npm modules.</p>
+<p class="indent">npm is a community-driven repository of Node.js packages and utilities that are published in such a way as to allow anyone access to them. The npm system has grown extremely quickly, keeping step with the growth of Node.js in general throughout its development. Currently there are more than twenty-five thousand npm packages available, according to the npm site at<span class="FontName1"><a href="https://npmjs.org/">https://npmjs.org</a></span>. With that many packages, it can easily become difficult to identify the packages that fit your needs. To find a package, use the search functionality, which is a Google site search, on<span class="FontName1"><a href="https://npmjs.org/">https://npmjs.org/</a></span>, shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#Fig8" id="_Fig8">Figure 1-8</a>.</p>
+<div class="Figure" id="Fig8">
+<p class="img">
+<img src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/9781430260585_Fig01-08.jpg" alt="9781430260585_Fig01-08.jpg" width="650" height="198" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/9781430260585_Fig01-08.jpg"></p>
+<p class="FigCapt">
+<span class="CaptNr">
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_Fig8">Figure 1-8</a>. </span>npm Search on <a href="https://npmjs.org/">https://npmjs.org/</a> </p>
+</div>
+<p class="indent">Alternatively you can utilize the built-in search mechanism within npm itself. This is run on the command line of your terminal (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list23" id="_list23">Listing 1-23</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list23" id="list23">Listing 1-23</a></i></b>.&nbsp;&nbsp;Command-Line npm Search</p>
+<pre><span class="FontName1">npm search &lt;term(s) or package name&gt;</span></pre>
+<p class="indent">When you perform the search command, npm will first cache a local index of all packages and will then search the package names, descriptions, authors, and keywords for the packages. The results are returned in a table that shows the package name, description, author, date of publication, version, and keywords. This can be useful for determining which package you want to use. To view detailed information about a package, run the npm view command, shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list24" id="_list24">Listing 1-24</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list24" id="list24">Listing 1-24</a></i></b>.&nbsp;&nbsp;Detailed View of a Package</p>
+<pre><span class="FontName1">npm view &lt;package name&gt;</span></pre>
+<p class="indent">Once you have discovered the package you wish to install and have viewed the details about the package, you can install it, also via the command line (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list25" id="_list25">Listing 1-25</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list25" id="list25">Listing 1-25</a></i></b>.&nbsp;&nbsp;Installing via the Command Line</p>
+<pre><span class="FontName1">npm install &lt;package name&gt;</span></pre>
+<p class="indent">Running the npm install command will download the package and place it in a directory in your application. This directory is named “node_modules” and will usually reside in the same directory as your package definition file named package.json. This folder helps to define your npm package. This means that if you have a file that requires this npm module, it will look to this directory to find it. This is also the case for files within subdirectories as well, meaning that, within a package, npm-installed modules will be installed and referenced from this directory. This prevents too many subdirectories from containing a “node_modules” directory referencing a single module and cluttering your application structure.</p>
+<p class="indent">Contrary to many package managers (i.e., Python’s easy_install) that download packages to a central shared directory, npm installs modules locally, relative to the package itself. However, there is also a global flag that can be set when you install a package from npm. By setting the package to install globally, it will be accessible by any application for that user, as it is installed in the $HOME directory ($USERPROFILE on Windows). To install globally, simply add the flag to your install command, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list26" id="_list26">Listing 1-26</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list26" id="list26">Listing 1-26</a></i></b>.&nbsp;&nbsp;Globalizing a Package Install</p>
+<pre><span class="FontName1">npm install –g &lt;package name&gt;</span><br><span class="FontName1"># or</span><br><span class="FontName1">npm install –-global &lt;package name&gt;</span></pre>
+<p class="indent">The node_modules<a id="cXXX.42"></a> directory is a special case in Node.js’s module-lookup routine, which was outlined in the previous section. A module lookup does not jump directly from looking for a native Node.js module to then searching the directory structure for the file name. If Node.js does not recognize the module as a native module, it will then check the node_modules directory to see if the module is located there, before continuing through the loading waterfall.</p>
+<p class="indent">Because this is part of the loading path for modules, there is not really any difference to requiring an npm module versus a module that you author yourself, which allows you to reference it in the same way.</p>
+<p id="Sec18" class="Heading1">1-7. Getting Started with npm and Dependency<a id="cXXX.43"></a></p>
+<p class="noindent">Using npm has many advantages when you are developing a robust Node.js application. As you have seen, it is incredibly easy to discover, retrieve, and include any published npm package within your application. There are even simpler ways of determining how your application is structured and what npm modules are included with your application. This is done via the npm package management files<a id="cXXX.18p"></a><a id="cXXX.18z"></a><a id="cXXX.18s"></a> that live within your application directory. These files are named package.json and include all of the details needed to completely manage the remote dependencies of your application.</p>
+<p class="indent">Let us examine in detail precisely what package.json is and how it works in your Node.js application. First, package.json contains JavaScript Object Notation (JSON),<a id="cXXX.44"></a> which is what is parsed by Node.js and npm in order to read the details of your application. When this file is parsed it can help load dependencies, serve application metadata, start and stop your application, and list authors and contributors, code repositories, development dependencies, and much more. Let’s discover what all the various fields for package.json could be and what they tell npm and Node.js. Some of these fields should be included in all your package.json files<a id="cXXX.18i"></a>, whereas others are really more useful when you are publishing your package to the npm registry, which will be covered in a later chapter.</p>
+<div>
+<p id="Sec19" class="Heading2">name<a id="cXXX.45"></a><a id="cXXX.46"></a></p>
+<p class="noindent">The name field is required in package.json. Without it, your application cannot be installed. One rule for the name is that it needs to be a URL-safe name. If you publish your package, the name will become a part of a URL for locating the package and therefore must be capable of being parsed as a URL. It is also what other modules will utilize when they require your module. This means that utilizing a ridiculously long name is not recommended because it is highly unlikely anyone will want to type an extraordinarily long package name (like the one in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list27" id="_list27">Listing 1-27</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list27" id="list27">Listing 1-27</a></i></b>.&nbsp;&nbsp;A Ridiculously Long Package Name</p>
+<pre><span class="FontName1">var poppins = require('supercalifragilisticexpialidocious');</span></pre>
+<p class="indent">However, you may need to craft a creatively particular name because the npm module names must be unique throughout the entire npm registry. Also do not include “js” or “node” in the name<a id="cXXX.18n"></a>. It is assumed that the file is JavaScript and you can add the “node” as part of the “engines” directive, which you will see later.</p>
+</div>
+<div>
+<p id="Sec20" class="Heading2">version<a id="cXXX.47"></a><a id="cXXX.48"></a></p>
+<p class="noindent">The version field is also required. This manages which version is installed, and it is utilized with the “name” field in your package.json file to determine a completely unique identifier. Each time you make a change to your package, you should bump the version number. Version numbers can take various forms: some common forms are simply numeric (0.0.1, or v0.0.1). Sometimes developers like to place a qualifier on the version number, such as 0.0.2-alpha, 0.0.2beta, or 0.0.2-42. These all denote different versions and fit into a hierarchy that is parsed by node-semver<i>,</i> the npm semantic versioner.</p>
+</div>
+<div>
+<p id="Sec21" class="Heading2">description</p>
+<p class="noindent">The description field<a id="cXXX.49"></a> is simply a text description of the package; terms in the description are searchable via the npm search.</p>
+</div>
+<div>
+<p id="Sec22" class="Heading2">keywords<a id="cXXX.50"></a></p>
+<p class="noindent">Keywords are also used in an npm search; these help other developers target your package.</p>
+</div>
+<div>
+<p id="Sec23" class="Heading2">homepage<a id="cXXX.51"></a></p>
+<p class="noindent">This field is where you can place the URL of your package or project’s homepage.</p>
+</div>
+<div>
+<p id="Sec24" class="Heading2">bugs<a id="cXXX.52"></a></p>
+<p class="noindent">This points developers to a place (an issue tracker or e-mail address) to find or submit bugs so they can help you make your project even more amazing.</p>
+</div>
+<div>
+<p id="Sec25" class="Heading2">license<a id="cXXX.53"></a></p>
+<p class="noindent">This field describes the license that your code will be under. This can be simple like MIT, BSD, or GPL, or you can use a custom license with a type and URL of the license file.</p>
+</div>
+<div>
+<p id="Sec26" class="Heading2">author, contributors<a id="cXXX.54"></a></p>
+<p class="noindent">These sections hold the names, e-mails, and URLs for the persons who are responsible for the package.</p>
+</div>
+<div>
+<p id="Sec27" class="Heading2">files<a id="cXXX.19a"></a><a id="cXXX.55"></a></p>
+<p class="noindent">This field can be vital to good dependency management in your package.json file<a id="cXXX.56"></a><a id="cXXX.57"></a>. This field lists the files<a id="cXXX.19g"></a> that you want to include with your package. This can also contain a list of the folders that need to be bundled with the package. You can load a directory of files and then exclude certain ones with an .npmignore file within the directory, which specifies which files to ignore.</p>
+</div>
+<div>
+<p id="Sec28" class="Heading2">main</p>
+<p class="noindent">This field tells the module loader<a id="cXXX.58"></a> which module to load when the package is required within a Node.js application. This should be the module identifier for that module.</p>
+</div>
+<div>
+<p id="Sec29" class="Heading2">bin</p>
+<p class="noindent">This field controls where npm will install any executable files that will either live in the node_modules/.bin/ directory or will be symbolically linked globally. This is precisely the way that npm itself installs the command-line interface for npm. The bin field<a id="cXXX.20j"></a><a id="cXXX.59"></a> takes a key field, which will be the linked command, and a value, which is the script that will be linked to that key. For example, the bin field looks like what is shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list28" id="_list28">Listing 1-28</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list28" id="list28">Listing 1-28</a></i></b>.&nbsp;&nbsp;bin Field<a id="cXXX.60"></a> in package.json<a id="cXXX.61"></a></p>
+<pre><span class="FontName1">{"bin": {"program": "./path/to/program"}}</span></pre>
+</div>
+<div>
+<p id="Sec30" class="Heading2">repository<a id="cXXX.62"></a></p>
+<p class="noindent">This field indicates where the central repository is located. The repository holds the code for your Node.js package. This field takes a type, denoting the version control type, such as git or svn, and a URL argument in order to locate your code.</p>
+</div>
+<div>
+<p id="Sec31" class="Heading2">config<a id="cXXX.63"></a></p>
+<p class="noindent">This field can be utilized for configuration options that persist with your package. You could set a configured port number, tell the application to run in production mode, or set the username to associate in the npm registry.</p>
+</div>
+<div>
+<p id="Sec32" class="Heading2">dependencies</p>
+<p class="noindent">This is a very important field when you design your package.json file: it holds information vital to the success of your application. Because there are various versions of other packages available, this field will list those that you have presumably tested with your Node.js application and know will work correctly. Dependencies can not only outline what npm libraries your application depends on but also target the specific versions of those items. There are multiple methods for which you can specify the version you are targeting. This can be done either by explicit listing of the exact version number, defining a range explicitly, implicitly defining a range with comparison operators, listing a URL, a tilde versioning system, and “X version ranges” (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list29" id="_list29">Listing 1-29</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list29" id="list29">Listing 1-29</a></i></b>.&nbsp;&nbsp;Managing Dependencies<a id="cXXX.64"></a> in package.json files<a id="cXXX.20y"></a></p>
+<p class="noindent"><i>Explicit Listing of Version Number for a Dependency<a id="cXXX.20a"></a></i></p>
+<pre><span class="FontName1">"package": "0.0.1"</span><br><span class="FontName1">"package": "=0.0.1"</span></pre>
+<p class="noindent"><i>Dependencies can also be managed by providing a set of versions via a range</i></p>
+<pre><span class="FontName1">"package": "0.0.1 – 0.0.3"</span><br><span class="FontName1">"package": "&gt;=0.0.1</span></pre>
+<p class="noindent"><i>Package ranges</i><a id="cXXX.65"></a><a id="cXXX.66"></a> <i>are also listed in the dependency section of your file by comparison operators such as</i></p>
+<pre><span class="FontName1">"package": "&gt;0.0.1"</span><br><span class="FontName1">"package": "&lt;0.0.1"</span><br><span class="FontName1">"package": "&gt;=0.0.1"</span><br><span class="FontName1">"package": "&lt;=0.0.1"</span></pre>
+<p class="noindent"><i>Ranges can also be represented with an “x” placeholder that will allow any numeral in the place of the “x”</i></p>
+<pre><span class="FontName1">"package":&nbsp;&nbsp;"0.1.x"</span><br><span class="FontName1">"package": "0.0.x"</span></pre>
+<p class="noindent"><i>Packages as URLs must point to a tarball or a git endpoint that can be checked out (</i></p>
+<pre><span class="FontName1">tarball</span><br><span class="FontName1">"package": "</span><span class="FontName1"><a href="https://example.com/package.tar.gz">https://example.com/package.tar.gz</a></span><span class="FontName1">"</span><br>&nbsp;<br><span class="FontName1">Git</span><br><span class="FontName1">"package": "</span><span class="FontName1"><a href="https://git//github.com/organization/source.git">git://github.com/organization/source.git</a></span><span class="FontName1">"</span></pre>
+<p class="noindent"><i>Tilde ranges</i><a id="cXXX.67"></a><a id="cXXX.68"></a> <i>represent a subset of ranges that must be at least equal to the version listed with the tilde, but not greater than the next major version</i></p>
+<pre><span class="FontName1">"package": "∼0.8.4"</span><br><span class="FontName1">Is equivalent to:</span><br><span class="FontName1">"package": "&gt;=0.8.4 &lt;0.9.0"</span></pre>
+<p class="indent">There are variants of dependencies that can be a part of your package.json file as well. These are devDependencies, optionalDependencies, and bundledDependencies.</p>
+<div>
+<p id="Sec33" class="Heading3">devDependencies<a id="cXXX.69"></a><a id="cXXX.70"></a><a id="cXXX.71"></a></p>
+<p class="noindent"><span class="FontName1">devDependencies</span>, as you might expect, are dependencies that will be downloaded if npm install is called, utilizing the development flag <span class="FontName1">--dev</span>. This would be useful if the development branch utilizes a framework that is not needed when installing the production version.</p>
+</div>
+<div>
+<p id="Sec34" class="Heading3">bundledDependencies<a id="cXXX.72"></a><a id="cXXX.73"></a><a id="cXXX.74"></a></p>
+<p class="noindent">The bundledDependencies flag denotes what items are to be bundled when publishing the package.</p>
+</div>
+<div>
+<p id="Sec35" class="Heading3">optionalDependencies<a id="cXXX.75"></a><a id="cXXX.76"></a><a id="cXXX.77"></a></p>
+<p class="noindent"><span class="FontName1">optionalDependencies</span> are dependencies that need to be handled in your application if they are or are not present. If you have a section of code that would optionally rely on a certain package, you must account for that if the package is listed in the optionalDependencies hash, as in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list30" id="_list30">Listing 1-30</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list30" id="list30">Listing 1-30</a></i></b>.&nbsp;&nbsp;optionalDependencies in Practice</p>
+<pre><span class="FontName1">try {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var optional = require('optional');</span><br><span class="FontName1">} catch(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">optional = null;</span><br><span class="FontName1">}</span><br>&nbsp;<br><span class="FontName1">if (optional) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">optional.doThing();</span><br><span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">doThingWithoutOptionalPackage();</span><br><span class="FontName1">}</span></pre>
+</div>
+</div>
+<div>
+<p id="Sec36" class="Heading2">Engines<a id="cXXX.22v"></a></p>
+<p class="noindent">You can specify engines within your package.json file<a id="cXXX.78"></a> as well. This means that if you know that your application will only work on Node.js or npm within a certain version range, set this here. The values for engines follow the same values as the dependencies (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list31" id="_list31">Listing 1-31</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list31" id="list31">Listing 1-31</a></i></b>.&nbsp;&nbsp;Defining Engines</p>
+<pre><span class="FontName1">"engines": {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"node": "0.8.x",</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"npm": "*"</span><br><span class="FontName1">}</span></pre>
+</div>
+<div>
+<p id="Sec37" class="Heading2">OS and CPU<a id="cXXX.22e"></a></p>
+<p class="noindent">If you are aware that certain aspects of your application will only perform on a given operating system, or you are only targeting a specific operating system, then you can add the specific values within your package.json file<a id="cXXX.79"></a> as well. This also applies if you have a certain CPU you are targeting, such as 64-bit machines, which can be seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list32" id="_list32">Listing 1-32</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list32" id="list32">Listing 1-32</a></i></b>.&nbsp;&nbsp;Defining Architectures for Your Application</p>
+<pre><span class="FontName1">"os" : ["linux", "darwin", "!win32"],</span><br><span class="FontName1">"cpu": ["!arm", "x64" ]</span></pre>
+</div>
+<div>
+<p id="Sec38" class="Heading2">preferGlobal<a id="cXXX.22z"></a><a id="cXXX.80"></a></p>
+<p class="noindent">If the package that you are maintaining is best run as a global package, or you would prefer it to be installed as global, set this flag to true and it will set a console warning message if it is chosen to be installed locally by the user.</p>
+<p class="indent">Putting together all the fields in your package.json file helps to dictate the configuration and dependencies required to run your Node.js application. This makes your package extremely portable, and setup on a new machine is usually straightforward. When you put together even a simple app, you will be able to gain valuable information about your application by examining the package.json file. Managing all of these settings can seem cumbersome when you are building an application. Fortunately, if you have already built an application in Node.js you can retroactively create a valid package.json file by running the command <span class="FontName1">npm init</span>, which will produce a file that may be similar to the package shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list33" id="_list33">Listing 1-33</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list33" id="list33">Listing 1-33</a></i></b>.&nbsp;&nbsp;Initialized Application via npm init</p>
+<pre><span class="FontName1">{</span><br>&nbsp;&nbsp;<span class="FontName1">"name": "squirrel",</span><br>&nbsp;&nbsp;<span class="FontName1">"version": "0.0.1",</span><br>&nbsp;&nbsp;<span class="FontName1">"private": true,</span><br>&nbsp;&nbsp;<span class="FontName1">"scripts": {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"start": "node app"</span><br>&nbsp;&nbsp;<span class="FontName1">},</span><br>&nbsp;&nbsp;<span class="FontName1">"dependencies": {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"express": "3.0.0rc4",</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"ejs": "*",</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"feedparser": ""</span><br>&nbsp;&nbsp;<span class="FontName1">},</span><br>&nbsp;&nbsp;<span class="FontName1">"gitHead": "e122...",</span><br>&nbsp;&nbsp;<span class="FontName1">"description": "A sample app to parse through your RSS feeds",</span><br>&nbsp;&nbsp;<span class="FontName1">"main": "app.js",</span><br>&nbsp;&nbsp;<span class="FontName1">"devDependencies": {},</span><br>&nbsp;&nbsp;<span class="FontName1">"repository": {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"type": "git",</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"url": "</span><span class="FontName1"><a href="http://ssh//git@bitbucket.org/username/squirrel.git">ssh://git@bitbucket.org/username/squirrel.git</a></span><span class="FontName1">"</span><br>&nbsp;&nbsp;<span class="FontName1">},</span><br>&nbsp;&nbsp;<span class="FontName1">"keywords": [</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">"rss"</span><br>&nbsp;&nbsp;<span class="FontName1">],</span><br>&nbsp;&nbsp;<span class="FontName1">"author": "cory gackenheimer",</span><br>&nbsp;&nbsp;<span class="FontName1">"license": "MIT"</span><br><span class="FontName1">}</span></pre>
+<p class="indent">When you examine the above package.json skeleton, generated by <span class="FontName1">npm init</span>, you notice that not every field available is included in the file. This is okay, but what this file does indicate is the name and version of your application. More important, however, it dictates dependencies, so when you execute <span class="FontName1">npm install</span> from the root of your application, npm will install the prescribed version of express, ejs, and feedparser, in order to resolve the dependencies listed in package.json.</p>
+</div>
+<p id="Sec39" class="Heading1">1-8. Installing a Node.js Version Manager</p>
+<p class="noindent">If you are going to spend any amount of time developing Node.js applications, you will inevitably encounter a new version of Node.js. This is because the development of Node.js is moving at an incredible pace. As of this writing the current stable release version is 0.10.x. This release holds the stabilized APIs that are suitable for production environments. There is also a secondary, experimental build, which is currently at version 0.11.x. The experimental build is not suitable for production because it holds new features as they are being created for upcoming versions. It may be the case that you are developing a package for the current stable version, but you also would like to ensure it will continue to work with Node.js API changes in upcoming releases. If this is the case, you are going to need to install multiple versions of Node.js. There are two ways to accomplish this sort of version management. First, you can go to the Node.js web site, download Node.js, and install the version you are targeting. Second, and more elegant, you can use a version management tool.</p>
+<p class="indent">Once you have decided to use a Node.js version management tool, you have a choice between different tools. There are currently three predominant variations of Node.js version management tools: nvm, n, and nave. Each of these tools is slightly different and may offer options that suit your particular use case better.</p>
+<p class="indent">Node Version Manager, or nvm, created by Tim Caswell, is an installable shell script that will download and install multiple versions of Node.js that you specify. To install the nvm utility you need to get the install script, which is also a shell script. There are three ways to get and install this script: cURL, Wget, or a manual install.</p>
+<p class="indent">To install manually, you first need to get the <span class="FontName1">nvm.sh</span> file that is located at the project’s repository on GitHub (<span class="FontName1"><a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></span> <span class="FontName1"></span>). It can be downloaded from that location directly, or fetched at git clone <span class="FontName1"><a href="http://git//github.com/creationix/nvm.git%20%E2%88%BC/nvm">git://github.com/creationix/nvm.git ∼/nvm</a></span>.</p>
+<p class="indent">Then you need to run the shell script that was just downloaded to the nvm directory:</p>
+<pre><span class="FontName1">∼/nvm/nvm.sh</span></pre>
+<p class="indent">Luckily there is an even easier way that you can install nvm if you use cURL (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list34" id="_list34">Listing 1-34</a>) or Wget (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list35" id="_list35">Listing 1-35</a>): you can download the shell script and have an nvm alias added to your ∼/.bash_profile or ∼/.profile file.</p>
+<p class="noindent"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list34" id="list34">Listing 1-34</a>. Using cURL</p>
+<pre><span class="FontName1">curl</span> <span class="FontName1"><a href="https://raw.github.com/creationix/nvm/master/install.sh">https://raw.github.com/creationix/nvm/master/install.sh</a></span> <span class="FontName1">| sh</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list35" id="list35">Listing 1-35</a></i></b>.&nbsp;&nbsp;Using Wget</p>
+<pre><span class="FontName1">wget -qO-</span> <span class="FontName1"><a href="https://raw.github.com/creationix/nvm/master/install.sh">https://raw.github.com/creationix/nvm/master/install.sh</a></span> <span class="FontName1">| sh</span></pre>
+<p class="indent">Installing other Node.js version management tools is just as straightforward. A similar script to nvm is a tool called nave, which was developed by Isaac Schlueter, and is packaged as Virtual Environment for Node. Nave runs a shell script, just as nvm does; however, it is installable via npm.</p>
+<pre><span class="FontName1">npm install –g nave</span></pre>
+<p class="indent">The last version management utility that will be covered is also installed via npm, <span class="FontName1">npm install –g n</span>, and is also similar in functionality to the other tools.</p>
+<p class="indent">These tools are built to make working with more than one version of node extremely easy and intuitive. They each have their own divergent features that set them apart, so that you as a developer may find the right tool for the job. In the next section you will see an in-depth look into the workflow and options available for each of these version management tools.</p>
+<p id="Sec40" class="Heading1">1-9. Using Multiple Versions of Node.js on Your Machine</p>
+<p class="noindent">As you might imagine, developing a Node.js application takes time. You might begin a project while Node.js is on a given version and all the packages work seamlessly with it. However, you may find that, for one reason or another, you need to upgrade (or downgrade) the version of Node.js that you are using with your application. To do this with your application and to utilize multiple Node.js instances on your machine, you can use one of the Node.js versioning tools. While each tool provides similar functionality, their APIs are slightly different and do contain certain features unique to each tool.</p>
+<div>
+<p id="Sec41" class="Heading2">nvm</p>
+<p class="noindent">Installation for nvm follows the pattern nvm install &lt;version&gt;, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list36" id="_list36">Listing 1-36</a>. The version that you specify can be written explicitly or as a shortened version that will install the latest provided version.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list36" id="list36">Listing 1-36</a></i></b>.&nbsp;&nbsp;nvm Install<a id="cXXX.81"></a></p>
+<pre><span class="FontName1">$ nvm install v0.8.23</span><br><span class="FontName1">$ nvm install 0.8.23</span><br><span class="FontName1">$ nvm install 0.8</span></pre>
+<p class="indent">The install script finds the appropriate version number, goes to the appropriate location in the<span class="FontName1"><a href="https://nodejs.org/dist/">https://nodejs.org/dist/</a></span> directory, and installs the specified version of Node.js on your machine. The script does not alter your path in order for it to be utilized globally. To do this, specify the version you wish to use with the command use (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list37" id="_list37">Listing 1-37</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list37" id="list37">Listing 1-37</a></i></b>.&nbsp;&nbsp;nvm Use</p>
+<pre><span class="FontName1">$ nvm use 0.10.1</span></pre>
+<p class="indent">If you do not know the specific version of Node.js that you would like to install or use, you can list the remote versions of Node.js that are available by executing the <span class="FontName1">nvm ls-remote</span> command. This will list all versions available for download. If you have multiple versions installed on your machine already, you can utilize the <span class="FontName1">nvm ls</span> command to show the list of Node.js versions that are currently available on your machine.</p>
+<p class="indent">nvm allows you to specify a particular version, separate from the installed version you are using, to run your application with. For example, you could enter <span class="FontName1">nvm run 0.6 server.js</span>. This would run your application (server.js) with the latest installed version of Node.js 0.6.x, even if the version set with the use command is completely different.</p>
+<p class="indent">With nvm you can also set an alias for a version by running <span class="FontName1">nvm alias &lt;name&gt; &lt;version&gt;</span>. The use case for this could be similar to the run command, but if you want to test a build more than once against your application, you might find it cumbersome to type the run command. For this an alias is very useful, such as <span class="FontName1">nvm alias dev 0.11.0</span>, which would allow you to test out new features in Node.js version 0.11.0 with a simpler command (<span class="FontName1">dev server.js</span>, instead of <span class="FontName1">nvm run 0.11.0 server.js)</span>.</p>
+<p class="indent">Of course, by installing multiple versions via nvm, you may end up with a housekeeping nightmare. Too many versions could pose an issue when trying to maintain some order. These issues are resolved with the <span class="FontName1">nvm uninstall &lt;version&gt;</span> command and the <span class="FontName1">nvm unalias &lt;alias&gt;</span> command. These uninstall a specified version of Node.js and remove the specified alias from your machine, respectively.</p>
+</div>
+<div>
+<p id="Sec42" class="Heading2">nave</p>
+<p class="noindent">nave<a id="cXXX.82"></a> is not very dissimilar from nvm. In fact nave credits nvm for inspiration. There are a few differences with the implementations and underlying shell scripts that do vary enough to note. It is important to understand that nave is presented as a Node.js virtual environment provider, versus a version manager. First, <span class="FontName1">nave install &lt;version&gt;</span> expects the version parameter to be an exact version of Node.js, with the exception of fetching the latest, or latest stable version, which would look like <span class="FontName1">nave install latest</span> and <span class="FontName1">nave install stable</span>, respectively.</p>
+<p class="indent">The virtual environment portion of nave is based around the <span class="FontName1">use</span> command. This command takes either a version number by itself, a version number followed by a Node.js program parameter, or a name followed by a version number, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list38" id="_list38">Listing 1-38</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list38" id="list38">Listing 1-38</a></i></b>.&nbsp;&nbsp;Nave Use</p>
+<p class="noindent"><i>Nave use version, this will open a subshell utilizing the version specified</i></p>
+<pre><span class="FontName1">$ nave use &lt;version&gt;</span></pre>
+<p class="noindent"><i>Providing a version with a program target, it will run the program in a subshell using the specified version</i></p>
+<pre><span class="FontName1">$ nave use &lt;version&gt; &lt;program&gt;</span></pre>
+<p class="noindent"><i>This will provide an alias based on the specified version</i></p>
+<pre><span class="FontName1">$ nave use &lt;name&gt; &lt;version&gt;</span></pre>
+<p class="indent">To set the main version to use for development, the command is <span class="FontName1">nave usemain &lt;version&gt;</span>. You can also remove an installed instance by running <span class="FontName1">nave uninstall &lt;version&gt;</span>. Similar to this is the <span class="FontName1">nave clean &lt;version&gt;</span> command. The clean command does not uninstall the version, but it does remove the source code for the specified version. <span class="FontName1">nave</span> also provides a set of listing commands, <span class="FontName1">ls</span> and <span class="FontName1">ls-remote</span> operate, in the same manner as the nvm ls and ls-remote commands by providing a list of local or remote versions of Node.js that are available. The nave script provides an additional <span class="FontName1">ls-all</span> command, which will list both local and remote Node.js versions available to you as a developer. If you are curious as to which version of Node.js is the latest, simply run the <span class="FontName1">nvm latest</span> command.</p>
+</div>
+<div>
+<p id="Sec43" class="Heading2">n</p>
+<p class="noindent">The Node.js versioning tool n<a id="cXXX.83"></a> is different in implementation and its API than nvm and nave, but it still serves the primary purpose of allowing you to install multiple versions of Node.js. With n, you can specify an exact version of Node.js by using the command <span class="FontName1">n &lt;version&gt;</span>. This is less lenient than nvm, which allows you to pick a major revision, and it will install the latest of that version. Where this does differ is that you can specify the latest (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list39" id="_list39">Listing 1-39</a>), or the latest stable release (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list40" id="_list40">Listing 1-40</a>), and n will fetch it for you.</p>
+<p class="noindent"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list39" id="list39">Listing 1-39</a>.&nbsp;&nbsp;&nbsp;Fetch the Latest Version</p>
+<pre><span class="FontName1">$ n latest</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list40" id="list40">Listing 1-40</a></i></b>.&nbsp;&nbsp;Fetch the Latest Stable Version</p>
+<pre><span class="FontName1">$ n stable</span></pre>
+<p class="indent">What these commands do is go to the <span class="FontName1"><a href="https://nodejs.org/dist/">https://nodejs.org/dist/</a></span> site and search for the latest version (the highest number available for retrieving the latest or the highest even-numbered release available for latest stable). To move to a previous version that you had installed, simply use the <span class="FontName1">n prev</span> command<span class="FontName1">.</span></p>
+<p class="indent">To view the locally installed versions of Node.js that are available, and to select one to use, simply type the command n. The n command by itself will list test versions, along with any flags you have specified to run with that version. In order to specify a flag, or configuration option, you simply provide it as a parameter after your n &lt;version&gt; command, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#list41" id="_list41">Listing 1-41</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#_list41" id="list41">Listing 1-41</a></i></b>.&nbsp;&nbsp;Pass the debug Parameter to This Version of node</p>
+<pre><span class="FontName1">n latest --debug</span></pre>
+<p class="indent">The <span class="FontName1">n bin &lt;version&gt;</span> command will output the path to that binary installation that is on your machine. If the specified version is not present on your machine, n will let you know it is not installed. The bin command is very handy if you want to target a specific version directly without using the <span class="FontName1">use</span> command, which is run as <span class="FontName1">n use &lt;version&gt; [args...]</span></p>
+<p class="indent">To uninstall, or remove Node.js using n, the command is <span class="FontName1">n rm &lt;version list&gt;</span>. You will notice that this command takes a list of versions, meaning that you can remove multiple versions of Node.js from your system in a single bound.</p>
+</div>
+<p id="Sec44" class="Heading1">Summary</p>
+<p class="noindent">In this chapter you reviewed the multiple ways to get Node.js installed on your machine. You also saw the basics of implementing and using CommonJS modules within your Node.js application, including utilizing the npm Node.js package management tool. The following chapters will begin to have a recipe-centric format. This format divides many of the interesting Node.js topics into a problem–solution approach. This means that you will start with a definition of a problem you might encounter when building a Node.js application, and you will then read about a solution to that problem. You can read through these chapters, see how certain portions of Node.js work, and be able to find these solutions again easily when returning to the book as a desk reference.</p>
+</div>
+<div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Acknowledgments.xhtml" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Acknowledgments</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch02.xhtml" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">CHAPTER 2: Networking with Node.js</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781430260585/chapter/9781430260585_Ch01.xhtml" data-for-analytics="9781430260585:9781430260585_Ch01.xhtml" aria-label="Add to Queue">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel  collapsed slideUp">
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="js-toggle-nag ss-navigateup" title="Toggle open or close footer"></a>
+        <div class="sample-message">
+          <p class="usage-data t-collapsed-text">Enjoy Safari?
+            <a class="ga-active-trial-subscribe-nag" href="https://www.safaribooksonline.com/subscribe/">
+              Subscribe Today
+              
+            </a>
+          </p>
+          
+
+        <div class="expanded">
+          <h2>You have 10 days left in your trial, Raviguru0007. </h2>
+          <p class="t-expanded-text">Safari is your trusted guide for building a remarkable career. We hope you've been enjoying your trial—ready to join?</p>
+          <a href="https://www.safaribooksonline.com/subscribe/" class="button-primary">
+            Subscribe Today
+            
+          </a>
+          
+          <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="icon-up" style="display: block;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/contact/">Contact Us</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+    </ul>
+    <span class="copyright">© 2017 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/membership-agreement/">Membership Agreement</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" class="icon-up" style="display: block;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2017 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"licenseKey":"510f1a6865","applicationID":"3275661","errorBeacon":"bam.nr-data.net","transactionName":"YgdaZ0NSW0cEB0RdWltNfkZfUEFdCgofXFBHDVYdR1pQQxZeRl1QQj1aWkU=","beacon":"bam.nr-data.net","applicationTime":840,"queueTime":0,"agent":""}</script>
+
+
+    
+
+    <script src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/saved_resource" charset="utf-8"></script>
+    <script src="./CHAPTER 1_ Understanding Node.js - Node.js Recipes_ A Problem-Solution Approach_files/saved_resource(1)" charset="utf-8"></script>
+  
+
+<div class="annotator-notice"></div><div class="font-flyout" style="top: 200.012px; left: 1217px;"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch01.xhtml#">Reset</a>
+</div>
+</div></body></html>

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml -->
+<html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="1573407" data-user-uuid="29525685-85c9-45c7-9eda-3c178d86398e" data-username="raviguru0007" data-account-type="Trial" data-activated-trial-date="04/17/2017" data-archive="9781430260585" data-publishers="Apress" data-htmlfile-name="9781430260585_Ch10.xhtml" data-epub-title="Node.js Recipes: A Problem-Solution Approach" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781430260585"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><script type="text/javascript" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/510f1a6865"></script><script src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/nr-spa-1026.min.js"></script><script type="text/javascript" async="" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/linkid.js"></script><script async="" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQDUVVVGwACU1RUAQA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(19),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(20),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(p){"stack"in p&&(t(12),t(11),"addEventListener"in window&&t(6),s.xhrWrappable&&t(13),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){C++,N=y.hash,this[u]=M.now()}function o(){C--,y.hash!==N&&i(0,!0);var t=M.now();this[l]=~~this[l]+t-this[u],this[d]=t}function i(t,e){x.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=M.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,h="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location;if(w[v]){var b=t(9),g=t(10),x=t(8),E=t(6),O=t(12),R=t(7),P=t(13),T=t("ee"),S=T.get("tracer");t(14);var M=t("loader");M.features.spa=!0;var N,j=w[v],C=0;T.on(u,r),T.on(p,r),T.on(d,o),T.on(h,o),T.buffer([u,d,"xhr-done","xhr-resolved"]),E.buffer([u]),O.buffer(["setTimeout"+s,"clearTimeout"+c,u]),P.buffer([u,"new-xhr","send-xhr"+c]),R.buffer([m+c,m+"-done",m+f+c,m+f+s]),x.buffer(["newURL"]),b.buffer([u]),g.buffer(["propagate",p,h,"executor-err","resolve"+c]),S.buffer([u,"no-"+u]),a(P,"send-xhr"+c),a(T,"xhr-resolved"),a(T,"xhr-done"),a(R,m+c),a(R,m+"-done"),x.on("pushState-end",i),x.on("replaceState-end",i),j("hashchange",i,!0),j("load",i,!0),j("popstate",function(){i(0,C>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(12),c=t(11),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",h="-start",l="-end",m="fn"+h,v="fn"+l,w="bstTimer",y="pushState",b=t("loader");b.features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=b.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,b.now()])}),a.on(m,function(t,e,n){this.bstStart=b.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),this.bstType])}),c.on(m,function(){this.bstStart=b.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),"requestAnimationFrame"])}),o.on(y+h,function(t){this.time=b.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(22)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(19);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,h="prototype";u&&d&&p&&(i(f,function(t,e){r(u[h],e,s),r(d[h],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(22)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("mutation"),o=t(22)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],10:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(22),a=t("ee").get("promise"),c=i(a),s=t(19),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],11:[function(t,e,n){var r=t("ee").get("raf"),o=t(22)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],12:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(22)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],13:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",c)}function i(t){w.push(t),l&&(b=-b,g.data=b)}function a(){for(var t=0;t<w.length;t++)r([],w[t]);w.length&&(w=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(22)(u),p=NREUM.o,h=p.XHR,l=p.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],w=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(h,y),y.prototype=h.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var b=1,g=document.createTextNode(b);new l(a).observe(g,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],14:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(15),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),h=t(18),l=t(17),m=window.XMLHttpRequest;a.features.xhr=!0,t(13),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],15:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],16:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(19),c=t(20),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var l=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){l[e]=o(h+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],19:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],20:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],21:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],22:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(20),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=l(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([b,n,r,a]),a}}function h(t,e){w[t]=l(t).concat(e)}function l(t){return w[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var w={},y={},b={on:h,emit:n,get:m,listeners:l,context:e,buffer:v,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(19),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!x++){var t=g.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+g.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+g.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-g.offset}var c=(new Date).getTime(),s=t("handle"),f=t(19),u=t("ee"),d=window,p=d.document,h="addEventListener",l="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1026.min.js"},b=m&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:c,now:a,origin:w,features:{},xhrWrappable:b};t(16),p[h]?(p[h]("DOMContentLoaded",i,!1),d[h]("load",r,!1)):(p[l]("onreadystatechange",o),d[l]("onload",r)),s("mark",["firstbyte",c],null,"api");var x=0,E=t(21)},{}]},{},["loader",2,14,5,3,4]);</script><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/css" rel="stylesheet" type="text/css"><title>CHAPTER 10: Connecting to a Data Store - Node.js Recipes: A Problem-Solution Approach</title><link rel="stylesheet" href="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/74741d96e0ae.css" type="text/css"><link rel="stylesheet" type="text/css" href="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/annotator.e34eec1a0d5a.css"><link rel="stylesheet" href="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    #sbo-rt-content div{margin:1em 1em 1em 1em}#sbo-rt-content a{text-decoration:none}#sbo-rt-content img{max-width:100%;margin-top:10pt}#sbo-rt-content p.booktitle{font-weight:bold;font-size:2.5em;margin-top:2em;margin-bottom:8em;text-align:center}#sbo-rt-content p.bookauthor{font-weight:bold;font-size:1.7em;margin-top:0;margin-right:2em;margin-bottom:0;text-align:left}#sbo-rt-content p.booksubtitle{font-weight:bold;font-size:1.7em;margin-top:0;margin-bottom:7em;text-align:center;color:#8A8A8A}#sbo-rt-content .bookimage{font-size:1.2em;margin-top:0;margin-bottom:1em;text-align:left}#sbo-rt-content .fmpara{font-size:.9em;text-indent:0;margin-top:.5em;margin-bottom:.3em;text-align:justify}#sbo-rt-content .fmpara1{font-size:.9em;text-indent:0;margin-top:.4em;margin-bottom:.3em;text-align:right}#sbo-rt-content .inpara{text-indent:0;margin-top:.4em;margin-left:3em;margin-bottom:.3em}#sbo-rt-content .pub{margin-top:10em;margin-bottom:1em;text-align:right;margin-right:5em}#sbo-rt-content .copyright{font-size:.9em;margin-top:.4em;margin-bottom:.4em;margin-left:1.2em;margin-right:1.2em;text-align:left}#sbo-rt-content .copyright1{font-size:.9em;margin-top:.1em;margin-bottom:.1em;margin-left:4em;margin-right:3.3em;text-align:left;text-indent:-1.6em}#sbo-rt-content .copyright2{font-size:.9em;margin-top:.1em;margin-bottom:.1em;margin-left:4.2em}#sbo-rt-content .dedication{font-size:1.2em;margin-bottom:0;margin-top:3.5em;text-align:center;margin-right:1em;font-style:italic}#sbo-rt-content .dedication1{font-size:1.2em;margin-bottom:0;margin-top:.5em;text-align:center;margin-right:1em;font-style:normal}#sbo-rt-content .dedication2{font-size:1.2em;margin-bottom:0;margin-top:1.5em;text-align:center;margin-right:1em;font-style:italic}#sbo-rt-content .content-title{font-size:1.6em;margin-top:3em;margin-bottom:.1em;text-align:left;font-weight:bold}#sbo-rt-content .fmtitle{font-size:2.5em;margin-top:1em;margin-bottom:1em;text-align:left;font-weight:bold;border-bottom:1.1px solid black;padding-bottom:.8em}#sbo-rt-content .right{text-indent:0;margin-top:1em;margin-right:1.5em;margin-bottom:.3em;text-align:right}#sbo-rt-content .right1{text-indent:0;margin-top:0;margin-right:1.5em;margin-bottom:.2em;text-align:right}#sbo-rt-content .chapimage{margin-left:.2em;margin-top:1.5em;margin-bottom:1.5em;text-align:left}#sbo-rt-content p.ChapterNumber{font-weight:bold;font-size:1.7em;margin-top:10px;margin-left:0;margin-bottom:5px;text-align:left}#sbo-rt-content p.ChapterTitle{font-weight:bold;font-size:2.5em;margin-top:0;margin-bottom:1em;margin-left:0;text-align:left;border-bottom:1.1px solid black;padding-bottom:.8em}#sbo-rt-content p.PartNumber{font-weight:bold;font-size:1.7em;margin-top:10px;margin-left:0;margin-bottom:5px;text-align:left;padding-bottom:.8em}#sbo-rt-content p.partTitle{font-weight:bold;font-size:2.5em;margin-top:1em;margin-bottom:1em;margin-left:0;text-align:left}#sbo-rt-content .paraaftertitle{font-size:100%;text-indent:0;margin-top:0;margin-left:0;margin-bottom:0}#sbo-rt-content p.noindent{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:0;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.noindent1{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:1em}#sbo-rt-content p.noindent2{font-size:100%;text-indent:0;margin-top:1.5em;margin-bottom:1em}#sbo-rt-content p.noindent3{font-size:100%;text-indent:0;margin-top:.8em;margin-bottom:.2em;margin-left:0;margin-right:0;text-align:center}#sbo-rt-content p.noindent4{font-size:100%;text-indent:0;margin-top:.8em;margin-bottom:.2em;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content span.listing{font-weight:bold}#sbo-rt-content p.indent{font-size:100%;text-indent:1.2em;margin-top:.1em;margin-bottom:.1em;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.indent1{font-size:100%;text-indent:1.2em;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.indent1a{font-size:100%;text-indent:1.5em;margin-top:0;margin-bottom:0;margin-left:0;margin-right:4.5em;text-align:right}#sbo-rt-content p.indent2{font-size:100%;margin-top:.8em;margin-bottom:.8em;margin-left:2.4em;margin-right:2.4em;text-align:justify;font-style:italic}#sbo-rt-content p.indent3{font-size:100%;text-indent:1em;margin-top:.8em;margin-bottom:.8em;margin-left:1.8em;margin-right:1.8em;text-align:left}#sbo-rt-content p.indent4{font-size:100%;text-indent:1.3em;margin-top:.5em;margin-bottom:.5em;margin-left:2em;margin-right:0;text-align:left}#sbo-rt-content .blockquote{font-size:100%;text-indent:.2em;margin-top:1em;margin-left:3em;margin-right:2em;margin-bottom:1em;font-style:italic}#sbo-rt-content .blockquote1{font-size:100%;text-indent:.2em;margin-top:1em;margin-left:3em;margin-bottom:0;font-style:italic}#sbo-rt-content p.Heading1{font-weight:bold;font-size:2em;text-indent:0;margin-top:1.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2{font-size:1.6em;text-indent:0;margin-top:1.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2_2{font-size:1.6em;text-indent:0;margin-top:.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2a{font-size:1.5em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;font-weight:bold}#sbo-rt-content p.Heading3{font-weight:bold;font-size:1.45em;text-indent:0;margin-top:1.2em;margin-bottom:.1em}#sbo-rt-content p.Heading3a{font-weight:normal;font-size:1.25em;text-indent:0;margin-top:1.2em;margin-bottom:.1em}#sbo-rt-content p.Heading4{font-size:1.3em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;text-align:left}#sbo-rt-content .img{max-width:100%;margin-top:10pt}#sbo-rt-content .img1{text-align:left}#sbo-rt-content .img1a{text-align:right;margin-right:5em;margin-top:5em}#sbo-rt-content .img2{text-align:left}#sbo-rt-content div.Figure{font-size:small;margin-top:1.5em;margin-bottom:1.5em}#sbo-rt-content .para-1{font-size:100%;margin-top:1em;text-indent:1.5em;margin-bottom:0;text-align:left}#sbo-rt-content .para-2{font-size:.9em;text-indent:-1.4em;margin-left:2.4em;margin-top:.5em;margin-bottom:0}#sbo-rt-content .figurecaption{font-size:small;margin-top:0;margin-bottom:0;text-align:justify}#sbo-rt-content .image{text-align:center}#sbo-rt-content .codecaption{font-size:100%;margin-top:.6em;margin-bottom:.6em;text-align:justify;font-style:italic}#sbo-rt-content .PCode{font-size:small;margin-top:1em;margin-bottom:1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-1{font-size:small;margin-top:1em;margin-bottom:.1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-2{font-size:small;margin-top:0;margin-bottom:0;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-3{font-size:small;margin-top:0;margin-bottom:1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content div.singlethin{border-bottom:solid 3px;margin-left:1em;margin-right:1em;margin-bottom:1em}#sbo-rt-content div.singlethin1{margin-left:2em;margin-right:2em}#sbo-rt-content .inlinecode{font-family:monospace}#sbo-rt-content div.notepara{font-size:110%;text-indent:0;margin-top:1em;border-top:solid 1px;border-bottom:solid 1px;margin-bottom:1em;text-align:justify}#sbo-rt-content span.pink-box{font-weight:bold;padding-left:1.3em;padding-right:1.3em;border:1.1px solid black;font-size:1.5em;margin-top:.5em;margin-bottom:.5em;text-indent:0;text-align:justify}#sbo-rt-content span.courier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%}#sbo-rt-content div.courier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%;margin-top:1em;margin-bottom:1em}#sbo-rt-content div.boxcourier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%;margin-top:1em;margin-bottom:1em;margin-left:1.5em;margin-right:1.5em;text-align:left}#sbo-rt-content span.courier1{font-family:Courier New;font-weight:normal;font-style:normal;font-size:95%}#sbo-rt-content .boxhead{font-size:1.25em;font-weight:bold;padding-left:.1em;padding-bottom:.1em;padding-top:.1em;margin-top:0;text-indent:0;text-align:center;border:3px solid black}#sbo-rt-content div.box{margin-top:1em;margin-bottom:1em}#sbo-rt-content .boxpara{font-size:110%;text-indent:0;margin-left:1.5em;margin-right:1.5em;margin-top:.5em;margin-bottom:.5em;text-align:left}#sbo-rt-content .alpha{font-size:1.2em;font-weight:bold;margin-left:.2em;margin-top:1em;margin-bottom:.3em;text-align:left}#sbo-rt-content .index{font-size:small;margin-left:.2em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .index1{font-size:small;margin-left:1em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .index2{font-size:small;margin-left:2em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .cover{text-align:center}#sbo-rt-content .top{border-top:1.1px solid black;border-bottom:2px solid black}#sbo-rt-content .bot{border-bottom:2px solid black}#sbo-rt-content table.bodytable,#sbo-rt-content table{border-collapse:collapse;margin-bottom:8px;font-size:small;margin-top:10pt;width:95%;border-top:0 solid black;border-bottom:0 solid black}#sbo-rt-content table.fmtable{margin-bottom:1em;font-size:1em;margin-left:4em;border-top:0 solid #FFF;border-bottom:0 solid #FFF}#sbo-rt-content table{margin-bottom:1em;border-top:1.1px solid black;border-bottom:1.1px solid black;border-collapse:collapse}#sbo-rt-content th{border-top:1px solid black;border-bottom:1px solid black;padding-right:1.5em}#sbo-rt-content td{font-size:small;vertical-align:top;padding-right:1.5em;margin-top:0;margin-bottom:1em}#sbo-rt-content .tablepara{font-size:small;text-indent:0;margin-top:0;margin-bottom:.5em;padding-right:1.5em}#sbo-rt-content .tablepara1{font-size:small;margin-left:2em;margin-top:0;margin-bottom:0;padding-right:1.5em}#sbo-rt-content .header{border-bottom:1.1px solid black;text-indent:0;text-align:left}#sbo-rt-content .TabCapt{font-style:italic;margin-left:0;text-indent:0}#sbo-rt-content .FigCapt{font-style:italic;font-size:.9em}#sbo-rt-content .CaptNr{font-weight:bold}#sbo-rt-content .ttitle{font-style:Italic;margin-bottom:1em}#sbo-rt-content p.paraaftertitle1{font-size:.9em;text-indent:0;margin-top:.5em;margin-bottom:.8em;text-align:left}#sbo-rt-content p.para{font-size:small;text-indent:20px;margin-top:0;margin-bottom:0;text-align:justify}#sbo-rt-content p.quote{font-style:italic;font-size:100%;margin-top:1.5em;margin-left:2.5em;margin-right:2.5em;margin-bottom:0}#sbo-rt-content p.quotesource{font-size:small;text-indent:0;margin-top:1em;margin-bottom:1em;text-align:right}#sbo-rt-content p.chaptersubtitle{font-size:x-large;text-indent:0;margin-top:0;margin-left:0;margin-bottom:0;text-align:left}#sbo-rt-content p.line{margin-top:.3em;border-bottom:1px solid black}#sbo-rt-content p.line1{margin-top:.3em;margin-bottom:1.5em;border-bottom:1px solid black}#sbo-rt-content p.line2{margin-top:5em;margin-bottom:5em;border-bottom:1px solid black;text-align:center;margin-left:15em;margin-right:15em}#sbo-rt-content li{margin-bottom:.5em;margin-top:.5em}#sbo-rt-content p.alpha{font-size:1.2em;font-weight:bold;margin-left:.2em;margin-top:1em;margin-bottom:.3em;text-align:left}#sbo-rt-content ul.bulleted{font-size:100%;text-align:justify;margin-left:2.5em;margin-right:3em;margin-top:1em;margin-bottom:1em;text-indent:0}#sbo-rt-content ol.OrderedList{font-size:100%;text-align:left;margin-left:2.5em;margin-right:3em;margin-top:1em;margin-bottom:1em}#sbo-rt-content ul.bulleted1{font-size:100%;text-align:left;margin-left:1em;margin-right:5em;margin-top:1em;margin-bottom:1em;list-style-type:none}#sbo-rt-content ul.bulleted1_a{font-size:100%;text-align:justify;margin-left:0;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0;list-style-type:none}#sbo-rt-content ul.bulleted2{font-size:100%;text-align:justify;margin-left:2.3em;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0}#sbo-rt-content ul.bulleted4{font-size:100%;text-align:center;margin-left:1.3em;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0;list-style-type:none}#sbo-rt-content .numbered{font-size:small;text-align:justify;margin-left:2em;margin-right:2em;margin-top:.5em;margin-bottom:.5em;text-indent:1em}#sbo-rt-content .bulletedin{font-size:100%;text-align:justify;margin-left:4em;margin-right:4em;margin-top:.5em;margin-bottom:.5em}#sbo-rt-content ul.None{font-size:.9em;text-align:justify;margin-left:3em;margin-right:2em;margin-top:.5em;margin-bottom:.5em;list-style-type:none}#sbo-rt-content .Listing{font-size:small;margin-bottom:0}#sbo-rt-content .PCode1{font-size:small;margin-top:.7em;margin-bottom:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode2{font-size:small;margin-top:1em;margin-bottom:.1em;margin-left:2.2em;text-align:left;font-family:monospace}#sbo-rt-content .PCode3{font-size:small;margin-top:0;margin-left:2.2em;margin-bottom:.1em;text-align:left;font-family:monospace}#sbo-rt-content .NoteCaption{font-size:small;margin-top:1.3em;margin-left:5em;margin-right:5em;border:1.1px solid black;padding:.5em;margin-bottom:1.3em}#sbo-rt-content .Table{font-size:100%;margin-bottom:1em;margin-left:0}#sbo-rt-content .toc{font-size:1.1em;margin-top:.2em;margin-bottom:.2em;text-align:left;font-weight:bold}#sbo-rt-content .toca{font-size:1.1em;margin-top:.8em;margin-bottom:.4em;text-align:left;font-weight:bold}#sbo-rt-content .toc1{font-size:1.1em;margin-top:.4em;margin-bottom:.3em;text-align:left;text-indent:1.4em;font-weight:normal}#sbo-rt-content .toc2{font-size:1.2em;margin-top:.4em;margin-bottom:.3em;text-align:left;font-weight:bold}#sbo-rt-content .toc3{font-size:.9em;margin-top:.4em;margin-bottom:.3em;text-align:left;text-indent:3.5em;font-weight:normal}#sbo-rt-content .toc4{font-size:1.1em;margin-top:.2em;margin-bottom:.5em;text-align:left;font-weight:bold}#sbo-rt-content .tocch{font-size:1.3em;margin-top:.7em;margin-bottom:.7em;text-align:left;font-weight:bold}#sbo-rt-content .noborder{margin-bottom:1em;border-top:0 solid #FFF;border-bottom:0 solid #FFF}#sbo-rt-content .authurright{text-align:right;margin-top:0;margin-bottom:0}#sbo-rt-content .FormalPara{font-size:small;margin-bottom:.7em}#sbo-rt-content .FontName1{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content span.FontName2{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content span.FontName3{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content .rightarrow{margin-top:0}#sbo-rt-content div.thinline{margin-top:1em;margin-bottom:1em;border-top:solid 4px #AFAFB0;border-bottom:solid 4px #AFAFB0}#sbo-rt-content span.line{text-decoration:underline}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content div.box{border-top:solid 2px;border-bottom:solid 2px}#sbo-rt-content .app{font-size:150%;margin-left:.8em}#sbo-rt-content .page{text-decoration:none;color:#000}#sbo-rt-content .cXXX{text-decoration:none;color:#000}#sbo-rt-content .textindent{margin-left:1.7em;margin-top:1em;margin-bottom:1em;font-size:100%}#sbo-rt-content .textindent1{margin-left:1.7em;margin-top:0;margin-bottom:0;font-size:100%}#sbo-rt-content .textindent2{margin-left:1.7em;margin-top:0;margin-bottom:0;font-size:100%;text-indent:1em}#sbo-rt-content p.FootNote{margin-top:.8em;margin-bottom:0;font-size:85%;text-indent:0;text-align:left;margin-left:1.1em;margin-right:1.1em}#sbo-rt-content pre{margin-left:0;font-family:monospace;white-space:pre-wrap}#sbo-rt-content p.Heading4a{font-size:1.15em;font-weight:bold;text-indent:1em;margin-top:1.3em;margin-bottom:.3em;border-top:3px solid #4d4d4c;border-left:solid 3px #4d4d4c;border-right:solid 3px #4d4d4c;border-bottom:solid 3px #4d4d4c;text-align:center}#sbo-rt-content p.noindent8{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:1em;text-align:center;font-weight:bold;color:#8A8A8A}#sbo-rt-content .tocb{font-size:1.4em;margin-top:.5em;margin-bottom:.2em;text-align:left;font-weight:bold}#sbo-rt-content .part{font-weight:normal;font-size:1em;margin-bottom:5px;text-align:left;padding-left:1.3em;padding-bottom:10em;padding-right:1.3em;border:1.1px solid black}#sbo-rt-content p.Heading5{font-size:1em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;text-align:center}#sbo-rt-content p.noindent5s{font-size:100%;text-indent:0;margin-top:.1em;margin-bottom:.1em;margin-left:0;margin-right:0;text-align:right}#sbo-rt-content span.strike{text-decoration:line-through}
+    </style><script> // <![CDATA[
+    var g = {
+      position_cache: {
+        
+          "chapter": "/api/v1/book/9781430260585/chapter/9781430260585_Ch10.xhtml",
+          "book_id": "9781430260585",
+          "chapter_uri": "9781430260585_Ch10.xhtml",
+          "position": 0,
+          "user_uuid": "29525685-85c9-45c7-9eda-3c178d86398e",
+          "next_chapter_uri": "/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch11.xhtml"
+        
+      },
+      title: "Node.js Recipes: A Problem\u002DSolution Approach",
+      author_list: "Cory Gackenheimer",
+      format: "book",
+      source: "application/epub+zip",
+      is_system_book: true,
+      is_public: false,
+      loaded_from_server: true,
+      allow_scripts: false,
+      has_mathml: false,
+      show_ios_app_teaser: false
+    };
+    // ]]></script><script src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/modernizr.js"></script><script>
+    
+      
+        
+
+        
+
+        
+          
+            window.PUBLIC_ANNOTATIONS = true;
+          
+        
+
+      
+
+      
+        window.MOBILE_PUBLIC_ANNOTATIONS = false;
+      
+
+    
+
+    
+      window.PRIVACY_CONTROL_OVERRIDE = false;
+    
+
+    
+      window.PRIVACY_CONTROL_SWITCH = true;
+    
+
+    
+      window.PUBLISHER_PAGES = true;
+    
+
+      window.SBO = {
+        "constants": {
+          "SITB_ENDPOINT": "https://www.safaribooksonline.com/api/v2/sitb/",
+          "SEARCH_SELECT_ENDPOINT": "https://www.safaribooksonline.com/api/v2/search/select/",
+          "ENABLE_ONLINE_TRAINING": true
+        }
+      };
+  </script><link rel="canonical" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml"><meta name="description" content="CHAPTER 10 Connecting to a Data Store If you are building an application with Node.js, you are almost inevitably going to need some form of data storage. This can ... "><meta property="og:title" content="CHAPTER 10: Connecting to a Data Store"><meta itemprop="isPartOf" content="/library/view/nodejs-recipes-a/9781430260585/"><meta itemprop="name" content="CHAPTER 10: Connecting to a Data Store"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781430260585/"><meta property="og:description" itemprop="description" content="CHAPTER 10 Connecting to a Data Store If you are building an application with Node.js, you are almost inevitably going to need some form of data storage. This can ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Apress"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781430260585"><meta property="og:book:author" itemprop="author" content="Cory Gackenheimer"><meta property="og:book:tag" itemprop="about" content="JavaScript"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: &lt;%= font_size %&gt; !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: &lt;%= font_family %&gt; !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: &lt;%= column_width %&gt;% !important; margin: 0 auto !important; }"></style><noscript>&lt;meta http-equiv="refresh" content="0; url=/library/no-js/" /&gt;</noscript><script type="text/javascript">
+  (function(i,s,o,g,r,a,m) {
+    i['GoogleAnalyticsObject']=r;
+    i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+    a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+    a.async=1;
+    a.src=g;
+    m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  var matches = document.cookie.match(/BrowserCookie\s*=\s*([a-f0-9\-]{36})/),
+      user_uuid = null;
+
+  if (matches && matches.length === 2) {
+    user_uuid = matches[1];
+  }
+
+
+  ga('create', 'UA-39299553-7', {'userId': '29525685-85c9-45c7-9eda-3c178d86398e' });
+
+
+ga('set', 'dimension1', 'Trial');
+ga('set', 'dimension6', user_uuid);
+
+
+  ga('set', 'dimension2', '29525685-85c9-45c7-9eda-3c178d86398e');
+  
+
+
+
+
+
+
+  //enable enhanced link tracking
+  ga('require', 'linkid', 'linkid.js');
+
+  // reading interface will track pageviews itself
+  if (document.location.pathname.indexOf("/library/view") !== 0) {
+    ga('send', 'pageview');
+  }
+</script><script defer="" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/vendor.34024413b1d4.js"></script><script defer="" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/reader.a05323b190d3.js"></script><script async="" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/MathJax.js"></script><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z"></path></g></svg><span>
+              
+                Queue
+              
+            </span></a></li><li class="search"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/001o00000169U9HAAU/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Node.js Recipes: A Problem-Solution Approach
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781430260585/chapter/9781430260585_Ch10.xhtml" data-for-analytics="9781430260585:9781430260585_Ch10.xhtml" aria-label="Add to Queue"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml&amp;text=Node.js%20Recipes%3A%20A%20Problem-Solution%20Approach&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20CHAPTER%2010%3A%20Connecting%20to%20a%20Data%20Store&amp;body=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml%0D%0Afrom%20Node.js%20Recipes%3A%20A%20Problem-Solution%20Approach%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  <script defer="" src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/djangoMessagesPage.845b17d78025.js"></script>
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch09.xhtml" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">CHAPTER 9: Using Web Server Frameworks</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch11.xhtml" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">CHAPTER 11: Testing in Node.js</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><p class="ChapterNumber"><a id="Chap_10"></a>CHAPTER 10</p>
+<p class="chapimage"><img src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/frontdot.jpg" alt="image" width="82" height="25" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/frontdot.jpg"></p>
+<p class="ChapterTitle">Connecting to a Data Store</p>
+<div>
+<p class="noindent">If you are building an application with Node.js, you are almost inevitably going to need some form of data storage<a id="cXXX.253g"></a>. This can be as simple as in-memory storage or any number of data storage solutions. The Node.js community has created many drivers and connectivity bridges for nearly any data store you might encounter in your application development. In this chapter you will investigate how to use Node.js to connect to many of these, including the following:</p>
+<ul class="bulleted">
+<li>MySQL</li>
+<li>Microsoft SQL Server</li>
+<li>PostgreSQL</li>
+<li>MongoDB</li>
+<li>CouchDB</li>
+<li>Redis</li>
+<li>Cassandra</li>
+</ul>
+<div class="notepara">
+<p class="paraaftertitle1"><img src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/sq.jpg" alt="image" width="12" height="12" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/sq.jpg">&nbsp;<b>Note</b>&nbsp;&nbsp;This chapter contains a wide variety of databases to utilize with Node.js. It may not be in your best interest to spend your time installing each of these databases on your local machines or environments. This chapter focuses on the Node.js communication with these databases and not the installation and initialization of each database. Because this book is designed to focus on Node.js and how it can operate in various use cases and with all of these database types, you are encouraged to find the recipe that suits your specific database needs.</p></div>
+<p id="Sec1" class="Heading1">10-1. Connecting to MySQL<a id="cXXX.253m"></a></p>
+<div>
+<p id="Sec2" class="Heading2_2">Problem</p>
+<p class="noindent">Many developers are first introduced to database programming via MySQL<a id="cXXX.253s"></a>. Because of this, many also want to bring this familiarity, or bridge, from an existing application into a Node.js application. Because of this, you want to be able to connect to a MySQL database from within your Node.js code.</p>
+</div>
+<div>
+<p id="Sec3" class="Heading2">Solution</p>
+<p class="noindent">When you begin to integrate MySQL to your application, you must decide on a Node.js framework that you wish to use as the MySQL driver. If you choose to use npm and search for MySQL, you will likely see the mysql package listed at or near the top. You then install that package with the $ npm install mysql command.</p>
+<p class="indent"><a id="cXXX.527"></a>Once the package is installed, you are ready to use MySQL in your Node.js application. To connect and execute queries<a id="cXXX.528"></a>, you can use a module similar to the one that you see in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list1" id="_list1">Listing 10-1</a>. In this example you can utilize the MySQL sample database, Sakila, which you can install from the instructions found at <span class="FontName1"><a href="http://dev.mysql.com/doc/sakila/en/sakila-installation.html">http://dev.mysql.com/doc/sakila/en/sakila-installation.html</a></span>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list1" id="list1">Listing 10-1</a></i></b>.&nbsp;&nbsp;Connecting and Querying MySQL</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* mysql</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var mysql = require('mysql');</span><br>&nbsp;<br><span class="FontName1">var connectionConfig = {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">host: 'localhost',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">user: 'root',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">password: '',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">database: 'sakila'</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">var connection = mysql.createConnection(connectionConfig);</span><br>&nbsp;<br>&nbsp;<br><span class="FontName1">connection.connect(function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connection::connected');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">connection.query('SELECT * FROM actor', function(err, rows, fields) {</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) throw err;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">rows.forEach(function(row) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(row.first_name, row.last_name);</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">var actor = { first_name: 'Wil', last_name: 'Wheaton' };</span><br><span class="FontName1">connection.query('INSERT INTO actor SET ?', actor, function(err, results) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) throw err;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(results);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">connection.end(function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connection::end');</span><br><span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec4" class="Heading2">How It Works</p>
+<p class="noindent">Using the mysql module to connect to MySQL begins with a connection configuration object. The connection object in your solution simply provides the host, user, password, and database to which you wish to connect. These are the basic settings, but there are other options that can be configured on this object, as you see in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab1" id="_Tab1">Table 10-1</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab1" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab1">Table 10-1</a>. </span>Connection Options<a id="cXXX.529"></a> for MySQL </p>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> bigNumberStrings</td>
+<td> When used with supportBigNumbers, Big Numbers will be represented by strings in your JavaScript. Default: False</td>
+</tr>
+<tr>
+<td> Charset</td>
+<td> Names the charset that you want to use for the connection. Default: UTF8_GENERAL_CI</td>
+</tr>
+<tr>
+<td> Database</td>
+<td> Lists the name of the database on the MySQL server.</td>
+</tr>
+<tr>
+<td> Debug</td>
+<td> Prints details using stdout. Default: False</td>
+</tr>
+<tr>
+<td> Flags</td>
+<td> Lists nondefault connection flags to be used.</td>
+</tr>
+<tr>
+<td> Host</td>
+<td> Provides the hostname of the database server to which you are connecting. Default: Localhost</td>
+</tr>
+<tr>
+<td> insecureAuth</td>
+<td> Allows connecting to insecure (older) server authentication methods. Default: False</td>
+</tr>
+<tr>
+<td> multipleStatements</td>
+<td> Allows more than one statement per query. This could allow for SQL injection attacks. Default: False</td>
+</tr>
+<tr>
+<td> Password</td>
+<td> Lists the password of the MySQL user.</td>
+</tr>
+<tr>
+<td> Port</td>
+<td> Gives the port number on the machine where the MySQL server instance resides. Default: 3306</td>
+</tr>
+<tr>
+<td> queryFormat</td>
+<td> Creates a custom query function.</td>
+</tr>
+<tr>
+<td> socketPath</td>
+<td> Provides the path to a Unix socket. This will cause the host and port to be ignored.</td>
+</tr>
+<tr>
+<td> stringifyObjects</td>
+<td> Will stringify objects instead of converting their values. Default: False</td>
+</tr>
+<tr>
+<td> supportBigNumbers</td>
+<td> Use this when using BIGINT or DECIMAL in your columns. Default: False</td>
+</tr>
+<tr>
+<td> Timezone</td>
+<td> Lists the time zone for local dates. Default: Local</td>
+</tr>
+<tr>
+<td> typecast</td>
+<td> Converts types to native JavaScript types. Default: True</td>
+</tr>
+<tr>
+<td> User</td>
+<td> Lists the MySQL user to utilize for authentication.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">Once you create your connection object, you are then able to instantiate a new connection to your MySQL server. This is done by calling <span class="FontName1">mysql.createConnection(config)</span>, which will then instantiate the connection object and pass to it the <span class="FontName1">ConnectionConfig()</span> object<a id="cXXX.531"></a>.</p>
+<p class="indent"><a id="cXXX.532"></a>You can see in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list2" id="_list2">Listing 10-2</a> that the connection object will actually attempt to create the connection in the Protocol module<a id="cXXX.533"></a>, which performs the necessary MySQL handshake in order to connect to the server.<a id="cXXX.534"></a></p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list2" id="list2">Listing 10-2</a></i></b>.&nbsp;&nbsp;Connecting in the MySQL Module</p>
+<pre><span class="FontName1">module.exports = Connection;</span><br><span class="FontName1">Util.inherits(Connection, EventEmitter);</span><br><span class="FontName1">function Connection(options) {</span><br>&nbsp;&nbsp;<span class="FontName1">EventEmitter.call(this);</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">this.config = options.config;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">this._socket&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= options.socket;</span><br>&nbsp;&nbsp;<span class="FontName1">this._protocol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= new Protocol({config: this.config, connection: this});</span><br>&nbsp;&nbsp;<span class="FontName1">this._connectCalled = false;</span><br>&nbsp;&nbsp;<span class="FontName1">this.state&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= "disconnected";</span><br><span class="FontName1">}</span></pre>
+<p class="indent">Now that you have a connection to the MySQL server, you are able to query by using that connection. In the solution you were able to perform two distinct types of queries.</p>
+<p class="indent"><a id="cXXX.535"></a>The first query was an explicit select statement from the actor table in your database. This required nothing more than properly forming the query as a string to the first parameter of the <span class="FontName1">connection.query</span> method<a id="cXXX.536"></a>. The <span class="FontName1">connection.query</span> method<a id="cXXX.537"></a> can accept up to three arguments: sql, values, and a callback. If the values parameter is not present, it is detected by checking if it is a function, then just the SQL is enqueued to be executed on the server. The callback will be returned once the query has completed.</p>
+<p class="indent">In the second query, you pass in&nbsp;&nbsp;some values that you wish to have set within the database. These values are in the form of a JavaScript object, and they are passed in to the ‘?’ placeholder on your INSERT query. One of the great things about using this method is that the mysql module will attempt to safely escape all of the data that you are loading into your database. It does this in order to mitigate SQL injection attacks. There is an escape matrix that will perform different types of escaping <a id="cXXX.538"></a>for different value types in the mysql module (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab2" id="_Tab2">Table 10-2</a>).</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab2" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab2">Table 10-2</a>. </span>Escape Matrix<a id="cXXX.539"></a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Value Type</th>
+<th>How It Is Converted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Arrays</td>
+<td> Turned to a list [‘a’, ‘b’] =&gt; ‘a’, ‘b’</td>
+</tr>
+<tr>
+<td> Boolean</td>
+<td> ‘True’ / ‘false’ strings</td>
+</tr>
+<tr>
+<td> Buffers</td>
+<td> Hex strings</td>
+</tr>
+<tr>
+<td> Dates</td>
+<td> ‘YYYY-mm-dd HH:ii:ss’ strings</td>
+</tr>
+<tr>
+<td> NaN/Infinity</td>
+<td> As is, because MySQL has nothing to convert them to</td>
+</tr>
+<tr>
+<td> Nested Arrays</td>
+<td> Grouped lists [[‘a’,’b’], [‘c’,’d’]] =&gt; (‘a’, b’), (‘c’, ‘d’)</td>
+</tr>
+<tr>
+<td> Numbers</td>
+<td> None</td>
+</tr>
+<tr>
+<td> Objects</td>
+<td> Key-‘value’ pairs are generated; nested objects turn to strings</td>
+</tr>
+<tr>
+<td> Strings</td>
+<td> Safely escaped</td>
+</tr>
+<tr>
+<td> Undefined/null</td>
+<td> NULL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">This is just a basic example for connecting and executing queries with MySQL by using the mysql module. There are other methods that you can utilize as well. You can stream the response from a query and bind to the events in order to perform specific actions on a row as it is returned, before continuing to the next. An example of this would be as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list3" id="_list3">Listing 10-3</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list3" id="list3">Listing 10-3</a></i></b>.&nbsp;&nbsp;Streaming<a id="cXXX.540"></a> a Query<a id="cXXX.541"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* mysql</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var mysql = require('mysql');</span><br>&nbsp;<br><span class="FontName1">var connectionConfig = {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">host: 'localhost',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">user: 'root',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">password: '’,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">database: 'sakila'</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">var connection = mysql.createConnection(connectionConfig);</span><br>&nbsp;<br>&nbsp;<br><span class="FontName1">connection.connect(function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connection::connected');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">var query = connection.query('SELECT * FROM actor');</span><br>&nbsp;<br><span class="FontName1">query.on('error', function(err) {</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(err);</span><br>&nbsp;<br><span class="FontName1">}).on('fields', function(fields) {</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(fields);</span><br>&nbsp;<br><span class="FontName1">}).on('result', function(row) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">connection.pause();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(row);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">connection.resume();</span><br><span class="FontName1">}).on('end', function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connection::end');</span><br><span class="FontName1">});</span></pre>
+<p class="indent">Here you see that the query itself does not change; instead of passing a callback to the query method, we are binding to the events that are emitted from the query while it executes. So as the fields are parsed they are processed. Then for each row you process that data before moving on to the next record. This is done by using the<a id="cXXX.542"></a>
+<span class="FontName1">connection.pause()</span> function, then performing your actions, followed by the <span class="FontName1">connection.resume()</span> method<a id="cXXX.543"></a>.</p>
+<p class="indent">Connecting and using MySQL in Node.js is straightforward when you use a framework such as the mysql module. If MySQL is your database of choice, it should not limit your ability to choose Node.js as your data access server.</p>
+</div>
+<p id="Sec5" class="Heading1">10-2. Connecting to Microsoft SQL Server<a id="cXXX.258j"></a></p>
+<div>
+<p id="Sec6" class="Heading2_2">Problem</p>
+<p class="noindent">You want to integrate your Node.js application into a Microsoft SQL Server<a id="cXXX.258y"></a> instance.</p>
+</div>
+<div>
+<p id="Sec7" class="Heading2">Solution</p>
+<p class="noindent">Just as with MySQL, there are several solutions for finding a driver for Microsoft SQL Server with Node.js. One of the most popular packages is “tedious,” named after the Tabular Data Stream (TDS)<a id="cXXX.544"></a> protocol for connecting to SQL Server. You first install this package via npm with the <span class="FontName1">$ npm install tedious</span> command<a id="cXXX.545"></a>.<a id="cXXX.546"></a></p>
+<p class="indent">You then build a set of modules that interact with SQL Server. The first portion of this solution, <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list4" id="_list4">Listing 10-4</a>, utilizes tedious to create a connection to your SQL Server instance. The second part, as seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list5" id="_list5">Listing 10-5</a>, is the module that contains the interaction with the data on your SQL Server instance.</p>
+<div class="notepara">
+<p class="paraaftertitle1"><img src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/sq.jpg" alt="image" width="12" height="12" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/sq.jpg">&nbsp;<b>Note</b>&nbsp;&nbsp;SQL Server is a Microsoft product. As such, the following implementation will work only if your server is running Windows and SQL Server.</p></div>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list4" id="list4">Listing 10-4</a></i></b>.&nbsp;&nbsp;Connecting<a id="cXXX.547"></a> to Your SQL Server Instance<a id="cXXX.548"></a></p>
+<pre><span class="FontName1">/*</span><br><span class="FontName1">* Using MS SQL</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var TDS = require('tedious'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">Conn = TDS.Connection,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">aModel = require('./10-2-1.js');</span><br>&nbsp;<br><span class="FontName1">var conn = new Conn({</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">username: 'sa',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">password: 'pass',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">server: 'localhost',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">options: {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">database: 'Northwind',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">rowCollectionOnRequestCompletion: true</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">function handleResult(err, res) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) throw err;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(res);</span><br><span class="FontName1">}</span><br>&nbsp;<br><span class="FontName1">conn.on('connect', function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) throw err;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">aModel.getByParameter(conn, 'parameter', handleResult);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">aModel.getByParameterSP(conn, 'parameter', handleResult);</span><br><span class="FontName1">});</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list5" id="list5">Listing 10-5</a></i></b>.&nbsp;&nbsp;Querying<a id="cXXX.549"></a> Microsoft SQL Server<a id="cXXX.550"></a></p>
+<pre><span class="FontName1">var TDS = require('tedious'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">TYPES = TDS.TYPES,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">Request = TDS.Request;</span><br><span class="FontName1">var aModel = module.exports = {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Use vanilla SQL</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">getByParameter: function(conn, parm, callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var q = 'select * from model (NOLOCK) where identifier = @parm';</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var req = new Request(q, function(err, rowcount, rows) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback( err, rows );</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">req.addParameter('parm', TYPES.UniqueIdentifierN, parm);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">conn.execSql(req);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">},</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// Use a Store Procedure</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">getByParameterSP: function(conn, parm, callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var q = 'exec sp_getModelByParameter @parm';</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var req = new Request(q, function(err, rowcount, rows) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback( err, rows );</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">req.addParameter('parm', TYPES.UniqueIdentifierN, parm);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">conn.execSql(req);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">};</span></pre>
+</div>
+<div>
+<p id="Sec8" class="Heading2">How It Works</p>
+<p class="noindent">When you first connect to a Microsoft SQL Server by using the tedious module, you first need to create a connection. This is done by using the <span class="FontName1">TDS.Connection</span> object and instantiating it with a configuration object. In your solution, to create the connection you send a username, password, server name, and a set of options<a id="cXXX.530"></a> to be used in the connection. There are a number of options that can be passed into this object, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab3" id="_Tab3">Table 10-3</a>.<a id="cXXX.551"></a></p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab3" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab3">Table 10-3</a>. </span>TDS.Connection<a id="cXXX.552"></a> Configuration </p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> options.cancelTimeout</td>
+<td> Time until a cancel request times out. Default: 5 seconds</td>
+</tr>
+<tr>
+<td> options.connectTimeout</td>
+<td> Time to wait until the connection attempt times out. Default: 15 seconds</td>
+</tr>
+<tr>
+<td> options.cryptoCredentialsDetails</td>
+<td> Object that will contain any credentials required for encryption. Default: Empty Object ‘{}’</td>
+</tr>
+<tr>
+<td> options.database</td>
+<td> The name of the database to connect to</td>
+</tr>
+<tr>
+<td> options.debug.data</td>
+<td> Boolean telling whether debug information about packet data is sent. Default: False</td>
+</tr>
+<tr>
+<td> options.debug.packet</td>
+<td> Boolean telling whether debug information about packets will be sent. Default: False</td>
+</tr>
+<tr>
+<td> options.debug.payload</td>
+<td> Boolean telling whether debug information about packet payload is sent. Default: False</td>
+</tr>
+<tr>
+<td> options.debug.token</td>
+<td> Boolean telling whether debug information about stream tokens is sent. Default: False</td>
+</tr>
+<tr>
+<td> options.encrypt</td>
+<td> Sets whether or not to encrypt requests. Default: False</td>
+</tr>
+<tr>
+<td> options.instanceName</td>
+<td> The named instance to connect to.</td>
+</tr>
+<tr>
+<td> options.isolationLevel</td>
+<td> The level of isolation on the server, or when the server will allow data to be seen from another operation. Default: Read Uncommitted (This is known as “dirty reads,” or the lowest level of isolation. A given transaction can see uncommitted transactions from another transaction.)</td>
+</tr>
+<tr>
+<td> options.packetSize</td>
+<td> The size limit for packets that are sent to and from the server. Default: 4 KB</td>
+</tr>
+<tr>
+<td> options.port</td>
+<td> The port on which to connect. This option is mutually exclusive with options.instanceName. Default: 1433</td>
+</tr>
+<tr>
+<td> options.requestTimeout</td>
+<td> Time until a given request times out. Default: 15 seconds</td>
+</tr>
+<tr>
+<td> options.rowCollectionOnDone</td>
+<td> Boolean that states that a row collection will be received when the ‘done’, ‘doneInProc’, and ‘doneProc’ events are emitted. Default: False</td>
+</tr>
+<tr>
+<td> options.rowCollectionOnRequestCompletion</td>
+<td> Boolean that, when true, will provide a row collection in the Request callback. Default: False</td>
+</tr>
+<tr>
+<td> options.tdsVersion</td>
+<td> The version of the TDS protocol that the connection is to use. Default: 7_2</td>
+</tr>
+<tr>
+<td> options.textsize</td>
+<td> Sets the maximum width of any column for text data types. Default: 2147483647</td>
+</tr>
+<tr>
+<td> .password</td>
+<td> The password associated with the username</td>
+</tr>
+<tr>
+<td> .server</td>
+<td> The name or IP address of the server to which you wish to connect</td>
+</tr>
+<tr>
+<td> .userName</td>
+<td> Username to use for connecting to the MS SQL Server instance (Note: Windows authentication connections are not supported.)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">Once you have passed these options to the connection object, which is a Node.js <span class="FontName1">EventEmitter</span><a id="cXXX.553"></a>, you then bind to the ‘connect’ event. There are several ways in which the ‘connect’ event can be emitted from the connection as described below:<a id="cXXX.554"></a></p>
+<ul class="bulleted">
+<li>A successful connection</li>
+<li>A login failure</li>
+<li>After <span class="FontName1">connectTimeout</span> has elapsed</li>
+<li>After a socket error occurs during connection</li>
+</ul>
+<p class="indent">Once you have successfully connected to SQL Server, you then call your module that contains your requests. <span class="FontName1">TDS.Request</span> is an <span class="FontName1">EventEmitter</span> that allows you to execute SQL either by a plain T-SQL string or a stored procedure. The request also accepts a callback, which will either be called directly, or the result will be applied to the ‘<span class="FontName1">requestCompleted</span>’ event.</p>
+<p class="indent"><a id="cXXX.555"></a>Just as with many SQL Server implementations, you can pass parameters to the SQL that you wish to execute. In both of the examples from your solution (one an SQL text and one a stored procedure), you pass a named parameter. This named parameter is added to the request by using the <span class="FontName1">Request.addParameter()</span> method<a id="cXXX.556"></a>. The <span class="FontName1">addParameter()</span> method<a id="cXXX.557"></a> accepts up to four arguments: name, type, value, and an options object. The type that is used when adding a parameter can be any type in the <span class="FontName1">TDS.Types</span> object that is allowed to be part of a parameter. These are Bit, TinyInt, SmallInt, Int, BigInt, Float,&nbsp;&nbsp;Real, SmallDateTime, DateTime, VarChar, Text, NVarChar, Null, UniqueIdentifier, and UniqueIdentifierN.<a id="cXXX.558"></a></p>
+<p class="indent">Once you have made the request object, and you added the parameters that you need, you can then execute the SQL statement by calling <span class="FontName1">connection.execSql(&lt;Request&gt;)</span> where you pass the request to the method. When the request completes, your callback executes and you can handle the result and the rows accordingly.</p>
+<p class="indent">You now understand how to implement a connection to MS SQL Server by using Node.js and the tedious package to manage TDS connections.</p>
+</div>
+<p id="Sec9" class="Heading1">10-3. Using PostgreSQL with Node.js <a id="cXXX.559"></a></p>
+<div>
+<p id="Sec10" class="Heading2_2">Problem</p>
+<p class="noindent">You are going to use PostgreSQL<a id="cXXX.560"></a> for your database and need to utilize this in your Node.js application.</p>
+</div>
+<div>
+<p id="Sec11" class="Heading2">Solution</p>
+<p class="noindent">There are several packages that can be used for connecting to PostgreSQL. This solution will be utilizing the node-postgres module, which is a low-level implementation of PostgreSQL. <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list6" id="_list6">Listing 10-6</a> shows a simple example of connecting to a PostgreSQL instance and executing a simple query, then logging the result.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list6" id="list6">Listing 10-6</a></i></b>.&nbsp;&nbsp;Connecting to PostgreSQL and Executing a Query</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* PostgreSQL</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var pg = require('pg');</span><br>&nbsp;<br><span class="FontName1">var connectionString = 'tcp://postgres:pass@localhost/postgres';</span><br>&nbsp;<br><span class="FontName1">var client = new pg.Client(connectionString);</span><br>&nbsp;<br><span class="FontName1">client.connect(function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) throw err;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">client.query('SELECT EXTRACT(CENTURY FROM TIMESTAMP "2011-11-11 11:11:11")', function(err, result) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err)&nbsp;&nbsp;throw err;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(result.rows[0]);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">client.end();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec12" class="Heading2">How It Works</p>
+<p class="noindent">This solution begins by installing the node-postgres module by using <span class="FontName1">$ npm install pg</span>. You then can add this to your Node.js code. You then create a connection to your PostgreSQL instance by instantiating a new client.&nbsp;&nbsp;The client constructor can parse the connection string parameters, and you can then create a connection as seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list7" id="_list7">Listing 10-7</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list7" id="list7">Listing 10-7</a></i></b>.&nbsp;&nbsp;Client Construct of node-postgres</p>
+<pre><span class="FontName1">var Client = function(config) {</span><br>&nbsp;&nbsp;<span class="FontName1">EventEmitter.call(this);</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">this.connectionParameters = new ConnectionParameters(config);</span><br>&nbsp;&nbsp;<span class="FontName1">this.user = this.connectionParameters.user;</span><br>&nbsp;&nbsp;<span class="FontName1">this.database = this.connectionParameters.database;</span><br>&nbsp;&nbsp;<span class="FontName1">this.port = this.connectionParameters.port;</span><br>&nbsp;&nbsp;<span class="FontName1">this.host = this.connectionParameters.host;</span><br>&nbsp;&nbsp;<span class="FontName1">this.password = this.connectionParameters.password;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">var c = config || {};</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">this.connection = c.connection || new Connection({</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">stream: c.stream,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">ssl: c.ssl</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;<span class="FontName1">this.queryQueue = [];</span><br>&nbsp;&nbsp;<span class="FontName1">this.binary = c.binary || defaults.binary;</span><br>&nbsp;&nbsp;<span class="FontName1">this.encoding = 'utf8';</span><br>&nbsp;&nbsp;<span class="FontName1">this.processID = null;</span><br>&nbsp;&nbsp;<span class="FontName1">this.secretKey = null;</span><br>&nbsp;&nbsp;<span class="FontName1">this.ssl = c.ssl || false;</span><br><span class="FontName1">};</span></pre>
+<p class="indent">Once you have created this connection, you next execute a query. This is done by calling <span class="FontName1">client.query()</span> and passing an SQL string as the first parameter. The second parameter can either be an array of values to be applied to the query, like you saw in Section 10-1, or the callback. The callback function will pass two arguments, an error if one exists, or the results of the query. The results, as you see, will contain an array of the rows returned. Once you have handled the results, you are able to then close the client connection by calling <span class="FontName1">client.end()</span>. The .<span class="FontName1">end()</span> method will close the connection via the <span class="FontName1">connection.end()</span> method<a id="cXXX.561"></a>.</p>
+<p class="indent">Your example used a plaintext SQL statement for node-postgres to execute. There are two other methods for executing a query with node-postgres: parameterized, and a prepared statement.</p>
+<p class="indent">Parameterized queries allow you to pass parameters to the query such as '<span class="FontName1">select description from products where name=$1', ['sandals']'</span>. By using parameterized queries, you provide a greater level of protection from SQL injection attacks. They also perform more slowly than plaintext queries, because before each execution these statements are prepared and then executed.</p>
+<p class="indent">The final type of query that you are able to execute with node-postgres is a prepared statement. One of these will be prepared once, and then for each session connection to postgres, the execution plan for this SQL query is cached so that if it is executed more than once it becomes the most efficient way to execute SQL with node-postgres. Like the parameterized queries, a prepared statement also provides a similar barrier to SQL injection attacks. The prepared statement is created by passing an object to the query method that has a name, text, and a values attribute. You can then call these prepared statements by the names that you provided for them.</p>
+<p class="indent">Utilizing node-postgres allows you to interact directly and efficiently with PostgreSQL from your Node.js application. The next sections will be a departure from the traditional SQL interfaces with Node.js, and you will begin to investigate several no SQL options for connecting to Node.js.</p>
+</div>
+<p id="Sec13" class="Heading1">10-4. Using Mongoose to Connect to MongoDB<a id="cXXX.263k"></a></p>
+<div>
+<p id="Sec14" class="Heading2_2">Problem</p>
+<p class="noindent">You want to be able to utilize MongoDB<a id="cXXX.263u"></a> in your Node.js application. To do this, you choose to integrate with Mongoose.</p>
+</div>
+<div>
+<p id="Sec15" class="Heading2">Solution</p>
+<p class="noindent">When you use MongoDB with your Node.js application, there are many drivers you can choose from to connect to your data store. However, what is likely the most widely used solution is to integrate your MongoDB instance with the Mongoose module. After installing with <span class="FontName1">$ npm install mongoose</span>, you can then create a connection to MongoDB by using the connection methods outlined in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list8" id="_list8">Listing 10-8</a>.<a id="cXXX.562"></a></p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list8" id="list8">Listing 10-8</a></i></b>.&nbsp;&nbsp;<a id="cXXX.563"></a>Connecting to MongoDB with Mongoose</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Connecting to MongoDB with Mongoose</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var mongoose = require('mongoose');</span><br>&nbsp;<br><span class="FontName1">// simple connection string</span><br><span class="FontName1">// mongoose.connect('mongodb://localhost/test');</span><br><span class="FontName1">mongoose.connect('mongodb://localhost/test', {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db: { native_parser: false },</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">server: { poolSize: 1 }</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// replset:&nbsp;&nbsp;{ rs_name : 'myReplicaSetName' },</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// user: 'username',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">// pass: 'password'</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">// using authentication</span><br><span class="FontName1">// mongoose.connect('mongodb://username:password@host/collection')</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('open', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('huzzah! connection open');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('connecting', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connecting');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('connected', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connected');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('reconnected', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('reconnected');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('disconnecting', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('disconnecting');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('disconnected', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('disconnected');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('error', function(error) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('error', error);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">mongoose.connection.on('close', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connection closed');</span><br><span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec16" class="Heading2">How It Works</p>
+<p class="noindent">Connecting to MongoDB in general is not complex. It requires a MongoDB-specific uniform resource identifier (URI)<a id="cXXX.564"></a> scheme, which will point to a server (or servers) that can host your MongoDB data. In Mongoose, the same URI scheme<a id="cXXX.565"></a> is used, as seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list9" id="_list9">Listing 10-9</a>, with the addition of several options that you saw in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list8">Listing 10-8</a>.<a id="cXXX.566"></a></p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list9" id="list9">Listing 10-9</a></i></b>.&nbsp;&nbsp;MongoDB Connection String</p>
+<pre><span class="FontName1">mongodb://[username:password@]host[:port][[,host2[:port2]...[,hostN[:portN][/database][?options]</span></pre>
+<p class="indent">For Mongoose, you use the <span class="FontName1">mongoose.connect(&lt;uri&gt;, &lt;options&gt;)</span> method. The options that you set in Mongoose can be set like any of those listed in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab4" id="_Tab4">Table 10-4</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab4" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab4">Table 10-4</a>. </span>Mongoose Connection Options<a id="cXXX.567"></a><a id="cXXX.568"></a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> .auth</td>
+<td> The authentication mechanism options, including the source and type of mechanism to use.</td>
+</tr>
+<tr>
+<td> .db</td>
+<td> Passed to the connection .db instance (e.g., {native_parser: true} will use native binary JSON [BSON] parsing).</td>
+</tr>
+<tr>
+<td> .mongos</td>
+<td> Boolean that says to use the high-availability option for your .mongos. This should be set to true if connecting to multiple instances of Mongoose.</td>
+</tr>
+<tr>
+<td> .pass</td>
+<td> The password associated with the username.</td>
+</tr>
+<tr>
+<td> .replset</td>
+<td> This is the name of the replica set to use, assuming that the Mongoose instance you are connecting to is a member of a set.</td>
+</tr>
+<tr>
+<td> .server</td>
+<td> Passed to the connection server instance (e.g., {poolSize: 1} number of pools).</td>
+</tr>
+<tr>
+<td> .user</td>
+<td> The username to be used for authentication.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">The connection object inherits for the Node.js EventEmitter<a id="cXXX.569"></a>, so you can see from your solution that there are many events that you are able to subscribe to by using Mongoose. These events are outlined and described in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab5" id="_Tab5">Table 10-5</a>.<a id="cXXX.570"></a></p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab5" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab5">Table 10-5</a>. </span>Mongoose Connection Events </p>
+<table>
+<thead>
+<tr class="header">
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ‘close’</td>
+<td> Emitted after disconnected and ‘onClose’ are executed on all connections.</td>
+</tr>
+<tr>
+<td> ‘connected’</td>
+<td> Emitted once the successful connection to the database occurs.</td>
+</tr>
+<tr>
+<td> ‘connecting’</td>
+<td> Emitted when connection.open or connection.openSet is executed on the connection.</td>
+</tr>
+<tr>
+<td> ‘disconnected’</td>
+<td> Emitted after disconnecting.</td>
+</tr>
+<tr>
+<td> ‘disconnecting’</td>
+<td> Emitted when the connection.close() event is executed.</td>
+</tr>
+<tr>
+<td> ‘error’</td>
+<td> Emitted when an error occurs (i.e., when a Mongo instance is dropped).</td>
+</tr>
+<tr>
+<td> ‘fullsetup’</td>
+<td> Emitted in a replica set when all nodes are connected.</td>
+</tr>
+<tr>
+<td> ‘open’</td>
+<td> Emitted once the connection is opened to the MongoDB instance.</td>
+</tr>
+<tr>
+<td> ‘reconnected’</td>
+<td> Emitted after a subsequent connection.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">This is the basic scenario and setup for connecting to MongoDB by using Mongoose. In the next section you will investigate how to use Mongoose to smartly model a data store and retrieve it in MongoDB.</p>
+</div>
+<p id="Sec17" class="Heading1">10-5. Modeling Data for Mongoose </p>
+<div>
+<p id="Sec18" class="Heading2_2">Problem</p>
+<p class="noindent">You want to model your MongoDB data with Mongoose in your Node.js application.</p>
+</div>
+<div>
+<p id="Sec19" class="Heading2">Solution</p>
+<p class="noindent">When you model data with Mongoose, you need to utilize the <span class="FontName1">mongoose.model()</span> method<a id="cXXX.571"></a><a id="cXXX.572"></a>. You do not necessarily need the <span class="FontName1">mongoose.Schema</span> method, but for the model created in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list10" id="_list10">Listing 10-10</a> it is utilized to build the schema for the model.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list10" id="list10">Listing 10-10</a></i></b>.&nbsp;&nbsp;Creating a Model with Mongoose<a id="cXXX.573"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Modeling data with Mongoose</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var mongoose = require('mongoose'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">Schema = mongoose.Schema,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">ObjectId = Schema.ObjectId;</span><br>&nbsp;<br><span class="FontName1">mongoose.connect('mongodb://localhost/test');</span><br>&nbsp;<br><span class="FontName1">var productModel = new Schema({</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">productId: ObjectId,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">name: String,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">description: String,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">price: Number</span><br><span class="FontName1">});</span><br>&nbsp;<br>&nbsp;<br><span class="FontName1">var Product = mongoose.model('Product', productModel);</span><br>&nbsp;<br><span class="FontName1">var sandal = new Product({name: 'sandal', description: 'something to wear', price: 12});</span><br>&nbsp;<br><span class="FontName1">sandal.save(function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('sandal created');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">Product.find({name: 'sandal'}).exec(function(err, product) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(product);</span><br><span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec20" class="Heading2">How It Works</p>
+<p class="noindent">One of the reasons why Mongoose has become a high priority for anyone utilizing MongoDB in a Node.js application is due to the fact that Mongoose naturally models data. This means that you only need to generate a schema model once for your data and then you can use the model to fetch, update, and remove data from MongoDB.</p>
+<p class="indent"><a id="cXXX.574"></a>In your solution, start by importing the <span class="FontName1">mongoose.Schema</span> object<a id="cXXX.575"></a>. The schema is created by passing a JavaScript object that contains the actual schema you wish to model, as well as an optional second parameter that contains the options for your model. The schema not only allows you to create the names of the fields in your model but also provides you with the opportunity to name specific types for the values in your schema. The types that are implemented in the schema instantiation appear as&nbsp;&nbsp;<span class="FontName1">{ &lt;fieldname&gt; : &lt;DataType&gt; }</span>. The available types are the following:</p>
+<ul class="bulleted">
+<li>Array</li>
+<li>BooleanBuffer</li>
+<li>Date</li>
+<li>Mixed</li>
+<li>Number</li>
+<li>ObjectId</li>
+</ul>
+<p class="indent">StringThe options that you create for your schema are any that are shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab6" id="_Tab6">Table 10-6</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab6" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab6">Table 10-6</a>. </span>Options for mongoose.Schema </p>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> autoIndex</td>
+<td> Boolean that determines whether MongoDB will autogenerate an index. Default:&nbsp;&nbsp;True</td>
+</tr>
+<tr>
+<td> bufferCommands</td>
+<td> Boolean that determines whether the commands are buffered when a connection is lost, until a reconnect occurs. Default: True</td>
+</tr>
+<tr>
+<td> capped</td>
+<td> Sets the MongoDB to be capped—meaning that the collection is a fixed size. Default: False</td>
+</tr>
+<tr>
+<td> Collection</td>
+<td> String that sets the collection name.</td>
+</tr>
+<tr>
+<td> id</td>
+<td> Returns the document’s _id field—or the hexString of the object. If set to false, this will be undefined. Default: True</td>
+</tr>
+<tr>
+<td> _id</td>
+<td> Tells whether MongoDB will create the _id field when the model object is created. Default:&nbsp;&nbsp;True</td>
+</tr>
+<tr>
+<td> read</td>
+<td> Sets query.read options on the schema. This string determines whether your application will read from the primary, secondary,&nbsp;&nbsp;or nearest Mongo in a replicated set. Options: ‘primary’ ‘primaryPreferred’ ‘secondary’ ‘secondaryPreferred’ ‘nearest’</td>
+</tr>
+<tr>
+<td> safe</td>
+<td> Boolean that sets whether an error is passed to the callback. Default: True</td>
+</tr>
+<tr>
+<td> shardKey</td>
+<td> Sets which sharded collection to target.</td>
+</tr>
+<tr>
+<td> strict</td>
+<td> Boolean that ensures that nonmodel values passed to the constructor aren’t saved. Default: True</td>
+</tr>
+<tr>
+<td> toJSON</td>
+<td> Converts the model to JavaScript Object Notation (JSON).</td>
+</tr>
+<tr>
+<td> toObject</td>
+<td> Converts the model to a plain JavaScript object.</td>
+</tr>
+<tr>
+<td> versionKey</td>
+<td> Sets the version of the schema when the model is created. Default: __v: 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">When you create your “product” schema, you create a simple object that contains a <span class="FontName1">productId</span>, which imports the <span class="FontName1">ObjectId</span> or the <span class="FontName1">hexString</span> of the product. Your model will also create a name as a string, a description as a string, and a price as a number for the products you wish to store and retrieve.</p>
+<p class="indent">From the schema object, you now actually create a Mongoose model by using the <span class="FontName1">mongoose.model()</span> method and passing the name you chose for your model and the schema model itself. You are now able to use this new product model to create a product. You do this by passing the object that you wish to model in the document on your MongoDB server. In this solution, you create a sandal object. This is then saved by using the <span class="FontName1">sandal.save()</span> method<a id="cXXX.576"></a>, which takes a callback.</p>
+<p class="indent"><a id="cXXX.577"></a>You can also find and remove data from your model. In this solution you query your model by using <span class="FontName1">Product.find({ name: 'sandal' }),</span> which will search for all products named “sandal” and return that in the exec() callback. From within the callback you have access to the array of all the products named “sandal.” If you wish to remove all or some of these, you could loop through these results and remove them individually, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list11" id="_list11">Listing 10-11</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list11" id="list11">Listing 10-11</a></i></b>.&nbsp;&nbsp;Using <a id="cXXX.578"></a>Mongoose to Remove Records<a id="cXXX.579"></a></p>
+<pre><span class="FontName1">Product.find({name: 'sandal'}).exec(function(err, products) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(products);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">for (var i = 0; i &lt; products.length; i++) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (i &gt;= 3) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">products[i].remove(function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('removing');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">});</span></pre>
+<p class="indent">You have seen how to connect to and implement a schema with Mongoose in your Node.js application. The Mongoose object model allows for clean implementation of your models to the MongoDB document database.</p>
+</div>
+<p id="Sec21" class="Heading1">10-6. Connecting to CouchDB<a id="cXXX.268f"></a> </p>
+<div>
+<p id="Sec22" class="Heading2_2">Problem</p>
+<p class="noindent">You want to utilize CouchDB<a id="cXXX.268i"></a> in your Node.js application.</p>
+</div>
+<div>
+<p id="Sec23" class="Heading2">Solution</p>
+<p class="noindent">CouchDB is a database that utilizes JSON documents, HTTP for its application programming interface (API), and JavaScript for MapReduce. Because of this,<a id="cXXX.580"></a> it has become a natural fit for many Node.js developers. There are several modules that can be used to build your Node.js application using CouchDB. In this solution you will utilize Nano, which is a lightweight module that supports CouchDB. It can be installed by using <span class="FontName1">$ npm install nano</span><a id="cXXX.581"></a>.</p>
+<p class="indent">In <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list12" id="_list12">Listing 10-12</a>, you will create a database and insert a document into that database. Next, you will update that document in the database. You will then, in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list13" id="_list13">Listing 10-13</a>, retrieve the document and remove it from the database.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list12" id="list12">Listing 10-12</a></i></b>.&nbsp;&nbsp;<a id="cXXX.582"></a>Creating a Database and Documents in CouchDB with Nano<a id="cXXX.583"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* CouchDB</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var nano = require('nano')('</span><span class="FontName1"><a href="http://localhost:5984/">http://localhost:5984</a></span><span class="FontName1">');</span><br>&nbsp;<br><span class="FontName1">nano.db.create('products', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">var products = nano.db.use('products', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">products.insert({ name: 'sandals', description: 'for your feet', price: 12.00}, 'sandals', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">products.get('sandals', {ref_info: true}, function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">// Updating in couchDB with Nano.</span><br><span class="FontName1">products.get('sandals', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (!err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">products.insert({name: 'sandals', description: 'flip flops', price: 12.50, _rev: body._rev }, 'sandals', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (!err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">});</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list13" id="list13">Listing 10-13</a></i></b>.&nbsp;&nbsp;Removing<a id="cXXX.584"></a> a Document from a CouchDB Database<a id="cXXX.585"></a></p>
+<pre><span class="FontName1">var nano = require('nano')('</span><span class="FontName1"><a href="http://localhost:5984/">http://localhost:5984</a></span><span class="FontName1">');</span><br>&nbsp;<br><span class="FontName1">var products = nano.db.use('products');</span><br><span class="FontName1">// deleting in couchDB with Nano.</span><br><span class="FontName1">products.get('sandals', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (!err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">products.destroy( 'sandals', body._rev, function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (!err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">nano.db.destroy('products');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">});</span></pre>
+<p class="indent">You can also create requests to CouchDB by using Nano through a single <span class="FontName1">nano.request()</span> interface<a id="cXXX.586"></a>, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list14" id="_list14">Listing 10-14</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list14" id="list14">Listing 10-14</a></i></b>.&nbsp;&nbsp;Using nano.request()<a id="cXXX.587"></a></p>
+<pre><span class="FontName1">nano.request({</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db: 'products',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">doc: 'sandals',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">method: 'get'</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}, function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log('request::err', err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('request::body', body);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec24" class="Heading2">How It Works</p>
+<p class="noindent">Using CouchDB is a natural fit for many Node.js applications. The Nano module was designed to be a “minimalistic CouchDB driver for Node.js.” Not only is Nano minimalistic, but it also supports using pipes, and you get direct access to errors from CouchDB.</p>
+<p class="indent">In <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list12">Listing 10-12</a> you first required the Nano module and connected to your server. Connecting to a server is as simple as pointing to a host and port that contain the CouchDB instance that is running. Next, you create a database on your CouchDB server that will hold all of the products that you wish to create. When you call any method with Nano, you can add a callback that will receive an error, body, and header parameter. When you first create a database with Nano, you will see the body and the request response JSON that looks like <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list15" id="_list15">Listing 10-15</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list15" id="list15">Listing 10-15</a></i></b>.&nbsp;&nbsp;Callback after Creating “Products<a id="cXXX.588"></a>”</p>
+<pre><span class="FontName1">Body: { ok: true }</span><br><span class="FontName1">Header: { location: '</span><span class="FontName1"><a href="http://localhost:5984/products">http://localhost:5984/products</a></span><span class="FontName1">',</span><br>&nbsp;&nbsp;<span class="FontName1">date: 'Sun, 28 Jul 2013 14:34:01 GMT',</span><br>&nbsp;&nbsp;<span class="FontName1">'content-type': 'application/json',</span><br>&nbsp;&nbsp;<span class="FontName1">'cache-control': 'must-revalidate',</span><br>&nbsp;&nbsp;<span class="FontName1">'status-code': 201,</span><br>&nbsp;&nbsp;<span class="FontName1">uri: '</span><span class="FontName1"><a href="http://localhost:5984/products">http://localhost:5984/products</a></span><span class="FontName1">' }</span></pre>
+<p class="indent">Once you have created your database, you then create your first product document. You create the “sandals” document by passing&nbsp;&nbsp;a JavaScript object that contains the information about the product to the <span class="FontName1">products.insert()</span><a id="cXXX.589"></a><a id="cXXX.590"></a> method. The second argument is the name that you want to associate with this document. The body and header responses will let you know that the insert was okay, as seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list16" id="_list16">Listing 10-16</a>.<a id="cXXX.591"></a></p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list16" id="list16">Listing 10-16</a></i></b>.&nbsp;&nbsp;Inserting a Product</p>
+<pre><span class="FontName1">Body: { ok: true,</span><br>&nbsp;&nbsp;<span class="FontName1">id: 'sandals',</span><br>&nbsp;&nbsp;<span class="FontName1">rev: '1-e62b89a561374872bab560cef58d1d61' }</span><br><span class="FontName1">Header: { location: '</span><span class="FontName1"><a href="http://localhost:5984/products/sandals">http://localhost:5984/products/sandals</a></span><span class="FontName1">',</span><br>&nbsp;&nbsp;<span class="FontName1">etag: '"1-e62b89a561374872bab560cef58d1d61"',</span><br>&nbsp;&nbsp;<span class="FontName1">date: 'Sun, 28 Jul 2013 14:34:01 GMT',</span><br>&nbsp;&nbsp;<span class="FontName1">'content-type': 'application/json',</span><br>&nbsp;&nbsp;<span class="FontName1">'cache-control': 'must-revalidate',</span><br>&nbsp;&nbsp;<span class="FontName1">'status-code': 201,</span><br>&nbsp;&nbsp;<span class="FontName1">uri: '</span><span class="FontName1"><a href="http://localhost:5984/products/sandals">http://localhost:5984/products/sandals</a></span><span class="FontName1">' }</span></pre>
+<p class="indent">If you want to update a document in CouchDB with Nano, you need to get the revision identifier for the particular document you wish to update and then call the <span class="FontName1">nano.insert()</span> function again, passing in the revision identifier to that particular document you wish to update. In your solution you did this by using the <span class="FontName1">nano.get()</span> method<a id="cXXX.592"></a>, then using the <a id="cXXX.593"></a>
+<span class="FontName1">body._rev</span> revision identifier from the callback to update the document (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list17" id="_list17">Listing 10-17</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list17" id="list17">Listing 10-17</a></i></b>.&nbsp;&nbsp;Updating an Existing Document</p>
+<pre><span class="FontName1">products.get('sandals', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (!err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">products.insert({name: 'sandals', description: 'flip flops', price: 12.50,</span> <b>_rev: body._rev</b>
+<span class="FontName1">}, 'sandals', function(err, body, header) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (!err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(body, header);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">});</span></pre>
+<p class="indent">After you have created, inserted, and updated a document, you will likely want to be able to remove items from time to time. To do this, you also need a reference to the revision of the document that you are planning to remove. This means that you can first fetch the document with <span class="FontName1">nano.get()</span> and use the <span class="FontName1">body._rev</span> identifier<a id="cXXX.594"></a> from the callback to be passed into the <span class="FontName1">nano.destroy()</span> method<a id="cXXX.595"></a>. This will remove the document from your database. However, if you want to remove your database you can destroy a database in its entirety by calling <span class="FontName1">nano.db.destroy(&lt;DBNAME&gt;);</span>.</p>
+<p class="indent"><a id="cXXX.596"></a>The key to the Nano framework is that all of these functions are really wrappers around the <span class="FontName1">nano.request()</span> method that you saw in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list14">Listing 10-14</a>. In <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list14">Listing 10-14</a> your request was made to the “sandals” document in the “products” database as an HTTP GET. This is the same as <span class="FontName1">nano.get()</span>. The equivalent for a destroy action is to use the HTTP Verb DELETE, so in the instance of your <span class="FontName1">nano.db.destroy('products')</span>, you are essentially writing <span class="FontName1">nano.request({db: 'products', method: 'DELETE'}, callback);.</span></p>
+</div>
+<p id="Sec25" class="Heading1">10-7. Using Redis<a id="cXXX.272n"></a></p>
+<div>
+<p id="Sec26" class="Heading2_2">Problem</p>
+<p class="noindent">You want to utilize the Redis<a id="cXXX.272q"></a> key-value store in your Node.js application.</p>
+</div>
+<div>
+<p id="Sec27" class="Heading2">Solution</p>
+<p class="noindent">Redis is an extremely powerful and popular key-value data store. Because it is so popular, there are many implementations for Node.js to choose from. Some are utilized to connect to the Express web server framework, and others are just as specified. One implementation that is recommended on the Redis website is node_redis, found at<span class="FontName1"><a href="https://github.com/mranney/node_redis">https://github.com/mranney/node_redis</a></span>. To install node_redis, you can utilize npm as follows: <span class="FontName1">$ npm install redis</span>.</p>
+<p class="indent">Using redis_node is simple for those familiar with Redis because the API is the same. All of your get, set, hget, and hgetall commands are able to be executed as they would be directly from Redis itself. A simple example of getting and setting values and hash values is shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list18" id="_list18">Listing 10-18</a>. <a id="cXXX.597"></a></p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list18" id="list18">Listing 10-18</a></i></b>.&nbsp;&nbsp;Getting and Setting String and Hash Key-Value Pairs with node_redis<a id="cXXX.598"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Redis</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var redis = require("redis"),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">client = redis.createClient();</span><br>&nbsp;<br><span class="FontName1">client.on("error", function (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log("Error " + err);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">client.set("key", "value", redis.print);</span><br>&nbsp;<br><span class="FontName1">client.hset("hash key", "hashtest 1", "some value", redis.print);</span><br><span class="FontName1">client.hset(["hash key", "hashtest 2", "some other value"], redis.print);</span><br><span class="FontName1">client.hkeys("hash key", function (err, replies) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(replies.length + " replies:");</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">replies.forEach(function (reply, i) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log("&nbsp;&nbsp;&nbsp;&nbsp;" + i + ": " + reply);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">client.quit();</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">client.hgetall('hash key', function(err, replies) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">replies.forEach(function(reply) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(reply);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">});</span><br>&nbsp;<br>&nbsp;<br><span class="FontName1">client.get("key", function(err, reply) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(reply);</span><br><span class="FontName1">});</span></pre>
+<p class="indent">Other times, instead of just storing hashes for session-level key-value storage, you may want to implement a loosely coupled publish and subscribe paradigm<a id="cXXX.599"></a>. This can be a very familiar method to many developers of Node.js applications who are already familiar with event-driven development but who want to leverage Redis for these purposes. An example of using publish and subscribe is shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list19" id="_list19">Listing 10-19</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list19" id="list19">Listing 10-19</a></i></b>.&nbsp;&nbsp;Publish and Subscribe Example<a id="cXXX.600"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Pub/Sub</span><br>&nbsp;<br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var redis = require("redis"),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">subscriber = redis.createClient(),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">publisher = redis.createClient();</span><br>&nbsp;<br><span class="FontName1">subscriber.on("subscribe", function (topic, count) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">publisher.publish("event topic", "your event has occured");</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">subscriber.on("message", function (topic, message) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log("message recieved:: " + topic + ": " + message);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">subscriber.end();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">publisher.end();</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">subscriber.subscribe("event topic");</span></pre>
+</div>
+<div>
+<p id="Sec28" class="Heading2">How It Works</p>
+<p class="noindent">Once you install node_redis via <span class="FontName1">$ npm install redis</span>, you have access to the full implementation of Redis in Node.js. As you saw in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list18">Listing 10-18</a>, you can easily create a new client by utilizing <span class="FontName1">redis.createClient()</span>. The <span class="FontName1">createClient()</span> method<a id="cXXX.601"></a> will create a connection to the port and host of the Redis instance, which defaults to <span class="FontName1"><a href="http://127.0.0.1:6379/">http://127.0.0.1:6379</a></span>, and will then instantiate a RedisClient object, as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list20" id="_list20">Listing 10-20</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list20" id="list20">Listing 10-20</a></i></b>.&nbsp;&nbsp;Node_redis createClient<a id="cXXX.602"></a></p>
+<pre><span class="FontName1">exports.createClient = function (port_arg, host_arg, options) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var port = port_arg || default_port,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">host = host_arg || default_host,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">redis_client, net_client;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">net_client = net.createConnection(port, host);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">redis_client = new RedisClient(net_client, options);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">redis_client.port = port;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">redis_client.host = host;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return redis_client;</span><br><span class="FontName1">};</span></pre>
+<p class="indent">The RedisClient inherits the Node.js EventEmitter and will emit several events, as shown in <a id="cXXX.603"></a>
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab7" id="_Tab7">Table 10-7</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab7" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab7">Table 10-7</a>. </span>RedisClient Events<a id="cXXX.604"></a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ‘connect’</td>
+<td> This event will be emitted at the same time as ‘ready’ unless the client option ‘no_ready_check’ is set to true, in which case only once the connection is established will this be emitted. Then you are free to send commands to Redis.</td>
+</tr>
+<tr>
+<td> ‘drain’</td>
+<td> The RedisClient will emit ‘drain’ when the Transmission Control Protocol (TCP) connection to the Redis server has been buffering but is once again writable.</td>
+</tr>
+<tr>
+<td> ‘end’</td>
+<td> Once the client connection to the Redis server has closed, this event is emitted.</td>
+</tr>
+<tr>
+<td> ‘error’</td>
+<td> The RedisClient will emit ‘error’ when there is an exception from the Redis server.</td>
+</tr>
+<tr>
+<td> ‘idle’</td>
+<td> The RedisClient will emit ‘idle’ once there are no outstanding messages that are awaiting a response.</td>
+</tr>
+<tr>
+<td> ‘ready’</td>
+<td> The client will emit the ‘ready’ event once a connection is established to the Redis server <i>and</i> the server reports that it is ready to receive commands. If you send commands before the ‘ready’ event, they will be queued and executed just before this event is emitted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">In your solution, you then set a string value and a hash value. String values are set and retrieved by using <span class="FontName1">client.set</span> and <span class="FontName1">client.get</span>. You also used <span class="FontName1">client.hset</span>, <span class="FontName1">client.hkeys</span>, and <span class="FontName1">client.hgetall</span> in order to deal with hashes. These methods are directly equivalent with entering the commands directly (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list21" id="_list21">Listing 10-21</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list21" id="list21">Listing 10-21</a></i></b>.&nbsp;&nbsp;Redis set, get, hset, hkeys, and hgetall</p>
+<pre><span class="FontName1">&gt; set key value</span><br><span class="FontName1">OK</span><br><span class="FontName1">&gt; get key</span><br><span class="FontName1">"value"</span><br><span class="FontName1">&gt; hset 'hash key' 'hashtest 1' 'blah'</span><br><span class="FontName1">(integer) 0</span><br><span class="FontName1">&gt; hset 'hash key' 'hashtest 2' 'cheese'</span><br><span class="FontName1">(integer) 0</span><br><span class="FontName1">&gt; hkeys 'hash key'</span><br><span class="FontName1">1) "hashtest 1"</span><br><span class="FontName1">2) "hashtest 2"</span><br><span class="FontName1">&gt; hgetall 'hash key'</span><br><span class="FontName1">1) "hashtest 1"</span><br><span class="FontName1">2) "blah"</span><br><span class="FontName1">3) "hashtest 2"</span><br><span class="FontName1">4) "cheese"</span></pre>
+<p class="indent">You then created a publish and subscribe solution. This can be utilized alongside the Node.js’s event model in order to create a loosely coupled integration between segregated portions of your application. To get started, you created two <span class="FontName1">RedisClients</span> called publisher and subscriber. First, you call <span class="FontName1">subscriber.subscribe()</span> on the topic you wish to listen for, then actually emit that event, using <span class="FontName1">publisher.publish(&lt;event name&gt;)</span>, once the subscriber’s ‘subscribe’ event has been emitted. You then can bind the subscriber to the message event and perform some variety of action once this&nbsp;&nbsp;event has been published.</p>
+<p class="indent">You have now utilized Redis to store key-value pairs, as well as hashed keys in a data store with node_redis. You also have performed publish and subscribe methods by using Redis to power these messages.</p>
+</div>
+<p id="Sec29" class="Heading1">10-8. Connecting to Cassandra<a id="cXXX.275b"></a></p>
+<div>
+<p id="Sec30" class="Heading2_2">Problem</p>
+<p class="noindent">You are utilizing Cassandra<a id="cXXX.275h"></a> to log events from your application and you would like to implement this logging with Node.js.</p>
+</div>
+<div>
+<p id="Sec31" class="Heading2">Solution</p>
+<p class="noindent">There are many different drivers for Cassandra across different programming languages. For Node.js, the package, “helenus,” installed with <span class="FontName1">$ npm install helenus</span>, is at the forefront because it provides bindings to both the thrift protocol and the Cassandra Query Language (CQL)<a id="cXXX.605"></a>.</p>
+<p class="indent">In <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list22" id="_list22">Listing 10-22</a> you will create a logging mechanism that will log events that are occurring on your Node.js server.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list22" id="list22">Listing 10-22</a></i></b>.&nbsp;&nbsp;Using helenus<a id="cXXX.606"></a> to Create a Logging Application for Cassandra<a id="cXXX.607"></a></p>
+<pre><span class="FontName1">var helenus = require('helenus'),</span><br>&nbsp;&nbsp;<span class="FontName1">pool = new helenus.ConnectionPool({</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">hosts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ['127.0.0.1:9160'],</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">keyspace&nbsp;&nbsp; : 'my_ks',</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 'username',</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">password&nbsp;&nbsp; : 'pass',</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">timeout&nbsp;&nbsp;&nbsp;&nbsp;: 3000//,</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">//cqlVersion : '3.0.0' // specify this if you're using Cassandra 1.1 and want to use CQL 3</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">var logger = module.exports = {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">/**</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* Logs data to the Cassandra cluster</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">*</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param status&nbsp;&nbsp;&nbsp;&nbsp; the status event that you want to log</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param message&nbsp;&nbsp;&nbsp;&nbsp;the detailed message of the event</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param stack&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the stack trace of the event</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param callback&nbsp;&nbsp; optional callback</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">*/</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log: function(status, message, stack, callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pool.connect(function(err, keyspace){</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('connected');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">keyspace.get('logger', function(err, cf) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var dt = Date.parse(new Date());</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">//Create a column</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var column = {};</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['time'] = dt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['status'] = status;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['message'] = message;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['stack'] = stack;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var timeUUID = helenus.TimeUUID.fromTimestamp(new Date());</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cf.insert(timeUUID, column, function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('error', err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">Console.log('insert complete');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">};</span></pre>
+</div>
+<div>
+<p id="Sec32" class="Heading2">How It Works</p>
+<p class="noindent">The helenus module is a robust solution for connecting to the Cassandra database. In your solution, after importing the helenus module, you connect to Cassandra. This is done by passing a simple object to <span class="FontName1">helenus.connectionPool()</span>. The object that creates this connection pool contains several options, as outlined in <a id="cXXX.608"></a>
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#Tab8" id="_Tab8">Table 10-8</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab8" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_Tab8">Table 10-8</a>. </span>Connection Pool Options<a id="cXXX.609"></a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> .cqlVersion</td>
+<td> Names the version of CQL you wish to utilize.</td>
+</tr>
+<tr>
+<td> .hosts</td>
+<td> Provides an array of values that are the IP address and port for all the Cassandra instances in your cluster.</td>
+</tr>
+<tr>
+<td> .keyspace</td>
+<td> Lists the keyspace on the Cassandra cluster that you wish to connect to initially.</td>
+</tr>
+<tr>
+<td> .password</td>
+<td> Provides the password that you wish to use to connect to the node.</td>
+</tr>
+<tr>
+<td> .timeout</td>
+<td> Is the timeout in milliseconds.</td>
+</tr>
+<tr>
+<td> .user</td>
+<td> Gives the username for connecting to the node.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">Once you have a connection, you can then call <span class="FontName1">pool.connect()</span>. Once the connect has occurred, the callback will provide a reference to the default keyspace that you configured in your connection pool.&nbsp;&nbsp;There is, however, another way in which you can connect to a keyspace by using the <span class="FontName1">pool.use('keyspacename', function(err, keyspace) {});</span> method.</p>
+<p class="indent">You now have access to a keyspace on your Cassandra cluster. To gain access to the logger column family, you call <span class="FontName1">keyspace.get('logger'...)</span>, which will fetch the column family and return a reference so that you can then operate on the column family directly.</p>
+<p class="indent"><a id="cXXX.610"></a>Now that you have gained access to the column family to which you wish to write data, you can create the column that you want to insert. In this solution, assume that your logger column family has a row key that is a TimeUUID type, creating a unique timestamp for each entry. <a id="cXXX.611"></a>Helenus allows you to use this type of key easily because TimeUUID is a built-in type. You can access this type and create a new TimeUUID by using the <span class="FontName1">fromTimestamp</span> method on the object, as seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list23" id="_list23">Listing 10-23</a>. You will also see that, if needed, helenus provides a way to generate UUID types.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list23" id="list23">Listing 10-23</a></i></b>.&nbsp;&nbsp;Creating a New TimeUUID</p>
+<pre>&nbsp;<span class="FontName1">&gt; helenus.TimeUUID.fromTimestamp(new Date());</span><br><span class="FontName1">c19515c0-f7c4-11e2-9257-fd79518d2700</span><br>&nbsp;<br><span class="FontName1">&gt; new helenus.UUID();</span><br><span class="FontName1">7b451d58-548f-4602-a26e-2ecc78bae57c</span></pre>
+<p class="indent">Aside from the row key in your logger column family, you simply pass the timestamp, status, message, and stack trace of the event you wish to log. These all become parts of an object you named “column.” Now that you have the row key and the column values, you can insert them into Cassandra by calling the <span class="FontName1">cf.insert</span> method<a id="cXXX.612"></a> on your column family.<a id="cXXX.613"></a></p>
+<p class="indent">This solution leveraged JavaScript and objects to generate a model-like implementation that was converted to the Cassandra Thrift protocol in order to insert data. Helenus allows for other methods of inserting data by using the CQL language. A similar implementation to the one seen in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list22">Listing 10-22</a> but that utilizes CQL<a id="cXXX.614"></a> is shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list24" id="_list24">Listing 10-24</a>. The step to retrieve the column family is omitted because CQL operates directly on the keyspace.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list24" id="list24">Listing 10-24</a></i></b>.&nbsp;&nbsp;Using CQL to Log Data to Cassandra<a id="cXXX.615"></a></p>
+<pre><span class="FontName1">var helenus = require('helenus'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pool = new helenus.ConnectionPool({</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">hosts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ['127.0.0.1:9160'],</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">keyspace&nbsp;&nbsp; : 'my_ks',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 'username',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">password&nbsp;&nbsp; : 'pass',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">timeout&nbsp;&nbsp;&nbsp;&nbsp;: 3000//,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">//cqlVersion : '3.0.0' // specify this if you're using Cassandra 1.1 and want to use CQL 3</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">var logger = module.exports = {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">/**</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* Logs data to the Cassandra cluster</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">*</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param status&nbsp;&nbsp;&nbsp;&nbsp; the status event that you want to log</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param message&nbsp;&nbsp;&nbsp;&nbsp;the detailed message of the event</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param stack&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the stack trace of the event</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">* @param callback&nbsp;&nbsp; optional callback</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">*/</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log: function(status, message, stack, callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pool.connect(function(err, keyspace){</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">keyspace.get('logger', function(err, cf) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var dt = Date.parse(new Date());</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">//Create a column</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var column = {};</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['time'] = dt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['status'] = status;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['message'] = message;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">column['stack'] = stack;</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var timeUUID = helenus.TimeUUID.fromTimestamp(new Date());</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var cqlInsert = 'INSERT INTO logger (log_time, time, status, message,stack)' +</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">'VALUES ( %s, %s, %s, %s, %s )';</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var cqlParams = [ timeUUID, column.time, column.status, column.message, column.stack ];</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pool.cql(cqlInsert, cqlParams, function(err, results) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) logger.log('ERROR', JSON.stringify(err), err.stack);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">var queueObj = {};</span><br><span class="FontName1">var timeUUID = helenus.TimeUUID.fromTimestamp(new Date()) + '';</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var cqlInsert = 'INSERT INTO hx_services_pha_card (card_id, card_definition<a id="cXXX.278w"></a>_id, pig_query, display_template, tokens, trigger)' +</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">'VALUES ( %s, %s, %s, %s, %s, %s )';</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var cqlParams = [ timeUUID, queueObj.card_definition_id, queueObj.pig_query, queueObj.display_template, tokens.join(','), queueObj.trigger ];</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">pool.cql(cqlInsert, cqlParams, function(err, results) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) logger.log('ERROR', JSON.stringify(err), err.stack);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span></pre>
+</div>
+<p id="Sec33" class="Heading1">10-9. Using Riak<a id="cXXX.616"></a> with Node.js</p>
+<div>
+<p id="Sec34" class="Heading2_2">Problem<a id="cXXX.617"></a></p>
+<p class="noindent">You want to be able to utilize the highly scalable distributed database, Riak, with your Node.js application.</p>
+</div>
+<div>
+<p id="Sec35" class="Heading2">Solution</p>
+<p class="noindent">Riak is designed for high availability across distributed systems. It is designed to be fast and scalable, which makes it a good fit for many Node.js applications. In <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list25" id="_list25">Listing 10-25</a>, you will once again create a data store that will create, update, and retrieve your product data.</p>
+<div class="notepara">
+<p class="paraaftertitle1"><img src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/sq.jpg" alt="image" width="12" height="12" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/sq.jpg">&nbsp;<b>Note</b>&nbsp;&nbsp;Riak is not supported on Windows machines currently. The following implementation should work on Linux or OSX.</p></div>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list25" id="list25">Listing 10-25</a></i></b>.&nbsp;&nbsp;Using Riak with Node.js</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* RIAK</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var db = require('riak-js').getClient();</span><br>&nbsp;<br><span class="FontName1">db.exists('products', 'huaraches', function(err, exists, meta) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (exists) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db.remove('products', 'huaraches', function(err, value, meta) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('removed huaraches');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">db.save('products', 'flops', { name: 'flip flops', description: 'super for your feet', price: 12.50}, function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('flip flops created');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">process.emit('prod');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">db.save('products', 'flops', { name: 'flip flops', description: 'fun for your feet', price: 12.00}, function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('flip flops created');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">process.emit('prod');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">db.save('products', 'huaraches', {name: 'huaraches', description: 'more fun for your feet', price: 20.00}, function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('huaraches created');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">process.emit('prod');</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db.get('products', 'huaraches', function(err, value, meta) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(value);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">process.on('prod', function() {</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">db.getAll('products', function(err, value, meta) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(value);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec36" class="Heading2">How It Works</p>
+<p class="noindent">To create this solution, you started with the Node.js module riak-js, installed by using <span class="FontName1">$ npm install riak-js</span>. You then connected to the server by using the <span class="FontName1">getClient()</span> method<a id="cXXX.618"></a>. This method, when left alone, will find the default client running on the local machine but can also be configured with an options object.</p>
+<p class="indent">You are now connected to the Riak instance by using the db object. First, you see that the API is concise as you encounter <span class="FontName1">db.exists(&lt;bucket&gt;, &lt;key&gt;, callback)</span>. This callback will return a value of true if the key exists in the bucket on your Riak node. If the bucket key did exist, you removed that particular set of data by simply pointing to that bucket key and using the <span class="FontName1">db.remove()</span> method<a id="cXXX.619"></a>.</p>
+<p class="indent">Next, you saved some data to your Riak node by using the <span class="FontName1">db.save</span> method. This method accepts a bucket, key, and a value you wish to set for the bucket key. This can be a JavaScript object, a number, or a string that you wish to store for the key’s value. You also, as with all requests with riak-js, gain access to the callback function. The callbacks have three values: an error if one occurred, a value that is passed as the result of the riak-js method, and the meta object.</p>
+<p class="indent">After you save your huaraches to the products bucket, you then retrieve this key by utilizing the <span class="FontName1">db.get()</span> function. Again, this method takes the bucket and the key in order to determine which data on your node you wish to retrieve. And the callback can contain the values and the meta associated with the data. There is one other way that you can access data by using riak-js. This is used to retrieve all the values for a given bucket. The resultant value in the callback will be an array of data associated with the bucket.</p>
+<p class="indent">You have used riak-js to interact with your Riak cluster in Node.js. This provides a simple API to insert, read, update, and remove data on your node. Riak is a powerful distributed database solution that, aside from these simple tasks, can also perform more complex searches by using map and reduce functions through a similar API. In order to do this, you could search all products in your node by running the following commands (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#list26" id="_list26">Listing 10-26</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#_list26" id="list26">Listing 10-26</a></i></b>.&nbsp;&nbsp;Map Reduce with riak-js</p>
+<pre><span class="FontName1">db.mapreduce</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">.add('products')</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">.map(function(v) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return [Riak.mapValuesJson(v)[0]];</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">})</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">.run(function(err, value, meta) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(value);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span></pre>
+</div>
+</div>
+<div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch09.xhtml" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">CHAPTER 9: Using Web Server Frameworks</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch11.xhtml" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">CHAPTER 11: Testing in Node.js</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781430260585/chapter/9781430260585_Ch10.xhtml" data-for-analytics="9781430260585:9781430260585_Ch10.xhtml" aria-label="Add to Queue">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel  collapsed slideUp">
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="js-toggle-nag ss-navigateup" title="Toggle open or close footer"></a>
+        <div class="sample-message">
+          <p class="usage-data t-collapsed-text">Enjoy Safari?
+            <a class="ga-active-trial-subscribe-nag" href="https://www.safaribooksonline.com/subscribe/">
+              Subscribe Today
+              
+            </a>
+          </p>
+          
+
+        <div class="expanded">
+          <h2>You have 10 days left in your trial, Raviguru0007. </h2>
+          <p class="t-expanded-text">Safari is your trusted guide for building a remarkable career. We hope you've been enjoying your trial—ready to join?</p>
+          <a href="https://www.safaribooksonline.com/subscribe/" class="button-primary">
+            Subscribe Today
+            
+          </a>
+          
+          <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="icon-up" style="display: none;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/contact/">Contact Us</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+    </ul>
+    <span class="copyright">© 2017 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/membership-agreement/">Membership Agreement</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" class="icon-up" style="display: none;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2017 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"licenseKey":"510f1a6865","transactionName":"YgdaZ0NSW0cEB0RdWltNfkZfUEFdCgofXFBHDVYdR1pQQxZeRl1QQj1aWkU=","queueTime":0,"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","applicationID":"3275661","applicationTime":696,"agent":""}</script>
+
+
+    
+
+    <script src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/saved_resource" charset="utf-8"></script>
+    <script src="./CHAPTER 10_ Connecting to a Data Store - Node.js Recipes_ A Problem-Solution Approach_files/saved_resource(1)" charset="utf-8"></script>
+  
+
+<div class="annotator-notice"></div><div class="font-flyout" style="top: 200.012px; left: 1217px;"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch10.xhtml#">Reset</a>
+</div>
+</div></body></html>

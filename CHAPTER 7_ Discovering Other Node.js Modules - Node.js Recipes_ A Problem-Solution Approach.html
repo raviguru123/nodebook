@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml -->
+<html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="1573407" data-user-uuid="29525685-85c9-45c7-9eda-3c178d86398e" data-username="raviguru0007" data-account-type="Trial" data-activated-trial-date="04/17/2017" data-archive="9781430260585" data-publishers="Apress" data-htmlfile-name="9781430260585_Ch07.xhtml" data-epub-title="Node.js Recipes: A Problem-Solution Approach" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781430260585"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><script type="text/javascript" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/510f1a6865"></script><script src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/nr-spa-1026.min.js"></script><script type="text/javascript" async="" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/linkid.js"></script><script async="" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQDUVVVGwACU1RUAQA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(19),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(20),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(p){"stack"in p&&(t(12),t(11),"addEventListener"in window&&t(6),s.xhrWrappable&&t(13),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){C++,N=y.hash,this[u]=M.now()}function o(){C--,y.hash!==N&&i(0,!0);var t=M.now();this[l]=~~this[l]+t-this[u],this[d]=t}function i(t,e){x.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=M.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,h="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location;if(w[v]){var b=t(9),g=t(10),x=t(8),E=t(6),O=t(12),R=t(7),P=t(13),T=t("ee"),S=T.get("tracer");t(14);var M=t("loader");M.features.spa=!0;var N,j=w[v],C=0;T.on(u,r),T.on(p,r),T.on(d,o),T.on(h,o),T.buffer([u,d,"xhr-done","xhr-resolved"]),E.buffer([u]),O.buffer(["setTimeout"+s,"clearTimeout"+c,u]),P.buffer([u,"new-xhr","send-xhr"+c]),R.buffer([m+c,m+"-done",m+f+c,m+f+s]),x.buffer(["newURL"]),b.buffer([u]),g.buffer(["propagate",p,h,"executor-err","resolve"+c]),S.buffer([u,"no-"+u]),a(P,"send-xhr"+c),a(T,"xhr-resolved"),a(T,"xhr-done"),a(R,m+c),a(R,m+"-done"),x.on("pushState-end",i),x.on("replaceState-end",i),j("hashchange",i,!0),j("load",i,!0),j("popstate",function(){i(0,C>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(12),c=t(11),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",h="-start",l="-end",m="fn"+h,v="fn"+l,w="bstTimer",y="pushState",b=t("loader");b.features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=b.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,b.now()])}),a.on(m,function(t,e,n){this.bstStart=b.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),this.bstType])}),c.on(m,function(){this.bstStart=b.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),"requestAnimationFrame"])}),o.on(y+h,function(t){this.time=b.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(22)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(19);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,h="prototype";u&&d&&p&&(i(f,function(t,e){r(u[h],e,s),r(d[h],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(22)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("mutation"),o=t(22)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],10:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(22),a=t("ee").get("promise"),c=i(a),s=t(19),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],11:[function(t,e,n){var r=t("ee").get("raf"),o=t(22)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],12:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(22)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],13:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",c)}function i(t){w.push(t),l&&(b=-b,g.data=b)}function a(){for(var t=0;t<w.length;t++)r([],w[t]);w.length&&(w=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(22)(u),p=NREUM.o,h=p.XHR,l=p.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],w=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(h,y),y.prototype=h.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var b=1,g=document.createTextNode(b);new l(a).observe(g,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],14:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(15),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),h=t(18),l=t(17),m=window.XMLHttpRequest;a.features.xhr=!0,t(13),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],15:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],16:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(19),c=t(20),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var l=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){l[e]=o(h+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],19:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],20:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],21:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],22:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(20),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=l(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([b,n,r,a]),a}}function h(t,e){w[t]=l(t).concat(e)}function l(t){return w[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var w={},y={},b={on:h,emit:n,get:m,listeners:l,context:e,buffer:v,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(19),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!x++){var t=g.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+g.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+g.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-g.offset}var c=(new Date).getTime(),s=t("handle"),f=t(19),u=t("ee"),d=window,p=d.document,h="addEventListener",l="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1026.min.js"},b=m&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:c,now:a,origin:w,features:{},xhrWrappable:b};t(16),p[h]?(p[h]("DOMContentLoaded",i,!1),d[h]("load",r,!1)):(p[l]("onreadystatechange",o),d[l]("onload",r)),s("mark",["firstbyte",c],null,"api");var x=0,E=t(21)},{}]},{},["loader",2,14,5,3,4]);</script><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/css" rel="stylesheet" type="text/css"><title>CHAPTER 7: Discovering Other Node.js Modules - Node.js Recipes: A Problem-Solution Approach</title><link rel="stylesheet" href="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/74741d96e0ae.css" type="text/css"><link rel="stylesheet" type="text/css" href="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/annotator.e34eec1a0d5a.css"><link rel="stylesheet" href="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    #sbo-rt-content div{margin:1em 1em 1em 1em}#sbo-rt-content a{text-decoration:none}#sbo-rt-content img{max-width:100%;margin-top:10pt}#sbo-rt-content p.booktitle{font-weight:bold;font-size:2.5em;margin-top:2em;margin-bottom:8em;text-align:center}#sbo-rt-content p.bookauthor{font-weight:bold;font-size:1.7em;margin-top:0;margin-right:2em;margin-bottom:0;text-align:left}#sbo-rt-content p.booksubtitle{font-weight:bold;font-size:1.7em;margin-top:0;margin-bottom:7em;text-align:center;color:#8A8A8A}#sbo-rt-content .bookimage{font-size:1.2em;margin-top:0;margin-bottom:1em;text-align:left}#sbo-rt-content .fmpara{font-size:.9em;text-indent:0;margin-top:.5em;margin-bottom:.3em;text-align:justify}#sbo-rt-content .fmpara1{font-size:.9em;text-indent:0;margin-top:.4em;margin-bottom:.3em;text-align:right}#sbo-rt-content .inpara{text-indent:0;margin-top:.4em;margin-left:3em;margin-bottom:.3em}#sbo-rt-content .pub{margin-top:10em;margin-bottom:1em;text-align:right;margin-right:5em}#sbo-rt-content .copyright{font-size:.9em;margin-top:.4em;margin-bottom:.4em;margin-left:1.2em;margin-right:1.2em;text-align:left}#sbo-rt-content .copyright1{font-size:.9em;margin-top:.1em;margin-bottom:.1em;margin-left:4em;margin-right:3.3em;text-align:left;text-indent:-1.6em}#sbo-rt-content .copyright2{font-size:.9em;margin-top:.1em;margin-bottom:.1em;margin-left:4.2em}#sbo-rt-content .dedication{font-size:1.2em;margin-bottom:0;margin-top:3.5em;text-align:center;margin-right:1em;font-style:italic}#sbo-rt-content .dedication1{font-size:1.2em;margin-bottom:0;margin-top:.5em;text-align:center;margin-right:1em;font-style:normal}#sbo-rt-content .dedication2{font-size:1.2em;margin-bottom:0;margin-top:1.5em;text-align:center;margin-right:1em;font-style:italic}#sbo-rt-content .content-title{font-size:1.6em;margin-top:3em;margin-bottom:.1em;text-align:left;font-weight:bold}#sbo-rt-content .fmtitle{font-size:2.5em;margin-top:1em;margin-bottom:1em;text-align:left;font-weight:bold;border-bottom:1.1px solid black;padding-bottom:.8em}#sbo-rt-content .right{text-indent:0;margin-top:1em;margin-right:1.5em;margin-bottom:.3em;text-align:right}#sbo-rt-content .right1{text-indent:0;margin-top:0;margin-right:1.5em;margin-bottom:.2em;text-align:right}#sbo-rt-content .chapimage{margin-left:.2em;margin-top:1.5em;margin-bottom:1.5em;text-align:left}#sbo-rt-content p.ChapterNumber{font-weight:bold;font-size:1.7em;margin-top:10px;margin-left:0;margin-bottom:5px;text-align:left}#sbo-rt-content p.ChapterTitle{font-weight:bold;font-size:2.5em;margin-top:0;margin-bottom:1em;margin-left:0;text-align:left;border-bottom:1.1px solid black;padding-bottom:.8em}#sbo-rt-content p.PartNumber{font-weight:bold;font-size:1.7em;margin-top:10px;margin-left:0;margin-bottom:5px;text-align:left;padding-bottom:.8em}#sbo-rt-content p.partTitle{font-weight:bold;font-size:2.5em;margin-top:1em;margin-bottom:1em;margin-left:0;text-align:left}#sbo-rt-content .paraaftertitle{font-size:100%;text-indent:0;margin-top:0;margin-left:0;margin-bottom:0}#sbo-rt-content p.noindent{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:0;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.noindent1{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:1em}#sbo-rt-content p.noindent2{font-size:100%;text-indent:0;margin-top:1.5em;margin-bottom:1em}#sbo-rt-content p.noindent3{font-size:100%;text-indent:0;margin-top:.8em;margin-bottom:.2em;margin-left:0;margin-right:0;text-align:center}#sbo-rt-content p.noindent4{font-size:100%;text-indent:0;margin-top:.8em;margin-bottom:.2em;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content span.listing{font-weight:bold}#sbo-rt-content p.indent{font-size:100%;text-indent:1.2em;margin-top:.1em;margin-bottom:.1em;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.indent1{font-size:100%;text-indent:1.2em;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;text-align:left}#sbo-rt-content p.indent1a{font-size:100%;text-indent:1.5em;margin-top:0;margin-bottom:0;margin-left:0;margin-right:4.5em;text-align:right}#sbo-rt-content p.indent2{font-size:100%;margin-top:.8em;margin-bottom:.8em;margin-left:2.4em;margin-right:2.4em;text-align:justify;font-style:italic}#sbo-rt-content p.indent3{font-size:100%;text-indent:1em;margin-top:.8em;margin-bottom:.8em;margin-left:1.8em;margin-right:1.8em;text-align:left}#sbo-rt-content p.indent4{font-size:100%;text-indent:1.3em;margin-top:.5em;margin-bottom:.5em;margin-left:2em;margin-right:0;text-align:left}#sbo-rt-content .blockquote{font-size:100%;text-indent:.2em;margin-top:1em;margin-left:3em;margin-right:2em;margin-bottom:1em;font-style:italic}#sbo-rt-content .blockquote1{font-size:100%;text-indent:.2em;margin-top:1em;margin-left:3em;margin-bottom:0;font-style:italic}#sbo-rt-content p.Heading1{font-weight:bold;font-size:2em;text-indent:0;margin-top:1.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2{font-size:1.6em;text-indent:0;margin-top:1.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2_2{font-size:1.6em;text-indent:0;margin-top:.3em;margin-bottom:.3em}#sbo-rt-content p.Heading2a{font-size:1.5em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;font-weight:bold}#sbo-rt-content p.Heading3{font-weight:bold;font-size:1.45em;text-indent:0;margin-top:1.2em;margin-bottom:.1em}#sbo-rt-content p.Heading3a{font-weight:normal;font-size:1.25em;text-indent:0;margin-top:1.2em;margin-bottom:.1em}#sbo-rt-content p.Heading4{font-size:1.3em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;text-align:left}#sbo-rt-content .img{max-width:100%;margin-top:10pt}#sbo-rt-content .img1{text-align:left}#sbo-rt-content .img1a{text-align:right;margin-right:5em;margin-top:5em}#sbo-rt-content .img2{text-align:left}#sbo-rt-content div.Figure{font-size:small;margin-top:1.5em;margin-bottom:1.5em}#sbo-rt-content .para-1{font-size:100%;margin-top:1em;text-indent:1.5em;margin-bottom:0;text-align:left}#sbo-rt-content .para-2{font-size:.9em;text-indent:-1.4em;margin-left:2.4em;margin-top:.5em;margin-bottom:0}#sbo-rt-content .figurecaption{font-size:small;margin-top:0;margin-bottom:0;text-align:justify}#sbo-rt-content .image{text-align:center}#sbo-rt-content .codecaption{font-size:100%;margin-top:.6em;margin-bottom:.6em;text-align:justify;font-style:italic}#sbo-rt-content .PCode{font-size:small;margin-top:1em;margin-bottom:1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-1{font-size:small;margin-top:1em;margin-bottom:.1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-2{font-size:small;margin-top:0;margin-bottom:0;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode-3{font-size:small;margin-top:0;margin-bottom:1em;margin-left:0;text-align:left;font-family:monospace}#sbo-rt-content div.singlethin{border-bottom:solid 3px;margin-left:1em;margin-right:1em;margin-bottom:1em}#sbo-rt-content div.singlethin1{margin-left:2em;margin-right:2em}#sbo-rt-content .inlinecode{font-family:monospace}#sbo-rt-content div.notepara{font-size:110%;text-indent:0;margin-top:1em;border-top:solid 1px;border-bottom:solid 1px;margin-bottom:1em;text-align:justify}#sbo-rt-content span.pink-box{font-weight:bold;padding-left:1.3em;padding-right:1.3em;border:1.1px solid black;font-size:1.5em;margin-top:.5em;margin-bottom:.5em;text-indent:0;text-align:justify}#sbo-rt-content span.courier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%}#sbo-rt-content div.courier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%;margin-top:1em;margin-bottom:1em}#sbo-rt-content div.boxcourier{font-family:Courier New;font-weight:normal;font-style:normal;font-size:100%;margin-top:1em;margin-bottom:1em;margin-left:1.5em;margin-right:1.5em;text-align:left}#sbo-rt-content span.courier1{font-family:Courier New;font-weight:normal;font-style:normal;font-size:95%}#sbo-rt-content .boxhead{font-size:1.25em;font-weight:bold;padding-left:.1em;padding-bottom:.1em;padding-top:.1em;margin-top:0;text-indent:0;text-align:center;border:3px solid black}#sbo-rt-content div.box{margin-top:1em;margin-bottom:1em}#sbo-rt-content .boxpara{font-size:110%;text-indent:0;margin-left:1.5em;margin-right:1.5em;margin-top:.5em;margin-bottom:.5em;text-align:left}#sbo-rt-content .alpha{font-size:1.2em;font-weight:bold;margin-left:.2em;margin-top:1em;margin-bottom:.3em;text-align:left}#sbo-rt-content .index{font-size:small;margin-left:.2em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .index1{font-size:small;margin-left:1em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .index2{font-size:small;margin-left:2em;margin-top:0;margin-bottom:0;text-align:left}#sbo-rt-content .cover{text-align:center}#sbo-rt-content .top{border-top:1.1px solid black;border-bottom:2px solid black}#sbo-rt-content .bot{border-bottom:2px solid black}#sbo-rt-content table.bodytable,#sbo-rt-content table{border-collapse:collapse;margin-bottom:8px;font-size:small;margin-top:10pt;width:95%;border-top:0 solid black;border-bottom:0 solid black}#sbo-rt-content table.fmtable{margin-bottom:1em;font-size:1em;margin-left:4em;border-top:0 solid #FFF;border-bottom:0 solid #FFF}#sbo-rt-content table{margin-bottom:1em;border-top:1.1px solid black;border-bottom:1.1px solid black;border-collapse:collapse}#sbo-rt-content th{border-top:1px solid black;border-bottom:1px solid black;padding-right:1.5em}#sbo-rt-content td{font-size:small;vertical-align:top;padding-right:1.5em;margin-top:0;margin-bottom:1em}#sbo-rt-content .tablepara{font-size:small;text-indent:0;margin-top:0;margin-bottom:.5em;padding-right:1.5em}#sbo-rt-content .tablepara1{font-size:small;margin-left:2em;margin-top:0;margin-bottom:0;padding-right:1.5em}#sbo-rt-content .header{border-bottom:1.1px solid black;text-indent:0;text-align:left}#sbo-rt-content .TabCapt{font-style:italic;margin-left:0;text-indent:0}#sbo-rt-content .FigCapt{font-style:italic;font-size:.9em}#sbo-rt-content .CaptNr{font-weight:bold}#sbo-rt-content .ttitle{font-style:Italic;margin-bottom:1em}#sbo-rt-content p.paraaftertitle1{font-size:.9em;text-indent:0;margin-top:.5em;margin-bottom:.8em;text-align:left}#sbo-rt-content p.para{font-size:small;text-indent:20px;margin-top:0;margin-bottom:0;text-align:justify}#sbo-rt-content p.quote{font-style:italic;font-size:100%;margin-top:1.5em;margin-left:2.5em;margin-right:2.5em;margin-bottom:0}#sbo-rt-content p.quotesource{font-size:small;text-indent:0;margin-top:1em;margin-bottom:1em;text-align:right}#sbo-rt-content p.chaptersubtitle{font-size:x-large;text-indent:0;margin-top:0;margin-left:0;margin-bottom:0;text-align:left}#sbo-rt-content p.line{margin-top:.3em;border-bottom:1px solid black}#sbo-rt-content p.line1{margin-top:.3em;margin-bottom:1.5em;border-bottom:1px solid black}#sbo-rt-content p.line2{margin-top:5em;margin-bottom:5em;border-bottom:1px solid black;text-align:center;margin-left:15em;margin-right:15em}#sbo-rt-content li{margin-bottom:.5em;margin-top:.5em}#sbo-rt-content p.alpha{font-size:1.2em;font-weight:bold;margin-left:.2em;margin-top:1em;margin-bottom:.3em;text-align:left}#sbo-rt-content ul.bulleted{font-size:100%;text-align:justify;margin-left:2.5em;margin-right:3em;margin-top:1em;margin-bottom:1em;text-indent:0}#sbo-rt-content ol.OrderedList{font-size:100%;text-align:left;margin-left:2.5em;margin-right:3em;margin-top:1em;margin-bottom:1em}#sbo-rt-content ul.bulleted1{font-size:100%;text-align:left;margin-left:1em;margin-right:5em;margin-top:1em;margin-bottom:1em;list-style-type:none}#sbo-rt-content ul.bulleted1_a{font-size:100%;text-align:justify;margin-left:0;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0;list-style-type:none}#sbo-rt-content ul.bulleted2{font-size:100%;text-align:justify;margin-left:2.3em;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0}#sbo-rt-content ul.bulleted4{font-size:100%;text-align:center;margin-left:1.3em;margin-right:5em;margin-top:1em;margin-bottom:1em;text-indent:0;list-style-type:none}#sbo-rt-content .numbered{font-size:small;text-align:justify;margin-left:2em;margin-right:2em;margin-top:.5em;margin-bottom:.5em;text-indent:1em}#sbo-rt-content .bulletedin{font-size:100%;text-align:justify;margin-left:4em;margin-right:4em;margin-top:.5em;margin-bottom:.5em}#sbo-rt-content ul.None{font-size:.9em;text-align:justify;margin-left:3em;margin-right:2em;margin-top:.5em;margin-bottom:.5em;list-style-type:none}#sbo-rt-content .Listing{font-size:small;margin-bottom:0}#sbo-rt-content .PCode1{font-size:small;margin-top:.7em;margin-bottom:0;text-align:left;font-family:monospace}#sbo-rt-content .PCode2{font-size:small;margin-top:1em;margin-bottom:.1em;margin-left:2.2em;text-align:left;font-family:monospace}#sbo-rt-content .PCode3{font-size:small;margin-top:0;margin-left:2.2em;margin-bottom:.1em;text-align:left;font-family:monospace}#sbo-rt-content .NoteCaption{font-size:small;margin-top:1.3em;margin-left:5em;margin-right:5em;border:1.1px solid black;padding:.5em;margin-bottom:1.3em}#sbo-rt-content .Table{font-size:100%;margin-bottom:1em;margin-left:0}#sbo-rt-content .toc{font-size:1.1em;margin-top:.2em;margin-bottom:.2em;text-align:left;font-weight:bold}#sbo-rt-content .toca{font-size:1.1em;margin-top:.8em;margin-bottom:.4em;text-align:left;font-weight:bold}#sbo-rt-content .toc1{font-size:1.1em;margin-top:.4em;margin-bottom:.3em;text-align:left;text-indent:1.4em;font-weight:normal}#sbo-rt-content .toc2{font-size:1.2em;margin-top:.4em;margin-bottom:.3em;text-align:left;font-weight:bold}#sbo-rt-content .toc3{font-size:.9em;margin-top:.4em;margin-bottom:.3em;text-align:left;text-indent:3.5em;font-weight:normal}#sbo-rt-content .toc4{font-size:1.1em;margin-top:.2em;margin-bottom:.5em;text-align:left;font-weight:bold}#sbo-rt-content .tocch{font-size:1.3em;margin-top:.7em;margin-bottom:.7em;text-align:left;font-weight:bold}#sbo-rt-content .noborder{margin-bottom:1em;border-top:0 solid #FFF;border-bottom:0 solid #FFF}#sbo-rt-content .authurright{text-align:right;margin-top:0;margin-bottom:0}#sbo-rt-content .FormalPara{font-size:small;margin-bottom:.7em}#sbo-rt-content .FontName1{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content span.FontName2{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content span.FontName3{font-size:100%;font-family:"Courier New",Courier,monospace}#sbo-rt-content .rightarrow{margin-top:0}#sbo-rt-content div.thinline{margin-top:1em;margin-bottom:1em;border-top:solid 4px #AFAFB0;border-bottom:solid 4px #AFAFB0}#sbo-rt-content span.line{text-decoration:underline}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content div.box{border-top:solid 2px;border-bottom:solid 2px}#sbo-rt-content .app{font-size:150%;margin-left:.8em}#sbo-rt-content .page{text-decoration:none;color:#000}#sbo-rt-content .cXXX{text-decoration:none;color:#000}#sbo-rt-content .textindent{margin-left:1.7em;margin-top:1em;margin-bottom:1em;font-size:100%}#sbo-rt-content .textindent1{margin-left:1.7em;margin-top:0;margin-bottom:0;font-size:100%}#sbo-rt-content .textindent2{margin-left:1.7em;margin-top:0;margin-bottom:0;font-size:100%;text-indent:1em}#sbo-rt-content p.FootNote{margin-top:.8em;margin-bottom:0;font-size:85%;text-indent:0;text-align:left;margin-left:1.1em;margin-right:1.1em}#sbo-rt-content pre{margin-left:0;font-family:monospace;white-space:pre-wrap}#sbo-rt-content p.Heading4a{font-size:1.15em;font-weight:bold;text-indent:1em;margin-top:1.3em;margin-bottom:.3em;border-top:3px solid #4d4d4c;border-left:solid 3px #4d4d4c;border-right:solid 3px #4d4d4c;border-bottom:solid 3px #4d4d4c;text-align:center}#sbo-rt-content p.noindent8{font-size:100%;text-indent:0;margin-top:1em;margin-bottom:1em;text-align:center;font-weight:bold;color:#8A8A8A}#sbo-rt-content .tocb{font-size:1.4em;margin-top:.5em;margin-bottom:.2em;text-align:left;font-weight:bold}#sbo-rt-content .part{font-weight:normal;font-size:1em;margin-bottom:5px;text-align:left;padding-left:1.3em;padding-bottom:10em;padding-right:1.3em;border:1.1px solid black}#sbo-rt-content p.Heading5{font-size:1em;text-indent:0;margin-top:1.3em;margin-bottom:.3em;text-align:center}#sbo-rt-content p.noindent5s{font-size:100%;text-indent:0;margin-top:.1em;margin-bottom:.1em;margin-left:0;margin-right:0;text-align:right}#sbo-rt-content span.strike{text-decoration:line-through}
+    </style><script> // <![CDATA[
+    var g = {
+      position_cache: {
+        
+          "chapter": "/api/v1/book/9781430260585/chapter/9781430260585_Ch07.xhtml",
+          "book_id": "9781430260585",
+          "chapter_uri": "9781430260585_Ch07.xhtml",
+          "position": 0,
+          "user_uuid": "29525685-85c9-45c7-9eda-3c178d86398e",
+          "next_chapter_uri": "/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch08.xhtml"
+        
+      },
+      title: "Node.js Recipes: A Problem\u002DSolution Approach",
+      author_list: "Cory Gackenheimer",
+      format: "book",
+      source: "application/epub+zip",
+      is_system_book: true,
+      is_public: false,
+      loaded_from_server: true,
+      allow_scripts: false,
+      has_mathml: false,
+      show_ios_app_teaser: false
+    };
+    // ]]></script><script src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/modernizr.js"></script><script>
+    
+      
+        
+
+        
+
+        
+          
+            window.PUBLIC_ANNOTATIONS = true;
+          
+        
+
+      
+
+      
+        window.MOBILE_PUBLIC_ANNOTATIONS = false;
+      
+
+    
+
+    
+      window.PRIVACY_CONTROL_OVERRIDE = false;
+    
+
+    
+      window.PRIVACY_CONTROL_SWITCH = true;
+    
+
+    
+      window.PUBLISHER_PAGES = true;
+    
+
+      window.SBO = {
+        "constants": {
+          "SITB_ENDPOINT": "https://www.safaribooksonline.com/api/v2/sitb/",
+          "SEARCH_SELECT_ENDPOINT": "https://www.safaribooksonline.com/api/v2/search/select/",
+          "ENABLE_ONLINE_TRAINING": true
+        }
+      };
+  </script><link rel="canonical" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml"><meta name="description" content="CHAPTER 7 Discovering Other Node.js Modules You have seen many different Node.js modules that you are able to utilize in the Node.js applications you wish to build ... "><meta property="og:title" content="CHAPTER 7: Discovering Other Node.js Modules"><meta itemprop="isPartOf" content="/library/view/nodejs-recipes-a/9781430260585/"><meta itemprop="name" content="CHAPTER 7: Discovering Other Node.js Modules"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781430260585/"><meta property="og:description" itemprop="description" content="CHAPTER 7 Discovering Other Node.js Modules You have seen many different Node.js modules that you are able to utilize in the Node.js applications you wish to build ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Apress"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781430260585"><meta property="og:book:author" itemprop="author" content="Cory Gackenheimer"><meta property="og:book:tag" itemprop="about" content="JavaScript"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: &lt;%= font_size %&gt; !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: &lt;%= font_family %&gt; !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: &lt;%= column_width %&gt;% !important; margin: 0 auto !important; }"></style><noscript>&lt;meta http-equiv="refresh" content="0; url=/library/no-js/" /&gt;</noscript><script type="text/javascript">
+  (function(i,s,o,g,r,a,m) {
+    i['GoogleAnalyticsObject']=r;
+    i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+    a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+    a.async=1;
+    a.src=g;
+    m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  var matches = document.cookie.match(/BrowserCookie\s*=\s*([a-f0-9\-]{36})/),
+      user_uuid = null;
+
+  if (matches && matches.length === 2) {
+    user_uuid = matches[1];
+  }
+
+
+  ga('create', 'UA-39299553-7', {'userId': '29525685-85c9-45c7-9eda-3c178d86398e' });
+
+
+ga('set', 'dimension1', 'Trial');
+ga('set', 'dimension6', user_uuid);
+
+
+  ga('set', 'dimension2', '29525685-85c9-45c7-9eda-3c178d86398e');
+  
+
+
+
+
+
+
+  //enable enhanced link tracking
+  ga('require', 'linkid', 'linkid.js');
+
+  // reading interface will track pageviews itself
+  if (document.location.pathname.indexOf("/library/view") !== 0) {
+    ga('send', 'pageview');
+  }
+</script><script defer="" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/vendor.34024413b1d4.js"></script><script defer="" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/reader.a05323b190d3.js"></script><script async="" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/MathJax.js"></script><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z"></path></g></svg><span>
+              
+                Queue
+              
+            </span></a></li><li class="search"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/001o00000169U9HAAU/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Node.js Recipes: A Problem-Solution Approach
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781430260585/chapter/9781430260585_Ch07.xhtml" data-for-analytics="9781430260585:9781430260585_Ch07.xhtml"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml&amp;text=Node.js%20Recipes%3A%20A%20Problem-Solution%20Approach&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20CHAPTER%207%3A%20Discovering%20Other%20Node.js%20Modules&amp;body=https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml%0D%0Afrom%20Node.js%20Recipes%3A%20A%20Problem-Solution%20Approach%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  <script defer="" src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/djangoMessagesPage.845b17d78025.js"></script>
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch06.xhtml" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">CHAPTER 6: Implementing Security and Cryptography</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch08.xhtml" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">CHAPTER 8: Creating a WebSocket Server</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><p class="ChapterNumber"><a id="Chap_7"></a>CHAPTER 7</p>
+<p class="chapimage"><img src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/frontdot.jpg" alt="image" width="82" height="25" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/frontdot.jpg"></p>
+<p class="ChapterTitle">Discovering Other Node.js Modules</p>
+<div>
+<p class="noindent">You have seen many different Node.js modules that you are able to utilize in the Node.js applications you wish to build. There are, however, many other modules and portions of the Node.js core that you can use when building a Node.js application. This chapter will touch on some of these native Node.js modules and expand on their implementations, giving you a better understanding of these modules. It is important to understand that these modules play a critical role in building a Node.js application.</p>
+<p class="indent">In this chapter you will use the Domain Name System (DNS) module<a id="cXXX.161s"></a> to resolve hostnames and IP addresses for remote servers. You will get a better handling of streams by using buffers, and you will look at clustering your applications. You will use the global process object, utilize timers, and work with query strings on server requests. You will also get a look at what is exposed in the Node.js console and get a look at the debugger URLs that are available in Node.js.</p>
+<p id="Sec1" class="Heading1">7-1. Creating a Simple DNS Server with DNS </p>
+<div>
+<p id="Sec2" class="Heading2_2">Problem</p>
+<p class="noindent">You want to be able to gain information from remote servers in your Node.js application. This information can be IP addresses or domain names.</p>
+</div>
+<div>
+<p id="Sec3" class="Heading2">Solution</p>
+<p class="noindent">Node.js provides a means for you to access the domain names and IP addresses and domain names of remote servers. This is possible by creating a simple Node.js command-line application<a id="cXXX.376"></a> (shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list1" id="_list1">Listing 7-1</a>) that will accept a domain name. The result is a listing of all IP addresses associated with that domain name. <a id="cXXX.377"></a></p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list1" id="list1">Listing 7-1</a></i></b>.&nbsp;&nbsp;DNS Lookup Command-Line Tool</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* DNS</span><br><span class="FontName1">*/</span><br><span class="FontName1">var dns = require('dns'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">args = process.argv.splice(2),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">domain = args[0];</span><br>&nbsp;<br><span class="FontName1">dns.resolve(domain, function (err, addresses) {</span><br>&nbsp;&nbsp;<span class="FontName1">if (err) throw err;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">addresses.forEach(function (address) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">getDomainsReverse('resolve', address);</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">dns.lookup(domain, function(err, address, family) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">getDomainsReverse('lookup', address);</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">function getDomainsReverse(type, ipaddress) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">dns.reverse(ipaddress, function(err, domains) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err)&nbsp;&nbsp;{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else if (domains.length &gt; 1) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(type + ' domain names for '&nbsp;&nbsp;+ ipaddress + ' ' + domain);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(type + ' domain name for '&nbsp;&nbsp; + ipaddress + ' ' + domain);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">}</span></pre>
+<p class="indent">Utilizing this command-line tool will result in an output similar to what is in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list2" id="_list2">Listing 7-2</a>, showing you the result of your query and which type of Node.js DNS tool was used to gather the result.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list2" id="list2">Listing 7-2</a></i></b>.&nbsp;&nbsp;Using the Node.js DNS Lookup Command-Line Tool</p>
+<pre><span class="FontName1">$ node 7-1-1.js g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.37 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.38 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.39 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.40 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.46 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.32 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.33 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.34 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.36 g.co</span><br><span class="FontName1">lookup domain name for 74.125.225.78 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.41 g.co</span><br><span class="FontName1">resolve domain name for 173.194.46.35 g.co</span></pre>
+</div>
+<div>
+<p id="Sec4" class="Heading2">How It Works</p>
+<p class="noindent">Node.js implements a version of DNS that is a wrapped version of ‘<span class="FontName1">C-ares</span>’. This is a C library that is built for asynchronous DNS requests. This module is the Node.js ‘<span class="FontName1">dns</span>’ module and it is required for the above solution.</p>
+<p class="indent">The above solution allows you to run a Node.js command and by passing in the domain name you wish to resolve, or lookup. This will then be parsed from the Node.js process’s arguments, passing into two methods of querying for this domain name.&nbsp;&nbsp;These two methods on the DNS object are <span class="FontName1">dns.resolve()</span> and <span class="FontName1">dns.lookup()</span>. Each of these performs a similar task in that they each will fetch from the DNS server the IP address that is associated with the domain name that is passed to the function. However, the implementation is quite different.</p>
+<p class="indent">The <span class="FontName1">dns.lookup()</span> function<a id="cXXX.378"></a> will accept a domain name and a callback. There is an optional second parameter into which you can pass a family parameter. The family parameter will be either a 4 or a 6 and represents which IP family you wish to query for the address. The callback for the <span class="FontName1">dns.lookup()</span> function<a id="cXXX.379"></a> will provide an error, address, and family parameter if they are available. <a id="cXXX.380"></a>As you can see from the source of the lookup function below, once the initial arguments are configured, Node.js calls the native wrapper for the C-ares DNS module<a id="cXXX.163i"></a> <span class="FontName1">cares.getaddrinfo</span> and returns the wrapped results.</p>
+<p class="noindent2"><b><i>Listing 7-3</i></b>.&nbsp;&nbsp;Dns.lookup Method from the Node.js dns.js Source</p>
+<pre><span class="FontName1">exports.lookup = function(domain, family, callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">// parse arguments</span><br>&nbsp;&nbsp;<span class="FontName1">if (arguments.length === 2) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback = family;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">family = 0;</span><br>&nbsp;&nbsp;<span class="FontName1">} else if (!family) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">family = 0;</span><br>&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">family = +family;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (family !== 4 &amp;&amp; family !== 6) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">throw new Error('invalid argument: `family` must be 4 or 6');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">callback = makeAsync(callback);</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">if (!domain) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(null, null, family === 6 ? 6 : 4);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return {};</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">if (process.platform == 'win32' &amp;&amp; domain == 'localhost') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(null, '127.0.0.1', 4);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return {};</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">var matchedFamily = net.isIP(domain);</span><br>&nbsp;&nbsp;<span class="FontName1">if (matchedFamily) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(null, domain, matchedFamily);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return {};</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">function onanswer(addresses) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (addresses) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (family) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(null, addresses[0], family);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(null, addresses[0], addresses[0].indexOf(':') &gt;= 0 ? 6 : 4);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(errnoException(process._errno, 'getaddrinfo'));</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">var wrap = cares.getaddrinfo(domain, family);</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">if (!wrap) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">throw errnoException(process._errno, 'getaddrinfo');</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">wrap.oncomplete = onanswer;</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">callback.immediately = true;</span><br>&nbsp;&nbsp;<span class="FontName1">return wrap;</span><br><span class="FontName1">};</span></pre>
+<p class="indent">The second function utilized in this solution was the <a id="cXXX.381"></a>
+<span class="FontName1">dns.resolve()</span> function<a id="cXXX.382"></a>, utilized to resolve a domain. This function also accepts a domain and a callback, with an optional second parameter. The callback function provides an error and an array of addresses that have been resolved. If the method results in an error, it will be one of the codes shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#Tab1" id="_Tab1">Table 7-1</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab1" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_Tab1">Table 7-1</a>. </span>DNS Error codes<a id="cXXX.384"></a><a id="cXXX.383"></a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Error (of the Form dns.ERROR)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ADDRGETNETWORKPARAMS</td>
+<td> Could not find GetNetworkParams function</td>
+</tr>
+<tr>
+<td> BADFAMILY</td>
+<td> Unsupported address family</td>
+</tr>
+<tr>
+<td> BADFLAGS</td>
+<td> Illegal flags specified</td>
+</tr>
+<tr>
+<td> BADHINTS</td>
+<td> Illegal hints flags specified</td>
+</tr>
+<tr>
+<td> BADNAME</td>
+<td> Malformed domain name</td>
+</tr>
+<tr>
+<td> BADQUERY</td>
+<td> Malformed DNS query</td>
+</tr>
+<tr>
+<td> BADRESP</td>
+<td> Malformed DNS reply</td>
+</tr>
+<tr>
+<td> BADSTR</td>
+<td> Misformatted string</td>
+</tr>
+<tr>
+<td> CANCELLED</td>
+<td> Cancels DNS query</td>
+</tr>
+<tr>
+<td> CONNREFUSED</td>
+<td> Could not contact DNS servers</td>
+</tr>
+<tr>
+<td> DESTRUCTION</td>
+<td> Channel is being destroyed</td>
+</tr>
+<tr>
+<td> EOF</td>
+<td> End of file</td>
+</tr>
+<tr>
+<td> FILE</td>
+<td> Error reading file</td>
+</tr>
+<tr>
+<td> FORMERR</td>
+<td> DNS server claims query was malformed</td>
+</tr>
+<tr>
+<td> LOADIPHLPAPI</td>
+<td> Error loading iphlpapi.dll</td>
+</tr>
+<tr>
+<td> NODATA</td>
+<td> DNS server returned an answer with no data</td>
+</tr>
+<tr>
+<td> NOMEM</td>
+<td> Out of memory</td>
+</tr>
+<tr>
+<td> NONAME</td>
+<td> Given hostname is not numeric</td>
+</tr>
+<tr>
+<td> NOTFOUND</td>
+<td> Domain name not found</td>
+</tr>
+<tr>
+<td> NOTIMP</td>
+<td> DNS server does not implement requested operation</td>
+</tr>
+<tr>
+<td> NOTINITIALIZED</td>
+<td> c-ares not initialized</td>
+</tr>
+<tr>
+<td> REFUSED</td>
+<td> DNS server refused query</td>
+</tr>
+<tr>
+<td> SERVFAIL</td>
+<td> DNS server returned general failure</td>
+</tr>
+<tr>
+<td> TIMEOUT</td>
+<td> Timeout while contacting DNS servers</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">Differing from the <span class="FontName1">dns.lookup()</span> method, this method’s optional second parameter is a record type, indicating the type of DNS record you are attempting to resolve. Record types are of the following: ‘A’, ‘AAAA’, ‘MX’, ‘TXT’, ‘SRV’, ‘PTR’, ‘NS’,&nbsp;&nbsp;and ‘CNAME’.&nbsp;&nbsp;The <span class="FontName1">dns.resolve()</span> method can take any of these seven record types as the parameter; however, if none are provided it defaults to the ‘A’ type, or IPv4. </p>
+<p class="indent">Related to this method, and not shown in the solution, are wrappers for each of the seven record types. These are shorthand methods to get the exact resolution you desire without the need to pass the optional parameter. These include <span class="FontName1">dns.resolve4, dns.resolve6, dns.resolveMx, dns.resolveTxt, dns.resolveSrv, dns.resolvePtr, dns.resolveNs</span>, and&nbsp;&nbsp;<span class="FontName1">dns.resolveCname</span>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list4" id="list4">Listing 7-4</a></i></b>.&nbsp;&nbsp;Dns.resolve and Relatives from dns.js</p>
+<pre><span class="FontName1">var resolveMap = {};</span><br><span class="FontName1">exports.resolve4 = resolveMap.A = resolver('queryA');</span><br><span class="FontName1">exports.resolve6 = resolveMap.AAAA = resolver('queryAaaa');</span><br><span class="FontName1">exports.resolveCname = resolveMap.CNAME = resolver('queryCname');</span><br><span class="FontName1">exports.resolveMx = resolveMap.MX = resolver('queryMx');</span><br><span class="FontName1">exports.resolveNs = resolveMap.NS = resolver('queryNs');</span><br><span class="FontName1">exports.resolveTxt = resolveMap.TXT = resolver('queryTxt');</span><br><span class="FontName1">exports.resolveSrv = resolveMap.SRV = resolver('querySrv');</span><br><span class="FontName1">exports.resolveNaptr = resolveMap.NAPTR = resolver('queryNaptr');</span><br><span class="FontName1">exports.reverse = resolveMap.PTR = resolver('getHostByAddr');</span><br>&nbsp;<br><span class="FontName1">exports.resolve = function(domain, type_, callback_) {</span><br>&nbsp;&nbsp;<span class="FontName1">var resolver, callback;</span><br>&nbsp;&nbsp;<span class="FontName1">if (typeof type_ == 'string') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">resolver = resolveMap[type_];</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback = callback_;</span><br>&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">resolver = exports.resolve4;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback = type_;</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">if (typeof resolver === 'function') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return resolver(domain, callback);</span><br>&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">throw new Error('Unknown type "' + type_ + '"');</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">};</span></pre>
+<p class="indent">For the final part of your solution, you built a <span class="FontName1">getDomainsReverse</span> function. This was a wrapper for the <span class="FontName1">dns.reverse</span> function<a id="cXXX.385"></a> that is designed to accept an IP address and find all the domains that match the IP address provided. In your solution you abstract this away so that both the <span class="FontName1">dns.lookup()</span> and the <span class="FontName1">dns.resolve()</span> methods can reuse the function. The results of this retrieval are then logged to the console.</p>
+<p class="indent">You can see that the DNS module affords you many opportunities to gather information about domains and servers that are remote to your location. In your solution to the problem of resolving a host, you were able to utilize the <span class="FontName1">dns.lookup</span>, <span class="FontName1">dns.resolve</span>, and <span class="FontName1">dns.reverse</span> methods to accomplish this task.</p>
+</div>
+<p id="Sec5" class="Heading1">7-2. Handling Streams with the Buffer </p>
+<div>
+<p id="Sec6" class="Heading2_2">Problem</p>
+<p class="noindent">You need to use the Buffer object<a id="cXXX.166y"></a> to better handle streams.</p>
+</div>
+<div>
+<p id="Sec7" class="Heading2">Solution</p>
+<p class="noindent">Buffers are data that are in the form of binary data similar to an array and not just a string. Buffer is a Node.js global object that is used to handle buffers. This means that you will likely not ever need <span class="FontName1">require('buffer')</span>, though that is possible, because of the global nature of the object. To examine the capabilities of the Buffer object, you will create a Node.js file<a id="cXXX.386"></a>, as in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list5" id="_list5">Listing 7-5</a>, that will execute most of the functionality available to buffers. This will allow you to understand better how you can handle buffers that become available in many parts of the Node.js ecosystem.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list5" id="list5">Listing 7-5</a></i></b>.&nbsp;&nbsp;Buffers in Node.js</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Buffer</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var buffer = new Buffer(16);</span><br><span class="FontName1">console.log('size init', buffer.toString());</span><br>&nbsp;<br><span class="FontName1">buffer = new Buffer([42, 41, 41, 41, 41, 41, 41, 42, 42,4, 41, 41, 0, 0, 7, 77], 'utf-8');</span><br><span class="FontName1">console.log('array init', buffer.toString());</span><br>&nbsp;<br><span class="FontName1">buffer = new Buffer('hello buffer', 'ascii');</span><br><span class="FontName1">console.log(buffer.toString());</span><br>&nbsp;<br><span class="FontName1">buffer = new Buffer('hello buffer', 'ucs2');</span><br><span class="FontName1">console.log(buffer.toString());</span><br>&nbsp;<br><span class="FontName1">buffer = new Buffer('hello buffer', 'base64');</span><br><span class="FontName1">console.log(buffer.toString());</span><br>&nbsp;<br><span class="FontName1">buffer = new Buffer('hello buffer', 'binary');</span><br><span class="FontName1">console.log(buffer.toString());</span><br>&nbsp;<br><span class="FontName1">console.log(JSON.stringify(buffer));</span><br><span class="FontName1">console.log(buffer[1]);</span><br><span class="FontName1">console.log(Buffer.isBuffer('not a buffer'));</span><br><span class="FontName1">console.log(Buffer.isBuffer(buffer));</span><br><span class="FontName1">// allocate size</span><br><span class="FontName1">var buffer = new Buffer(16);</span><br><span class="FontName1">// write to a buffer</span><br><span class="FontName1">console.log(buffer.write('hello again', 'utf-8'));</span><br><span class="FontName1">// append more starting with an offset</span><br><span class="FontName1">console.log(buffer.write(' wut', 11, 'utf8'));</span><br><span class="FontName1">console.log(buffer.toString());</span><br><span class="FontName1">// slice [start, end]</span><br><span class="FontName1">buf = buffer.slice(11, 15);</span><br>&nbsp;<br><span class="FontName1">console.log(buf.toString());</span><br><span class="FontName1">console.log(buffer.length);</span><br>&nbsp;<br><span class="FontName1">console.log(buffer.readUInt8(0));</span><br><span class="FontName1">console.log(buffer.readUInt16LE(0));</span><br><span class="FontName1">console.log(buffer.readUInt16BE(0));</span><br><span class="FontName1">console.log(buffer.readUInt32LE(0));</span><br><span class="FontName1">console.log(buffer.readUInt32BE(0));</span><br><span class="FontName1">console.log(buffer.readInt16LE(0));</span><br><span class="FontName1">console.log(buffer.readInt16BE(0));</span><br><span class="FontName1">console.log(buffer.readInt32LE(0));</span><br><span class="FontName1">console.log(buffer.readInt32BE(0));</span><br><span class="FontName1">console.log(buffer.readFloatLE(0));</span><br><span class="FontName1">console.log(buffer.readFloatBE(0));</span><br><span class="FontName1">console.log(buffer.readDoubleLE(0));</span><br><span class="FontName1">console.log(buffer.readDoubleBE(0));</span><br>&nbsp;<br><span class="FontName1">buffer.fill('4');</span><br>&nbsp;<br><span class="FontName1">console.log(buffer.toString());</span><br>&nbsp;<br><span class="FontName1">var b1 = new Buffer(4);</span><br><span class="FontName1">var b2 = new Buffer(4);</span><br><span class="FontName1">b1.fill('1');</span><br><span class="FontName1">b2.fill('2');</span><br>&nbsp;<br><span class="FontName1">console.log(b1.toString());</span><br><span class="FontName1">console.log(b2.toString());</span><br>&nbsp;<br><span class="FontName1">b2.copy(b1, 2, 2, 4);</span><br>&nbsp;<br><span class="FontName1">console.log(b1.toString());</span></pre>
+<p class="indent">The solution in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list5">Listing 7-5</a> highlights many of the capabilities that are available to you when you are utilizing a buffer in Node.js. Next you will see an example using the ‘<span class="FontName1">net</span>’ module<a id="cXXX.387"></a> and how when you communicate between client and server you are sending the data in the form of a buffer.</p>
+<p class="noindent2"><b><i>Listing 7-6</i></b>.&nbsp;&nbsp;Using Buffers</p>
+<pre><span class="FontName1">var net = require('net');</span><br>&nbsp;<br><span class="FontName1">var PORT = 8181;</span><br>&nbsp;<br><span class="FontName1">var server = net.Server(connectionListener);</span><br>&nbsp;<br><span class="FontName1">function connectionListener(conn) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">conn.on('readable', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">//buffer</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var buf = conn.read();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (Buffer.isBuffer(buf)) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('readable buffer: ' , buf);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">conn.write('from server');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">conn.on('end', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">}</span><br>&nbsp;<br><span class="FontName1">server.listen(PORT);</span><br>&nbsp;<br><span class="FontName1">//Connect a socket</span><br><span class="FontName1">var socket = net.createConnection(PORT);</span><br>&nbsp;<br><span class="FontName1">socket.on('data', function(data) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('data recieved: ',&nbsp;&nbsp;data.toString());</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">socket.on('connect', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">socket.end('My Precious');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">for (var i = 0; i &lt; 2000; i++) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">socket.write('buffer');</span><br><span class="FontName1">}</span><br>&nbsp;<br><span class="FontName1">socket.on('end', function() {</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">socket.on('close', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">server.close();</span><br><span class="FontName1">});</span></pre>
+</div>
+<div>
+<p id="Sec8" class="Heading2">How It Works</p>
+<p class="noindent">Buffers are the best ways to handle octet streams in Node.js. They represent raw data being transferred from within your Node.js application, and they are found in multiple places in Node.js. Buffers are very versatile. As you saw in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list5">Listing 7-5</a>, they have many methods available to provide you with the best solution for a given job.</p>
+<p class="indent">There are several methods that you can use when you wish to create a buffer. In the solution, you first created a buffer by allocating a size to the buffer, <span class="FontName1">var buffer = new Buffer(16);</span>. You then were able to generate a new buffer by passing an array directly into the constructor of the Buffer, <span class="FontName1">var buffer = new Buffer([42, 42]...);</span>. The third way in which you can create a new buffer is to directly pass a string to the constructor function, <span class="FontName1">var buffer = new Buffer('hello world');</span>.&nbsp;&nbsp;The constructor function also accepts a type of encoding, set as a string. If no encoding is passed, then the encoding will default to utf8.</p>
+<p class="indent">Once you have created your buffer, you can now manipulate the buffer. There are methods that are directly available on the Buffer object itself. These methods include <span class="FontName1">Buffer.isEncoding(encoding)</span>, <span class="FontName1">Buffer.isBuffer(object)</span>, and <span class="FontName1">Buffer.byteLength(buffer)</span>, which, respectively, evaluate if the encoding is set as expected, sees whether the given object is a buffer, and returns the byte length of the buffer.</p>
+<p class="indent">In addition to these Buffer methods that are on the class itself, there are several methods, outlined in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#Tab2" id="_Tab2">Table 7-2</a>, that you can utilize when working with a Buffer.</p>
+<div class="Table" id="Tab2">
+<p class="TabCapt">
+<span class="CaptNr"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_Tab2">Table 7-2</a>. </span>Buffer Methods and Events<a id="cXXX.388"></a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Method (buffer.&lt;method&gt;)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> write(string, [offset], [length], [encoding])</td>
+<td> Writes the string to the buffer at the given offset and encoding.</td>
+</tr>
+<tr>
+<td> toString([encoding], [start], [end])</td>
+<td> Converts the buffer to a string with a given encoding within a given range, start to end.</td>
+</tr>
+<tr>
+<td> toJSON()</td>
+<td> Returns a JSON-ized version of the buffer.</td>
+</tr>
+<tr>
+<td> Length</td>
+<td> Returns the size of the buffer in bytes.</td>
+</tr>
+<tr>
+<td> copy([targetBuffer], [targetStart], [sourceStart], [sourceEnd])</td>
+<td> Copies buffer data from the source to the target: <span class="FontName1">var b1 = new Buffer('1111');</span> <span class="FontName1">var b2 = new Buffer('2222');</span> <span class="FontName1">b2.copy(b1, 2, 2, 4);</span> <span class="FontName1">//b2 == 1121</span>
+</td>
+</tr>
+<tr>
+<td> slice([start],[end])</td>
+<td> Slices a buffer between the start and the end parameters. Results in a new buffer.</td>
+</tr>
+<tr>
+<td> readUInt8(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as an unsigned 8-bit integer.</td>
+</tr>
+<tr>
+<td> readUInt16LE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as an unsigned 16-bit integer little endian.</td>
+</tr>
+<tr>
+<td> readUInt16BE(offset[noassert])</td>
+<td> Reads the buffer, starting at the offset, as an unsigned 16-bit integer big endian.</td>
+</tr>
+<tr>
+<td> readUInt32LE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as an unsigned 32-bit integer, little endian format.</td>
+</tr>
+<tr>
+<td> readUInt32BE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset as an unsigned 32-bit integer, big endian format.</td>
+</tr>
+<tr>
+<td> readInt8(offset,[noassert])</td>
+<td> Reads the buffer, starting at the offset, as an 8-bit integer.</td>
+</tr>
+<tr>
+<td> readInt16LE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a 16-bit little endian.</td>
+</tr>
+<tr>
+<td> readInt16BE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a 16-bit big endian.</td>
+</tr>
+<tr>
+<td> readInt32LE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a 32-bit little endian.</td>
+</tr>
+<tr>
+<td> readInt32BE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a 32-bit big endian.</td>
+</tr>
+<tr>
+<td> readFloatLE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a float, little endian.</td>
+</tr>
+<tr>
+<td> readFloatBE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a float, big endian.</td>
+</tr>
+<tr>
+<td> readDoubleLE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a double, little endian.</td>
+</tr>
+<tr>
+<td> readDoubleBE(offset, [noassert])</td>
+<td> Reads the buffer, starting at the offset, as a double, big endian.</td>
+</tr>
+<tr>
+<td> writeUInt8(value, offset, [noassert]</td>
+<td> Writes an unsigned 8-bit integer to the buffer, starting at the offset.</td>
+</tr>
+<tr>
+<td> writeUInt16LE(value, offset, [noassert])</td>
+<td> Writes an unsigned 16-bit integer to the buffer, starting at the offset, little endian.</td>
+</tr>
+<tr>
+<td> writeUInt16BE(value, offset, [noassert])</td>
+<td> Writes an unsigned 16-bit integer to the buffer, starting at the offset, big endian.</td>
+</tr>
+<tr>
+<td> writeUInt32LE(value, offset, [noassert])</td>
+<td> Writes an unsigned 32-bit integer to the buffer, starting at the offset, little endian.</td>
+</tr>
+<tr>
+<td> writeUInt32BE(value, offset, [noassert])</td>
+<td> Writes an unsigned 32-bit integer to the buffer, starting at the offset, big endian.</td>
+</tr>
+<tr>
+<td> writeInt8(value, offset, [noassert])</td>
+<td> Writes an 8-bit integer to the buffer, starting at the offset.</td>
+</tr>
+<tr>
+<td> writeInt16LE(value, offset, [noassert])</td>
+<td> Writes a 16-bit integer to the buffer, starting at the offset, little endian.</td>
+</tr>
+<tr>
+<td> writeInt16BE(value, offset, [noassert])</td>
+<td> Writes a 16-bit integer to the buffer, starting at the offset, big endian.</td>
+</tr>
+<tr>
+<td> writeInt32LE(value, offset, [noassert])</td>
+<td> Writes a 32-bit integer to the buffer, starting at the offset, little endian.</td>
+</tr>
+<tr>
+<td> writeInt32BE(value, offset, [noassert])</td>
+<td> Writes a 32-bit integer to the buffer, starting at the offset, big endian.</td>
+</tr>
+<tr>
+<td> writeFloatLE(value, offset, [noassert])</td>
+<td> Writes a float value to the buffer, starting at the offset, little endian.</td>
+</tr>
+<tr>
+<td> siwriteFloatBE(value, offset, [noassert])</td>
+<td> Writes a float value to the buffer, starting at the offset, big endian.</td>
+</tr>
+<tr>
+<td> writeDoubleLE(value, offset, [noassert])</td>
+<td> Writes a double value to the buffer, starting at the offset, little endian. </td>
+</tr>
+<tr>
+<td> writeDoubleBE(value, offset, [noassert])</td>
+<td> Writes a double value to the buffer, starting at the offset, big endian.</td>
+</tr>
+<tr>
+<td> fill(value, [offset], [end])</td>
+<td> Fills the buffer with the value specified from the offset to end range.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">There are many methods available on a buffer that can be utilized for very specific purposes. For example, if you need to read and write unsigned 32-bit integers in little endian format, buffers can do that. While these methods are very flexible, in most cases, you will utilize buffers as shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list4" id="_list4">Listing 7-4</a>. This is an example of a ‘net’ server and client that send data between each other. The data become a readable stream, which is a buffer. You will be able to perform the methods described in the section on any buffers, allowing you to manipulate data and streams that are used in your application.</p>
+</div>
+<p id="Sec9" class="Heading1">7-3. Clustering with Node.js </p>
+<div>
+<p id="Sec10" class="Heading2_2">Problem</p>
+<p class="noindent">You want to build a cluster of processes to run your application more efficiently.</p>
+</div>
+<div>
+<p id="Sec11" class="Heading2">Solution</p>
+<p class="noindent">Node.js provides a solution for clustering. This feature is still experimental at the time of this writing but it is capable of turning your single threaded Node.js application into one that utilizes multiple cores on your machine. In this way you are able to delegate Node.js tasks to separate threads, allowing for greater scalability. In this solution you will generate a Node.js application that will use the cluster module<a id="cXXX.170g"></a>. The first example is a self-contained solution that will split a simple HTTP server<a id="cXXX.389"></a> and log the results of various cluster methods to your console.</p>
+<p class="noindent2"><b><i>Listing 7-7</i></b>.&nbsp;&nbsp;Clustering</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Clustering</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var cluster = require('cluster'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">http = require('http'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cpuCount = require('os').cpus().length;</span><br>&nbsp;<br><span class="FontName1">if (cluster.isMaster) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">for (var i = 0; i &lt; cpuCount; i++) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.fork();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">cluster.on('fork', function(worker) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' worker is forked');</span><br><span class="FontName1">});</span><br><span class="FontName1">cluster.on('listening', function(worker, address) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' is listening on ' + address);</span><br><span class="FontName1">});</span><br><span class="FontName1">cluster.on('online', function(worker) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' is online');</span><br><span class="FontName1">});</span><br><span class="FontName1">cluster.on('disconnect', function(worker) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' disconnected');</span><br><span class="FontName1">});</span><br><span class="FontName1">cluster.on('exit', function(worker, code, signal) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('worker ' + worker.process.pid + ' died');</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">} else {</span><br>&nbsp;&nbsp;<span class="FontName1">// Workers can share any TCP connection</span><br>&nbsp;&nbsp;<span class="FontName1">// In this case it is an HTTP server</span><br>&nbsp;&nbsp;<span class="FontName1">http.createServer(function(req, res) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.writeHead(200);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end("hello world\n");</span><br>&nbsp;&nbsp;<span class="FontName1">}).listen(8000);</span><br><span class="FontName1">}</span></pre>
+<p class="indent">Now you will configure the cluster to execute a second Node.js file, once for each core on your machine.</p>
+<p class="noindent2"><b><i>Listing 7-8</i></b>.&nbsp;&nbsp;Clustering a Node.js Process</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Clustering</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var cluster = require('cluster'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cpuCount = require('os').cpus().length;</span><br>&nbsp;<br><span class="FontName1">cluster.setupMaster({</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">exec: '7-3-3.js'</span><br><span class="FontName1">});</span><br><span class="FontName1">if (cluster.isMaster) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">for (var i = 0; i &lt; cpuCount; i++) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.fork();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.on('fork', function(worker) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' worker is forked');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.on('listening', function(worker, address) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' is listening on ' + address);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.on('online', function(worker) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' is online');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.on('disconnect', function(worker) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(worker + ' disconnected');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">cluster.on('exit', function(worker, code, signal) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log('worker ' + worker.process.pid + ' died');</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">}</span></pre>
+<p class="indent"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list9" id="_list9">Listing 7-9</a>, the worker process<a id="cXXX.390"></a>, is shown here.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list9" id="list9">Listing 7-9</a></i></b>.&nbsp;&nbsp;The Worker Process</p>
+<pre><span class="FontName1">var http = require('http');</span><br>&nbsp;<br><span class="FontName1">http.createServer(function(req, res) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(req.url);</span><br>&nbsp;&nbsp;<span class="FontName1">res.writeHead(200);</span><br>&nbsp;&nbsp;<span class="FontName1">res.end("hello world\n");</span><br><span class="FontName1">}).listen(8000);</span></pre>
+</div>
+<div>
+<p id="Sec12" class="Heading2">How It Works</p>
+<p class="noindent">Clustering in Node.js is essentially a solution to utilize one Node.js module and to split worker processes, utilizing the <span class="FontName1">child_process.fork()</span> function, all while maintaining reference and communication between the master and worker processes. The workers can be TCP or HTTP servers, and the requests are handled by the master process. This master process then utilizes round-robin load balancing to distribute the load through the server. It does this by listening for a connection, then calling a distribute method<a id="cXXX.391"></a> and handing off the processing to the worker process.</p>
+<p class="noindent2"><b><i>Listing 7-10</i></b>.&nbsp;&nbsp;Master Listening, Then Distributing Load</p>
+<pre><span class="FontName1">this.server.once('listening', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">self.handle = self.server._handle;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">self.handle.onconnection = self.distribute.bind(self);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">self.server._handle = null;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">self.server = null;</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">RoundRobinHandle.prototype.distribute = function(handle) {</span><br>&nbsp;&nbsp;<span class="FontName1">this.handles.push(handle);</span><br>&nbsp;&nbsp;<span class="FontName1">var worker = this.free.shift();</span><br>&nbsp;&nbsp;<span class="FontName1">if (worker) this.handoff(worker);</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">RoundRobinHandle.prototype.handoff = function(worker) {</span><br>&nbsp;&nbsp;<span class="FontName1">if (worker.id in this.all === false) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Worker is closing (or has closed) the server.</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">var handle = this.handles.shift();</span><br>&nbsp;&nbsp;<span class="FontName1">if (typeof handle === 'undefined') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">this.free.push(worker);&nbsp;&nbsp;&nbsp;&nbsp; // Add to ready queue again.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return;</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">var message = { act: 'newconn', key: this.key };</span><br>&nbsp;&nbsp;<span class="FontName1">var self = this;</span><br>&nbsp;&nbsp;<span class="FontName1">sendHelper(worker.process, message, handle, function(reply) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (reply.accepted)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">handle.close();</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">self.distribute(handle);&nbsp;&nbsp;// Worker is shutting down. Send to another.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">self.handoff(worker);</span><br>&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">};</span></pre>
+<p class="indent">In your solutions you are working with the master process primarily. In both cases you have a simple HTTP server that will respond with a ‘hello world’ when a request is made to the server address. After importing the cluster module, you then check to see if the process is the cluster’s master process by using <span class="FontName1">cluster.isMaster</span><a id="cXXX.392"></a>. You now check to see how many clusters you should make on your machine by checking the number of cores that your machine has using the ‘os’ module. For each CPU, you fork a new worker process calling <span class="FontName1">cluster.fork()</span>. Since the underlying framework still generates a new child process, which is still a new instance of v8, you can assume that the startup time for each worker will be greater than 0 and less than 100 ms in most cases. It will also generate approximately 10 MB of memory consumption per process at startup.</p>
+<p class="indent">You now know that this is the master process, so you are able to bind to events that will be communicated to the master process. The events of interest are ‘fork’, ‘listening’, ‘exit’, ‘online’, and ‘setup’.&nbsp;&nbsp;The ‘fork’ event<a id="cXXX.393"></a> is emitted when a worker process is successfully forked and provides the worker object for the process that was forked. The ‘online’ event happens as soon as the forked process is created and running. The ‘listening’ event is sent once the worker has started listening. The ‘exit’ event is emitted when the worker process dies. If this happens you may want to call the .fork() method again to replace the downed worker.</p>
+<p class="indent">Cluster is a powerful module that will allow you to distribute the load of your servers between multiple processes on your machine. As your Node.js application grows, this functionality can quickly become important in creating a scalable application.</p>
+</div>
+<p id="Sec13" class="Heading1">7-4. Working with Query Strings <a id="cXXX.394"></a></p>
+<div>
+<p id="Sec14" class="Heading2_2">Problem</p>
+<p class="noindent">You built a web server with Node.js. You would like to smartly handle various differences with the query strings that are passed to your application with the HTTP requests.</p>
+</div>
+<div>
+<p id="Sec15" class="Heading2">Solution</p>
+<p class="noindent">Node.js has a query string module that will allow you to properly parse and encode query string parameters for your Node.js application.</p>
+<p class="noindent2"><b><i>Listing 7-11</i></b>.&nbsp;&nbsp;Using the Query String Module</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* querystrings</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var qs = require('querystring');</span><br>&nbsp;<br><span class="FontName1">var incomingQS = [ 'foo=bar&amp;foo=baz',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">'trademark=%E2%84%A2',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">'%7BLOTR%7D=frodo%20baggins'];</span><br>&nbsp;<br><span class="FontName1">incomingQS.forEach(function(q) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(qs.parse(q));</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">var outgoingQS = { good: 'night', v: '0.10.12', trademark: '™'};</span><br><span class="FontName1">console.log(qs.stringify(outgoingQS));</span><br>&nbsp;<br><span class="FontName1">var newQS = qs.stringify(outgoingQS, '|', '∼');</span><br><span class="FontName1">console.log(newQS);</span><br>&nbsp;<br><span class="FontName1">console.log(qs.parse(newQS));</span></pre>
+<p class="indent">You are able to take an arbitrary query string as input and then parse it to an object. You are also capable of taking an arbitrary object and parsing it to a URL safe query string.</p>
+</div>
+<div>
+<p id="Sec16" class="Heading2">How It Works</p>
+<p class="noindent">While the query string module is not a huge module, it only exports four methods. It provides a very useful solution for dealing with query strings. In this solution, you began by requiring the ‘<span class="FontName1">querystring</span>’ module. This module provides several methods to help deal with query strings in your application.</p>
+<p class="indent">First, the <span class="FontName1">querystring.parse</span> function<a id="cXXX.395"></a> accepts a string and optionally overrides for the separators, which default to ampersand and equals. There is also an options object that will allow you to override the default of 1000 maximum keys (<span class="FontName1">maxKeys</span>) that are to be processed. For each of the keys within the query string, the ‘<span class="FontName1">querystring</span>’ module will attempt to parse the value by first using the <span class="FontName1">decodeURIComponent()</span> function<a id="cXXX.396"></a> that is native to JavaScript. If this produces an error, then the module will move on to its own implementation that is called <span class="FontName1">querystring.unescape</span>.</p>
+<p class="indent">Second, the <span class="FontName1">querystring.stringify</span> function will accept an object that you wish to encode into a <span class="FontName1">querystring</span>. Optionally, this method will also allow you to override the default ampersand and equals separators. The <span class="FontName1">querystring.stringify</span> method<a id="cXXX.397"></a> will parse the object, turning it into a string, then it will call the module’s <span class="FontName1">QueryString.escape</span> method. This method is simply a wrapper for JavaScript’s <span class="FontName1">encodeURIComponent()</span>.</p>
+</div>
+<p id="Sec17" class="Heading1">7-5. Processing Events with ‘Process’ </p>
+<div>
+<p id="Sec18" class="Heading2_2">Problem</p>
+<p class="noindent">You want to be able to handle events globally in your Node.js application.</p>
+</div>
+<div>
+<p id="Sec19" class="Heading2">Solution</p>
+<p class="noindent">The Node.js Process module<a id="cXXX.175h"></a> is a global object that is accessible anywhere within your Node.js application. In this solution, you can imagine a situation where you have a module and an auxiliary module. The main module has bindings to the events of initialization, and it begins a call to certain methods of the auxiliary module. The main module<a id="cXXX.398"></a> will look like the one shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list12" id="_list12">Listing 7-12</a> and the auxiliary module will look like the one shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list13" id="_list13">Listing 7-13</a>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list12" id="list12">Listing 7-12</a></i></b>.&nbsp;&nbsp;Main Module, Dealing with Process</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* using the process</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">function log(msg) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (typeof msg === 'object') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">msg = JSON.stringify(msg);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">process.stdout.write(msg + '\n');</span><br><span class="FontName1">}</span><br><span class="FontName1">//add listeners</span><br><span class="FontName1">process.on('power::init', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log('power initialized');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">process.on('power::begin', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log('power calc beginning');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">process.on('exit', function() {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log(process.uptime());</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log('process exiting...');</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">process.on('uncaughtException', function(err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">log('error in process ' +&nbsp;&nbsp;err.message + '\n');</span><br><span class="FontName1">});</span><br><span class="FontName1">log(process.cwd());</span><br><span class="FontName1">process.chdir('..');</span><br><span class="FontName1">log(process.cwd());</span><br><span class="FontName1">log(process.execPath);</span><br><span class="FontName1">log(process.env.HOME);</span><br><span class="FontName1">log(process.version);</span><br><span class="FontName1">log(process.versions);</span><br><span class="FontName1">log(process.config);</span><br><span class="FontName1">log(process.pid);</span><br><span class="FontName1">log(process.platform);</span><br><span class="FontName1">log(process.memoryUsage());</span><br><span class="FontName1">log(process.arch);</span><br>&nbsp;<br><span class="FontName1">var pow = new require('./power');</span><br>&nbsp;<br><span class="FontName1">var out = pow.power(42, 42);</span><br><span class="FontName1">log(out);</span><br>&nbsp;<br><span class="FontName1">// throws</span><br><span class="FontName1">setTimeout(pow.error, 1e3);</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list13" id="list13">Listing 7-13</a></i></b>.&nbsp;&nbsp;Auxiliary Module<a id="cXXX.399"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* power module</span><br><span class="FontName1">*/</span><br><span class="FontName1">process.emit('power::init');</span><br>&nbsp;<br><span class="FontName1">exports.power = function(base, exponent) {</span><br>&nbsp;&nbsp;<span class="FontName1">var result = 1;</span><br>&nbsp;&nbsp;<span class="FontName1">process.emit('power::begin');</span><br>&nbsp;&nbsp;<span class="FontName1">for (var count = 0; count &lt; exponent; count++)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">result *= base;</span><br>&nbsp;&nbsp;<span class="FontName1">return result;</span><br><span class="FontName1">};</span></pre>
+</div>
+<div>
+<p id="Sec20" class="Heading2">How It Works</p>
+<p class="noindent">The Node.js process object can gain you valuable information and utility for your application. The Process object is global and is an <span class="FontName1">EventEmitter</span>. This is why in the example above you are able to emit ‘<span class="FontName1">power::init</span>’ from the power.js file. You also bind to this by calling <span class="FontName1">process.on('power::init', callback)</span>. You then bind to other events. First you bind to another custom event that you emit when you begin to execute the power.js module’s power function.</p>
+<p class="indent">The two other events are built-in events to the Node.js process. First, you bind to the ‘<span class="FontName1">exit</span>’ event. This will be triggered when the process is ready to exit, giving you one last chance to log errors or notify users of an imminent end of process. The other built-in event that you listen for is the ‘<span class="FontName1">uncaughtException</span>’ event. This event is triggered by any exception that would otherwise bubble up to the console and crash your application. In the solution, you were able to trigger this event by attempting to call a method that did not exist on the power.js module.</p>
+<p class="indent">The process module does more than just handle events. In fact, it can provide a large amount of information relevant to your current Node.js process, many of which you were able to utilize when creating your solution. <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#Tab3" id="_Tab3">Table 7-3</a> details these other methods and attributes<a id="cXXX.400"></a> on the process object.</p>
+<div class="Table" id="Tab3">
+<p class="TabCapt">
+<span class="CaptNr"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_Tab3">Table 7-3</a>. </span>Process Object Methods and Attributes </p>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> abort()</td>
+<td> This method will abort the process.</td>
+</tr>
+<tr>
+<td> arch</td>
+<td> Architecture of your system.</td>
+</tr>
+<tr>
+<td> argv</td>
+<td> This is the argument that instantiates your Node.js process. You have seen this before to parse parameters that are passed to your application.</td>
+</tr>
+<tr>
+<td> chdir(director)</td>
+<td> Changes the directory that your process is currently working from.</td>
+</tr>
+<tr>
+<td> config</td>
+<td> Lists the configuration of the Node.js application.</td>
+</tr>
+<tr>
+<td> cwd()</td>
+<td> Prints the current working directory for your process.</td>
+</tr>
+<tr>
+<td> env</td>
+<td> Lists the environmental variables on your system as an object.</td>
+</tr>
+<tr>
+<td> execPath</td>
+<td> This is the path to the Node.js executable on your system.</td>
+</tr>
+<tr>
+<td> exit([code])</td>
+<td> Emits the exit event with the specified code.</td>
+</tr>
+<tr>
+<td> getgid()</td>
+<td> Gets the group ID of the process. Not available on Windows.</td>
+</tr>
+<tr>
+<td> getgroups()</td>
+<td> Gets the group ID array of the processes’ supplementary groups. Not available on Windows.</td>
+</tr>
+<tr>
+<td> getuid()</td>
+<td> Gets the user ID of the process. Not available on Windows.</td>
+</tr>
+<tr>
+<td> hrtime([hrtime])</td>
+<td> High-resolution time array (seconds, nanoseconds) since an arbitrary epoch in the past. This can be used with a previous hrtime reading to get the difference.</td>
+</tr>
+<tr>
+<td> initgroups</td>
+<td> Reads /etc/groups. Not available on Windows.</td>
+</tr>
+<tr>
+<td> kill(process_id, [signal])</td>
+<td> Sends a signal to the process ID.</td>
+</tr>
+<tr>
+<td> maxTickDepth</td>
+<td> You can use this to set the number of ticks to go before allowing the event loop to process. This prevents using .nextTick from locking I/O.</td>
+</tr>
+<tr>
+<td> memoryUsage()</td>
+<td> Bytes of memory usage in your process.</td>
+</tr>
+<tr>
+<td> nextTick(callback)</td>
+<td> Next time around the event loop, the callback will be executed. This can be done in this fashion:<br><br><span class="FontName1">function definitelyAsync(arg, cb) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (arg) {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><span class="FontName1">process.nextTick(cb);</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><span class="FontName1">return;</span>&nbsp;&nbsp;&nbsp;&nbsp;<br><span class="FontName1">}</span>&nbsp;&nbsp;&nbsp;&nbsp;<br><span class="FontName1">fs.stat('file', cb);</span><br><span class="FontName1">}</span>
+</td>
+</tr>
+<tr>
+<td> pid</td>
+<td> Process identifier.</td>
+</tr>
+<tr>
+<td> platform</td>
+<td> Lists the platform on which the process is running.</td>
+</tr>
+<tr>
+<td> setgid()</td>
+<td> Sets the group ID of the process. Not available on Windows.</td>
+</tr>
+<tr>
+<td> setgroups</td>
+<td> Sets the group array for the process. Not available on Windows.</td>
+</tr>
+<tr>
+<td> setuid()</td>
+<td> Sets the user ID of the process. Not available on Windows.</td>
+</tr>
+<tr>
+<td> stderr</td>
+<td> Standard error; this is a writeable stream. </td>
+</tr>
+<tr>
+<td> stdin</td>
+<td> Readable stream that represents stdin.<br><br><span class="FontName1">function log(msg) {</span><br> &nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (typeof msg === 'object') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">msg = JSON.stringify(msg);</span><br><span class="FontName1">&nbsp; }</span><br><span class="FontName1">&nbsp;&nbsp;process.stdout.write(msg + '\n');</span><br><span class="FontName1">}</span>
+</td>
+</tr>
+<tr>
+<td> stdout</td>
+<td> This is the standard output for your process and is a writeable stream. You were able to recreate console logging by creating your log() function:<br><br><span class="FontName1">function log(msg) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (typeof msg === 'object') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">msg = JSON.stringify(msg);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">process.stdout.write(msg + '\n');</span> <br><span class="FontName1">}</span>
+</td>
+</tr>
+<tr>
+<td> title</td>
+<td> Title of the process.</td>
+</tr>
+<tr>
+<td> umask([mask])</td>
+<td> Setter and getter for the process’s file mode creation mask.</td>
+</tr>
+<tr>
+<td> uptime()</td>
+<td> Number of seconds (not milliseconds) that Node has been running.</td>
+</tr>
+<tr>
+<td> version</td>
+<td> Prints the version of Node.js that the process is using.</td>
+</tr>
+<tr>
+<td> versions</td>
+<td> Lists an object containing the version of Node.js and its dependencies.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p id="Sec21" class="Heading1">7-6. Using Timers<a id="cXXX.401"></a></p>
+<div>
+<p id="Sec22" class="Heading2_2">Problem</p>
+<p class="noindent">You want to be able to utilize timers in your Node.js application to control the flow.</p>
+</div>
+<div>
+<p id="Sec23" class="Heading2">Solution</p>
+<p class="noindent">Controlling the timing of particular processes in any application, including those built with Node.js, can be critical. Using timers in Node.js should be familiar to you if you have utilized timers in a web application, as some of the methods are available in browsers as well.</p>
+<p class="indent">In this solution you will create an application that will utilize timers to poll a fictionally remote resource. This solution will represent a scenario where you need to fetch data from a remote queue. There are several solutions for polling on an interval, or simply utilizing timers to invoke a method efficiently on the event loop.</p>
+<p class="noindent2"><b><i>Listing 7-14</i></b>.&nbsp;&nbsp;Using Timers</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Using Timers</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var count = 0;</span><br><span class="FontName1">var getMockData = function(callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var obj = {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">status: 'lookin good',</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">data: [</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">"item0",</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">"item1"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="FontName1">],</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">numberOfCalls: count++</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">};</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">return callback(null, obj);</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">var onDataSuccess = function(err, data) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) console.log(err);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (data.numberOfCalls &gt; 15) clearInterval(intrvl);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.log(data);</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">// getMockData(onDataSuccess);</span><br><span class="FontName1">setImmediate(getMockData, onDataSuccess);</span><br>&nbsp;<br><span class="FontName1">var tmr = setTimeout(getMockData, 2e3, onDataSuccess);</span><br><span class="FontName1">tmr.unref();</span><br><span class="FontName1">var intrvl = setInterval(getMockData, 50, onDataSuccess);</span></pre>
+</div>
+<div>
+<p id="Sec24" class="Heading2">How It Works</p>
+<p class="noindent">There are several timers that you can use in Node.js. First, there is the set of timers that you would find in a web browser. These are <span class="FontName1">setTimeout</span> and <span class="FontName1">setInterval</span> with their corresponding <span class="FontName1">clearTimeout</span> and <span class="FontName1">clearInterval</span> functions.</p>
+<p class="indent">
+<span class="FontName1">setTimeout</span> is a way that you can schedule a one-time event after a given time delay. The structure of a <span class="FontName1">setTimeout</span> call takes at least two arguments. The first argument is the callback that you want to have executed when the timer fires. The second is a number of milliseconds to wait until that callback is executed. Optionally, you may add additional arguments to the function, which will be applied to the callback when the timer executes. <span class="FontName1">setTimeout</span> can be canceled by calling <span class="FontName1">clearTimeout</span> and passing a reference to the initial timeout timer.</p>
+<div class="notepara">
+<p class="paraaftertitle1"><img src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/sq.jpg" alt="image" width="12" height="12" data-mfp-src="/library/view/nodejs-recipes-a/9781430260585/images/sq.jpg">&nbsp;<b>Note</b>&nbsp;&nbsp;Because of the JavaScript Node.js event loop, you are unable to rely directly on the timings of the callback execution. Node.js will attempt to execute the callback as close to the timing prescribed, but it will likely not be at the exact interval timings.</p></div>
+<p class="indent">
+<span class="FontName1">setInterval</span> is a relative of the <span class="FontName1">setTimeout</span>. It functions in a similar manner by providing a mechanism to delay execution of a function by a set period of time. However, with <span class="FontName1">setInterval</span> that function will execute repeatedly on the same interval until <span class="FontName1">clearInterval</span> is called. In the solution above, this was the case that was used to poll in a long running process. In theory you could run an interval on a long poll of 30 seconds, 3 minutes, or every hour and just let the process run. However in the solution, you ran the interval on a short (&lt; 1 second) interval and cleared it after it had executed 15 times.</p>
+<p class="indent">Both the <span class="FontName1">setInterval</span> and <span class="FontName1">setTimeout</span> methods have two extra methods attached to them. These are <span class="FontName1">unref()</span> and <span class="FontName1">ref()</span>. The <span class="FontName1">unref()</span> method allows the Node.js process to terminate if the timer is the only timer left on the event.loop. The <span class="FontName1">ref()</span> method does the opposite by holding the process until the timer has executed. To see this in action, you can note that immediately after your two-second delay <span class="FontName1">setTimeout</span> method in the solution, you call that timer’s <span class="FontName1">unref()</span> method. This means that this timer will never execute. Because the interval from the <span class="FontName1">setInterval</span> is finished and cleared well before the two seconds has elapsed, there remain no other timers on the event loop and the process exits gracefully.</p>
+<p class="indent">
+<span class="FontName1">setImmediate</span> is another timing mechanism for Node.js. This is useful for calling near immediate methods, similar to how the <span class="FontName1">process.nextTick()</span> function operates. <span class="FontName1">setImmediate</span> will queue the function to process immediately behind any I/O-bound callbacks that are currently in the event loop. This is slightly varied on how <span class="FontName1">nextTick</span> operates, as it will bump its execution to the front of the event loop. This means that <span class="FontName1">setImmediate</span> is a better way to execute a method that will not lock I/O processes from happening. This is particularly useful if you are running a recursive function that requires some level of CPU usage, as this will not prevent those operations from happening between callbacks.</p>
+</div>
+<p id="Sec25" class="Heading1">7-7. Using the V8 Debugger<a id="cXXX.180z"></a></p>
+<div>
+<p id="Sec26" class="Heading2_2">Problem</p>
+<p class="noindent">You need to step through and debug your Node.js application.</p>
+</div>
+<div>
+<p id="Sec27" class="Heading2">Solution</p>
+<p class="noindent">Node.js runs on Google’s V8, which has a built-in debugging mechanism. Because of this, Node.js allows you to debug the source utilizing this tool. You will create a solution that will help you gain an understanding of just how the debugger works and of what insights it can give you to your code. <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list15" id="_list15">Listing 7-15</a> shows a simple HTTP server that will require a second module (shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list16" id="_list16">Listing 7-16</a>).</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list15" id="list15">Listing 7-15</a></i></b>.&nbsp;&nbsp;HTTP Server<a id="cXXX.402"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Debugging</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var http = require('http'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">mod = require('./7-7-2');</span><br>&nbsp;<br><span class="FontName1">server = http.createServer(function(req, res) {</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (req.url === '/') {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">debugger;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">mod.doSomething(function(err, data) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) res.end('an error occured');</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(JSON.stringify(data));</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">} else {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end('404');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br><span class="FontName1">});</span><br>&nbsp;<br><span class="FontName1">server.listen(8080);</span></pre>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list16" id="list16">Listing 7-16</a></i></b>.&nbsp;&nbsp;Required Module<a id="cXXX.403"></a></p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Debugging</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">exports.doSomething = function(callback) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">debugger;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">callback(null, { status: 'okay', data: ['a', 'b', 'c']});</span><br><span class="FontName1">};</span></pre>
+<p class="indent">There are a few things that might be slightly different from your typical Node.js application; in particular you can see some ‘debugger;’ statements. These will be directives to tell the V8 debug mechanism to pause execution of your program. This process begins by starting your Node.js application with the ‘debug’ flag.</p>
+</div>
+<div>
+<p id="Sec28" class="Heading2">How It Works</p>
+<p class="noindent">Google designed the V8 JavaScript engine, which powers Node.js, to allow for debugging of the JavaScript that is executing within the engine. Node.js supports V8 debugging in two ways. One way is to implement the V8 debugger protocol in a manner that will create the debugger, listening on a TCP port. This is useful if you are creating or using a third-party debugging tool that is coordinated to utilize the protocol. To do this, start your Node.js application, 7-7-1.js, with the command <span class="FontName1">$ node --debug 7-7-1.js</span>. This will begin the debugger and listen on <span class="FontName1">localhost:5858</span> for hooks into the debugger. This allows for debugging clients to be created that communicate with the debugger. Fortunately, Node.js comes with its own V8 debugger client. You can access an application that you started in debug mode with the - -debug flag by typing <span class="FontName1">$ node debug</span><a id="cXXX.404"></a> into the console.</p>
+<p class="indent">The Node.js built-in debugger can be accessed by starting your Node.js application with the ‘debug’ parameter.</p>
+<p class="noindent2"><b><i>Listing 7-17</i></b>.&nbsp;&nbsp;Starting the Node.js debug CLI</p>
+<pre><span class="FontName1">$ node debug 7-7-1.js</span></pre>
+<p class="indent">This will start your application but with the debugger attached. The output in your console will show you that the debugger has started listening, and it will show the first line of JavaScript code, which the debugger will break by default.</p>
+<p class="noindent2"><b><i>Listing 7-18</i></b>.&nbsp;&nbsp;Initial State of the Debugger</p>
+<pre><span class="FontName1">&lt; debugger listening on port 5858</span><br><span class="FontName1">connecting... ok</span><br><span class="FontName1">break in 7-7-1.js:5</span><br>&nbsp;&nbsp;<span class="FontName1">3 */</span><br>&nbsp;&nbsp;<span class="FontName1">4</span><br>&nbsp;&nbsp;<span class="FontName1">5 var http = require('http'),</span><br>&nbsp;&nbsp;<span class="FontName1">6&nbsp;&nbsp;&nbsp;&nbsp; mod = require('./7-7-2');</span><br>&nbsp;&nbsp;<span class="FontName1">7</span><br><span class="FontName1">debug&gt;</span></pre>
+<p class="indent">You now have a ‘<span class="FontName1">debug&gt;</span>’ prompt. This is the command-line interface to the debugger. You can walk through the basics of debugging by following the next steps. First, you can add a watch to an object or property in your application. To do this you type ‘watch’ followed by any expression you wish to watch.</p>
+<pre><span class="FontName1">debug&gt; watch('expression')</span></pre>
+<p class="indent">So, in your solution you can watch for the request URL by using the watch command<a id="cXXX.405"></a> and passing ‘req.url’ as the expression.</p>
+<pre><span class="FontName1">debug&gt; watch('req.url')</span></pre>
+<p class="indent">You are also able to list all the watchers that are currently active in your debugger session. The results will print the active watchers and their values to the console. The current values are given the immediate context of where the JavaScript code is paused.</p>
+<pre><span class="FontName1">debug&gt; watchers</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "&lt;error&gt;"</span></pre>
+<p class="indent">Recall that in your application code, you created two places where you called ‘<span class="FontName1">debugger;</span>’. It will pause the execution at these points in your application. However, there may be times when you do not wish to add debugger statements and you would just like to set a breakpoint in your code. To do this, the debugger has several breakpoint methods available. To set a breakpoint on the current line, simply type <span class="FontName1">setBreakpoint()</span> into the debug console. Alternatively, you can use the shorthand <span class="FontName1">sb()</span> to set a breakpoint. The <span class="FontName1">setBreakpoint</span> method<a id="cXXX.406"></a> also accepts a line number, so you can predetermine a line to break on. You can do this in your code by setting a breakpoint on the <span class="FontName1">server.listen(8080)</span> method.</p>
+<pre><span class="FontName1">debug&gt; sb(21)</span><br>&nbsp;&nbsp;<span class="FontName1">1 /**</span><br>&nbsp;&nbsp;<span class="FontName1">2 * Debugging</span><br>&nbsp;&nbsp;<span class="FontName1">3 */</span><br>&nbsp;&nbsp;<span class="FontName1">4</span><br>&nbsp;&nbsp;<span class="FontName1">5 var http = require('http'),</span><br>&nbsp;&nbsp;<span class="FontName1">6&nbsp;&nbsp;&nbsp;&nbsp; mod = require('./7-7-2');</span><br>&nbsp;&nbsp;<span class="FontName1">7</span><br>&nbsp;&nbsp;<span class="FontName1">8 server = http.createServer(function(req, res) {</span><br>&nbsp;&nbsp;<span class="FontName1">9&nbsp;&nbsp;&nbsp;&nbsp; if (req.url === '/') {</span><br>&nbsp;<span class="FontName1">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; debugger;</span></pre>
+<p class="indent">You can also break on another file that will be loaded into your application. To do this, pass the file name and the line number to the <span class="FontName1">setBreakpoint</span> method<a id="cXXX.407"></a>.</p>
+<pre><span class="FontName1">debug&gt; sb('7-7-2.js', 5)</span><br><span class="FontName1">Warning: script '7-7-2.js' was not loaded yet.</span><br>&nbsp;&nbsp;<span class="FontName1">1 /**</span><br>&nbsp;&nbsp;<span class="FontName1">2 * Debugging</span><br>&nbsp;&nbsp;<span class="FontName1">3 */</span><br>&nbsp;&nbsp;<span class="FontName1">4</span><br>&nbsp;&nbsp;<span class="FontName1">5 var http = require('http'),</span><br>&nbsp;&nbsp;<span class="FontName1">6&nbsp;&nbsp;&nbsp;&nbsp; mod = require('./7-7-2');</span><br>&nbsp;&nbsp;<span class="FontName1">7</span><br>&nbsp;&nbsp;<span class="FontName1">8 server = http.createServer(function(req, res) {</span><br>&nbsp;&nbsp;<span class="FontName1">9&nbsp;&nbsp;&nbsp;&nbsp; if (req.url === '/') {</span><br>&nbsp;<span class="FontName1">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; debugger;</span></pre>
+<p class="indent">Here you see that you have set the breakpoint on the initial line of code in the file 7-7-2.js. Once you continue the execution of the program, the breakpoint will pause the execution of the program again as soon as that line of code is hit.</p>
+<p class="indent">At this point, you are ready to navigate through your application using the debugger. The debugger, like most debuggers, exposes methods that allow you to step through and continue the execution of your code. The most granular method is the step in command. This is called by typing ‘<span class="FontName1">step'</span>, or <span class="FontName1">'s'</span>, for shorthand. From the beginning of the execution of your debugging instance, if you step, it will move you to the next area of execution. In this instance it has moved into the module.js file and is beginning the process of adding the modules you required in the source.</p>
+<pre><span class="FontName1">debug&gt; s</span><br><span class="FontName1">break in module.js:380</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "&lt;error&gt;"</span><br>&nbsp;<br>&nbsp;<span class="FontName1">378</span><br>&nbsp;<span class="FontName1">379&nbsp;&nbsp; function require(path) {</span><br>&nbsp;<span class="FontName1">380&nbsp;&nbsp;&nbsp;&nbsp; return self.</span><b>require</b><span class="FontName1">(path);</span><br>&nbsp;<span class="FontName1">381&nbsp;&nbsp; }</span><br>&nbsp;<span class="FontName1">382</span></pre>
+<p class="indent">From here you will want to continue. Continuing execution will run until the next breakpoint is hit. If there are no other breakpoints, the application will run normally until you manually pause it with the <span class="FontName1">pause</span> command. A continuation can be triggered by ‘<span class="FontName1">cont'</span>, or ‘<span class="FontName1">c'</span>. In your example, this will move you through the module import code and to the breakpoint, which you set on the ‘7-7-2.js’ file, line 5<a id="cXXX.408"></a>.</p>
+<pre><span class="FontName1">debug&gt; c</span><br><span class="FontName1">break in 7-7-2.js:5</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "&lt;error&gt;"</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">3 */</span><br>&nbsp;&nbsp;<span class="FontName1">4</span><br>&nbsp;&nbsp;<span class="FontName1">5 exports.doSomething</span> <b>=</b> <span class="FontName1">function(callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">6&nbsp;&nbsp;&nbsp;&nbsp; debugger;</span><br>&nbsp;&nbsp;<span class="FontName1">7&nbsp;&nbsp;&nbsp;&nbsp; callback(null, { status: 'okay', data: ['a', 'b', 'c']});</span><br><span class="FontName1">debug&gt; c</span><br><span class="FontName1">break in 7-7-1.js:21</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "&lt;error&gt;"</span><br>&nbsp;<br>&nbsp;<span class="FontName1">19 });</span><br>&nbsp;<span class="FontName1">20</span><br><span class="FontName1">*21 server.</span><b>listen</b><span class="FontName1">(8080);</span><br>&nbsp;<span class="FontName1">22</span><br>&nbsp;<span class="FontName1">23</span></pre>
+<p class="indent">Continuing one more time, you will hit the breakpoint you set on line 21 of ‘7-7-1.js’; this is the last breakpoint you set. However, there are debugger statements that you will hit once a connection is made to your HTTP server. After continuing through this, you can then make a request to your webserver, <span class="FontName1">'</span><span class="FontName1"><a href="http://localhost:8080/">http://localhost:8080/</a></span>’. Because of the <span class="FontName1">debugger;</span> statement, this will pause the execution at precisely the location in your connection listener callback.</p>
+<pre><span class="FontName1">debug&gt; c</span><br><span class="FontName1">break in 7-7-1.js:10</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "/"</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">8 server = http.createServer(function(req, res) {</span><br>&nbsp;&nbsp;<span class="FontName1">9&nbsp;&nbsp;&nbsp;&nbsp; if (req.url === '/') {</span><br>&nbsp;<b>10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; debugger;</b><br>&nbsp;<span class="FontName1">11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mod.doSomething(function(err, data) {</span><br>&nbsp;<span class="FontName1">12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (err) res.end('an error occured');</span></pre>
+<p class="indent">From here, you can step into the next execution. This is done using the ‘<span class="FontName1">next</span>’, or ‘<span class="FontName1">n</span>’, command in the debugger. Performing ‘<span class="FontName1">next</span>’ twice, you end up at the debugger; statement within your ‘7-7-2.js’ module.</p>
+<pre><span class="FontName1">debug&gt; n</span><br><span class="FontName1">break in 7-7-1.js:11</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "/"</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">9&nbsp;&nbsp;&nbsp;&nbsp; if (req.url === '/') {</span><br>&nbsp;<span class="FontName1">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; debugger;</span><br>&nbsp;<span class="FontName1">11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mod.</span> <b>doSomething</b> <span class="FontName1">(function(err, data) {</span><br>&nbsp;<span class="FontName1">12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (err) res.end('an error occured');</span><br>&nbsp;<span class="FontName1">13</span><br><span class="FontName1">debug&gt; n</span><br><span class="FontName1">break in 7-7-2.js:6</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "&lt;error&gt;"</span><br>&nbsp;<br>&nbsp;&nbsp;<span class="FontName1">4</span><br>&nbsp;&nbsp;<span class="FontName1">5 exports.doSomething = function(callback) {</span><br>&nbsp;&nbsp;<span class="FontName1">6</span>&nbsp;&nbsp;&nbsp;&nbsp; <b>debugger</b><span class="FontName1">;</span><br>&nbsp;&nbsp;<span class="FontName1">7&nbsp;&nbsp;&nbsp;&nbsp; callback(null, { status: 'okay', data: ['a', 'b', 'c']});</span><br>&nbsp;&nbsp;<span class="FontName1">8 };</span></pre>
+<p class="indent">You can now step out of this method by using the ‘<span class="FontName1">out</span>’, or (‘<span class="FontName1">o</span>’), command.</p>
+<pre><span class="FontName1">debug&gt; o</span><br><span class="FontName1">break in 7-7-1.js:19</span><br><span class="FontName1">Watchers:</span><br>&nbsp;&nbsp;<span class="FontName1">0: req.url = "/"</span><br>&nbsp;<br>&nbsp;<span class="FontName1">17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; res.end('404');</span><br>&nbsp;<span class="FontName1">18&nbsp;&nbsp;&nbsp;&nbsp; }</span><br>&nbsp;<span class="FontName1">19</span><b>}</b><span class="FontName1">);</span><br>&nbsp;<span class="FontName1">20</span><br>&nbsp;<span class="FontName1">21 server.listen(8080);</span></pre>
+<p class="indent">Other than step, next, continue, and out, there is the ‘<span class="FontName1">pause</span>’ command. This will pause the execution of any code that is running at the time.</p>
+<p class="indent">While you are stepping through your code, it is sometimes necessary to get some more information about what is happening in your application. The debugger has utilities for this as well. First, when you are paused at a breakpoint, if you want to see more of the surrounding code, you can do this by using the ‘<span class="FontName1">list(n)</span>’ command<a id="cXXX.409"></a>. This will show the code surrounded by ‘n’ lines before and after the currently paused location, which can be very useful in gathering more context to what is currently taking place in the debugger. Another useful feature is the ‘<span class="FontName1">backtrace</span>’ (‘<span class="FontName1">bt</span>’) command. This will show the trace of execution path for the current point in the program.</p>
+<p class="noindent2"><b><i>Listing 7-19</i></b>.&nbsp;&nbsp;Example of backtrace from Within the doSomething Method<a id="cXXX.410"></a> of the 7-7-2.js Module</p>
+<pre><span class="FontName1">debug&gt; bt</span><br><span class="FontName1">#0 exports.doSomething 7-7-2.js:6:2</span><br><span class="FontName1">#1 7-7-1.js:11:7</span></pre>
+<p class="indent">You can also view the loaded files by using the ‘<span class="FontName1">scripts</span>’ command. Importantly, if you need to dig deeper into the code, you can use the debugger’s read–eval–print loop (REPL) module<a id="cXXX.411"></a> by using the ‘<span class="FontName1">repl</span>’ command.</p>
+<p class="indent">Debugging a Node.js application is treated as a high priority with the built-in command-line interface for debugging your application using the V8 debugger. You will find these tools to be useful when you track down anomalies and bugs in your code.</p>
+</div>
+<p id="Sec29" class="Heading1">7-8. Parsing URLs <a id="cXXX.412"></a></p>
+<div>
+<p id="Sec30" class="Heading2_2">Problem</p>
+<p class="noindent">You want to be able to parse URLs in your Node.js HTTP server applications.</p>
+</div>
+<div>
+<p id="Sec31" class="Heading2">Solution</p>
+<p class="noindent">Node.js comes with a URL module that can be utilized to parse URLs and gather the information contained within. A solution to see how this works (see <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list20" id="_list20">Listing 7-20</a>) will show you to parse an arbitrary URL.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list20" id="list20">Listing 7-20</a></i></b>.&nbsp;&nbsp;Parsing an Arbitrary URL</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* parse url</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var url = require('url');</span><br>&nbsp;<br><span class="FontName1">var theurl = '</span><span class="FontName1"><a href="http://who:ami@hostname:1234/a/b/c/d/?d=e#f=g">http://who:ami@hostname:1234/a/b/c/d/?d=e#f=g</a></span><span class="FontName1">';</span><br>&nbsp;<br><span class="FontName1">var urlParsed = url.parse(theurl, true, true);</span><br><span class="FontName1">console.log('protocol', urlParsed.protocol);</span><br><span class="FontName1">console.log('slashes', urlParsed.slashes);</span><br><span class="FontName1">console.log('auth', urlParsed.auth);</span><br><span class="FontName1">console.log('host', urlParsed.host);</span><br><span class="FontName1">console.log('port', urlParsed.port);</span><br><span class="FontName1">console.log('hostname', urlParsed.hostname);</span><br><span class="FontName1">console.log('hash', urlParsed.hash);</span><br><span class="FontName1">console.log('search', urlParsed.search);</span><br><span class="FontName1">console.log('query', urlParsed.query);</span><br><span class="FontName1">console.log('pathname', urlParsed.pathname);</span><br><span class="FontName1">console.log('path', urlParsed.path);</span><br><span class="FontName1">console.log('href', urlParsed.href);</span><br>&nbsp;<br><span class="FontName1">console.log(url.resolve('/a/b/c/', 'd'));</span></pre>
+<p class="noindent"><i>Results of 7-20</i></p>
+<pre><span class="FontName1">$ node 7-8-2.js</span><br><span class="FontName1">protocol http:</span><br><span class="FontName1">slashes true</span><br><span class="FontName1">auth who:ami</span><br><span class="FontName1">host hostname:1234</span><br><span class="FontName1">port 1234</span><br><span class="FontName1">hostname hostname</span><br><span class="FontName1">hash #f=g</span><br><span class="FontName1">search ?d=e</span><br><span class="FontName1">query { d: 'e' }</span><br><span class="FontName1">pathname /a/b/c/d/</span><br><span class="FontName1">path /a/b/c/d/?d=e</span><br><span class="FontName1">href</span> <span class="FontName1"><a href="http://who:ami@hostname:1234/a/b/c/d/?d=e#f=g">http://who:ami@hostname:1234/a/b/c/d/?d=e#f=g</a></span><br><span class="FontName1">/a/b/c/d</span></pre>
+<p class="indent">Using this in practice, you can imagine an HTTP server, not unlike <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list21" id="_list21">Listing 7-21</a>, that requires the URL to be parsed so that you can coordinate the correct file to serve the client in the <span class="FontName1">HTTP.response()</span>.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list21" id="list21">Listing 7-21</a></i></b>.&nbsp;&nbsp;Using the URL Module</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Parsing URLS</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">var http = require('http'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">fs = require('fs'),</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">url = require('url');</span><br>&nbsp;<br><span class="FontName1">var server = http.createServer(function(req, res) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var urlParsed = url.parse(req.url,true, true);</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">fs.readFile(urlParsed.path.split('/')[1], function(err, data) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">if (err) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.statusCode = 404;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(http.STATUS_CODES[404]);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var ursplit = urlParsed.path.split('.');</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">var ext = ursplit[ursplit.length - 1];</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">switch(ext) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">case 'htm':</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">case 'html':</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.writeHead(200, {'Content-Type': 'text/html'});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(data);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">break;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">case 'js':</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.writeHead(200, {'Content-Type': 'text/javascript'});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(data);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">break;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">case 'css':</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.writeHead(200, {'Content-Type': 'text/css'});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(data);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">break;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">case 'json':</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.writeHead(200, {'Content-Type': 'application/json'});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(data);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">break;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">default:</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.writeHead(200, {'Content-Type': 'text/plain'});</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">res.end(data);</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">});</span><br><span class="FontName1">}).listen(8080);</span></pre>
+</div>
+<div>
+<p id="Sec32" class="Heading2">How It Works</p>
+<p class="noindent">Using the URL module provides you with three methods for handling a URL. First you utilized the <span class="FontName1">url.parse()</span> method. This method takes a URL string and returns a parsed URL object. The parsed URL object can take the properties shown in <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#Tab4" id="_Tab4">Table 7-4</a>.</p>
+<div class="Table">
+<p class="TabCapt">
+<span class="CaptNr">
+<a id="Tab4" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_Tab4">Table 7-4</a>. </span>Parsed URL Object Properties </p>
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> .auth</td>
+<td> The authorization portion of the URL. username:password</td>
+</tr>
+<tr>
+<td> .hash</td>
+<td> Any fragment that is present in the URL.</td>
+</tr>
+<tr>
+<td> .host</td>
+<td> Full hostname and port of the URL.</td>
+</tr>
+<tr>
+<td> .hostname</td>
+<td> The full name of the host in the URL.</td>
+</tr>
+<tr>
+<td> .href</td>
+<td> The whole URL.</td>
+</tr>
+<tr>
+<td> .path</td>
+<td> The pathname and search combined.</td>
+</tr>
+<tr>
+<td> .pathname</td>
+<td> The full pathname following the hostname and port portion of the URL.</td>
+</tr>
+<tr>
+<td> .port</td>
+<td> The port specified in the URL.</td>
+</tr>
+<tr>
+<td> .protocol</td>
+<td> The protocol of the request.</td>
+</tr>
+<tr>
+<td> .query</td>
+<td> The query string without the ‘?’. Can be parsed as an object.</td>
+</tr>
+<tr>
+<td> .search</td>
+<td> The query string part of the URL.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="indent">The parsed object was used in the HTTP server example to resolve the path so that the server could read in the file type and serve an appropriate mime-type for the content. There are also great uses for URL routing that could benefit from parsing the URL.</p>
+<p class="indent">If you are dealing with a parsed URL, and you would like to turn that object back into a proper URL, whether you are serving a URL back to the client or some other purpose, you can create a URL from a parsed URL object by calling the <span class="FontName1">url.format()</span> function on that object. This will reformat the object, excluding the <span class="FontName1">href</span> back to a URL.</p>
+<p class="indent">The third method that can be used is the <span class="FontName1">url.resolve(from, to)</span> function. This function will attempt to resolve a path just as a web browser would.</p>
+<p class="indent">You can see that if you are going to deal with URLs in your Node.js application, you should utilize the features that have been built in with the URL module. It provides the tools needed to parse and format any URLs that you would need in your application.</p>
+</div>
+<p id="Sec33" class="Heading1">7-9. Using the Console&nbsp;&nbsp;</p>
+<div>
+<p id="Sec34" class="Heading2_2">Problem<a id="cXXX.413"></a></p>
+<p class="noindent">You would like to utilize the console to log details, metrics, and assertions in your Node.js application.</p>
+</div>
+<div>
+<p id="Sec35" class="Heading2">Solution</p>
+<p class="noindent">You are likely familiar with some console functions, as most people utilize at least the <span class="FontName1">console.log()</span> function<a id="cXXX.414"></a> if they are building a Node.js application, and you have seen it used in many examples in other portions of this book. To see how you can utilize the console, <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#list22" id="_list22">Listing 7-22</a> shows all the different methods that are available to you as a Node.js developer.</p>
+<p class="noindent2"><b><i><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#_list22" id="list22">Listing 7-22</a></i></b>.&nbsp;&nbsp;Using the Console</p>
+<pre><span class="FontName1">/**</span><br><span class="FontName1">* Console</span><br><span class="FontName1">*/</span><br>&nbsp;<br><span class="FontName1">console.log('console usage in Node.js');</span><br>&nbsp;<br><span class="FontName1">console.info('console.info writes the', 'same as console.log');</span><br>&nbsp;<br><span class="FontName1">console.error('same as console.log but writes to stderr');</span><br>&nbsp;<br><span class="FontName1">console.warn('same as console.err');</span><br>&nbsp;<br><span class="FontName1">console.time('timer');</span><br>&nbsp;<br><span class="FontName1">setTimeout(console.timeEnd, 2e3, 'timer');</span><br>&nbsp;<br><span class="FontName1">console.dir({ name: 'console.dir', logs: ['the', 'string representation', 'of objects']});</span><br>&nbsp;<br><span class="FontName1">var yo = 'yo';</span><br><span class="FontName1">console.trace(yo);</span><br>&nbsp;<br><span class="FontName1">try {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.assert(1 === '1', 'one does not equal one');</span><br><span class="FontName1">} catch(ex) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">console.error('an error occured: ', ex.message);</span><br><span class="FontName1">}</span></pre>
+<p class="noindent"><i>Console Results</i></p>
+<pre><span class="FontName1">7|</span>⇒ <span class="FontName1">node 7-9-1.js</span><br><span class="FontName1">console usage in Node.js</span><br><span class="FontName1">console.info writes the same as console.log</span><br><span class="FontName1">same as console.log but writes to stderr</span><br><span class="FontName1">same as console.err</span><br><span class="FontName1">{ name: 'console.dir',</span><br>&nbsp;&nbsp;<span class="FontName1">logs: [ 'the', 'string representation', 'of objects' ] }</span><br><span class="FontName1">Trace: yo</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at Object.&lt;anonymous&gt; (/Users/gack/Dropbox/book/code/7/7-9-1.js:20:9)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at Module._compile (module.js:456:26)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at Object.Module._extensions..js (module.js:474:10)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at Module.load (module.js:356:32)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at Function.Module._load (module.js:312:12)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at Function.Module.runMain (module.js:497:10)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at startup (node.js:119:16)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">at node.js:901:3</span><br><span class="FontName1">an error occured:&nbsp;&nbsp;one does not equal one</span><br><span class="FontName1">timer: 2001ms</span></pre>
+</div>
+<div>
+<p id="Sec36" class="Heading2">How It Works</p>
+<p class="noindent">The console object in Node.js is a method to write to <span class="FontName1">stdout</span> and <span class="FontName1">stderr</span><a id="cXXX.415"></a>. The most common console functions are <span class="FontName1">console.log</span>, <span class="FontName1">console.err</span>, <span class="FontName1">console.warn</span>, <span class="FontName1">console.dir</span>, and <span class="FontName1">console.info</span>. These functions deal with logging information directly to provide information to the user and they deal directly with the <span class="FontName1">stdout</span> and <span class="FontName1">stderr</span> of the Node.js process.</p>
+<p class="noindent"><i>Console Object Source</i></p>
+<pre><span class="FontName1">Console.prototype.log = function() {</span><br>&nbsp;&nbsp;<span class="FontName1">this._stdout.write(util.format.apply(this, arguments) + '\n');</span><br><span class="FontName1">};</span><br><span class="FontName1">Console.prototype.info = Console.prototype.log;</span><br><span class="FontName1">Console.prototype.warn = function() {</span><br>&nbsp;&nbsp;<span class="FontName1">this._stderr.write(util.format.apply(this, arguments) + '\n');</span><br><span class="FontName1">};</span><br><span class="FontName1">Console.prototype.error = Console.prototype.warn;</span><br><span class="FontName1">Console.prototype.dir = function(object) {</span><br>&nbsp;&nbsp;<span class="FontName1">this._stdout.write(util.inspect(object, { customInspect: false }) + '\n');</span><br><span class="FontName1">};</span></pre>
+<p class="indent">There is not much to implementing these methods in Node.js. There are, however, a few other console methods that can be useful.</p>
+<p class="indent">One of these is the pair of <span class="FontName1">console.time</span> and <span class="FontName1">console.timeEnd</span>. Each of the functions takes a label, which will tell Node.js to track the time between the call of <span class="FontName1">console.time('label')</span> and <span class="FontName1">console.timeEnd('label')</span>. Once <span class="FontName1">console</span>.<span class="FontName1">timeEnd('label')</span> is called, it will log the number of milliseconds that have elapsed between the events.</p>
+<pre><span class="FontName1">Console.prototype.time = function(label) {</span><br>&nbsp;&nbsp;<span class="FontName1">this._times[label] = Date.now();</span><br><span class="FontName1">};</span><br>&nbsp;<br><span class="FontName1">Console.prototype.timeEnd = function(label) {</span><br>&nbsp;&nbsp;<span class="FontName1">var time = this._times[label];</span><br>&nbsp;&nbsp;<span class="FontName1">if (!time) {</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="FontName1">throw new Error('No such label: ' + label);</span><br>&nbsp;&nbsp;<span class="FontName1">}</span><br>&nbsp;&nbsp;<span class="FontName1">var duration = Date.now() - time;</span><br>&nbsp;&nbsp;<span class="FontName1">this.log('%s: %dms', label, duration);</span><br><span class="FontName1">};</span></pre>
+<p class="indent">
+<span class="FontName1">Console.trace()</span><a id="cXXX.416"></a> is a function that will print the current stack trace, applied to an argument that was passed as a label. This happens by creating a new Error object and setting the specifics, based on the current stack.</p>
+<pre><span class="FontName1">Console.prototype.trace = function() {</span><br>&nbsp;&nbsp;<span class="FontName1">// TODO probably can to do this better with V8's debug object once that is</span><br>&nbsp;&nbsp;<span class="FontName1">// exposed.</span><br>&nbsp;&nbsp;<span class="FontName1">var err = new Error;</span><br>&nbsp;&nbsp;<span class="FontName1">err.name = 'Trace';</span><br>&nbsp;&nbsp;<span class="FontName1">err.message = util.format.apply(this, arguments);</span><br>&nbsp;&nbsp;<span class="FontName1">Error.captureStackTrace(err, arguments.callee);</span><br>&nbsp;&nbsp;<span class="FontName1">this.error(err.stack);</span><br><span class="FontName1">};</span></pre>
+<p class="indent">
+<span class="FontName1">Console.assert</span><a id="cXXX.417"></a>, is a wrapper for <span class="FontName1">assert.ok()</span> that will throw an error if the assertion fails. In the solution for this, you created an assertion that you knew would fail, and you logged the error message when you caught the exception.</p>
+</div>
+</div>
+<div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch06.xhtml" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">CHAPTER 6: Implementing Security and Cryptography</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch08.xhtml" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">CHAPTER 8: Creating a WebSocket Server</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781430260585/chapter/9781430260585_Ch07.xhtml" data-for-analytics="9781430260585:9781430260585_Ch07.xhtml">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel  collapsed slideUp">
+        <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="js-toggle-nag ss-navigateup" title="Toggle open or close footer"></a>
+        <div class="sample-message">
+          <p class="usage-data t-collapsed-text">Enjoy Safari?
+            <a class="ga-active-trial-subscribe-nag" href="https://www.safaribooksonline.com/subscribe/">
+              Subscribe Today
+              
+            </a>
+          </p>
+          
+
+        <div class="expanded">
+          <h2>You have 10 days left in your trial, Raviguru0007. </h2>
+          <p class="t-expanded-text">Safari is your trusted guide for building a remarkable career. We hope you've been enjoying your trial—ready to join?</p>
+          <a href="https://www.safaribooksonline.com/subscribe/" class="button-primary">
+            Subscribe Today
+            
+          </a>
+          
+          <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="icon-up" style="display: none;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/contact/">Contact Us</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+    </ul>
+    <span class="copyright">© 2017 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/membership-agreement/">Membership Agreement</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" class="icon-up" style="display: none;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2017 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"3275661","errorBeacon":"bam.nr-data.net","agent":"","beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"510f1a6865","applicationTime":322,"transactionName":"YgdaZ0NSW0cEB0RdWltNfkZfUEFdCgofXFBHDVYdR1pQQxZeRl1QQj1aWkU="}</script>
+
+
+    
+
+    <script src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/saved_resource" charset="utf-8"></script>
+    <script src="./CHAPTER 7_ Discovering Other Node.js Modules - Node.js Recipes_ A Problem-Solution Approach_files/saved_resource(1)" charset="utf-8"></script>
+  
+
+<div class="annotator-notice">Sorry we could not read the annotations from the store</div><div class="font-flyout" style="top: 200.003px; left: 1217px;"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com/library/view/nodejs-recipes-a/9781430260585/9781430260585_Ch07.xhtml#">Reset</a>
+</div>
+</div></body></html>
